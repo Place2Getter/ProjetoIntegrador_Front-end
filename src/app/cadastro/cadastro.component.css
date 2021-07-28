@@ -1,0 +1,207 @@
+.borda {
+  border: 1px solid red;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+img.vetor-1 {
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+img.vetor-2 {
+  width: 300px;
+  height: 280px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top-descricao {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.top-descricao h2 {
+  color: #4BB9A3;
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  margin-right: 18px;
+}
+
+.redes-sociais i {
+  margin-left: 20px;
+  color: rgba(0, 0, 0, 0.603);
+  font-size: 24px;
+  margin-top: 10px;
+  transition: .1s ease-in-out;
+}
+
+.redes-sociais i:hover {
+  color: #60dbc5;
+  transform: scale(130%);
+}
+
+form {
+  width: 1000px;
+  height: 500px;
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cadastro {
+  width: 480px;
+  height: 490px;
+  margin-right: 30px;
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs {
+  width: 400px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.inputs i {
+  opacity: 35%;
+}
+
+.inputs input {
+  width: 300px;
+  height: 50px;
+  border: none;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.inputs input:focus {
+  outline: none;
+}
+
+.buttons {
+  width: 140px;
+  text-align: center;
+  padding: 10px;
+  background-color: #3AB19B;
+  border-radius: 20px;
+  position: absolute;
+  left: 44%;
+  margin-top: 20px;
+  transform: translateX(-50%);
+}
+
+.buttons:hover {
+  background-color: #60dbc5;
+  cursor: pointer;
+}
+
+.buttons a {
+  color: white;
+  transition: .20s ease-in-out all;
+  text-decoration: none;
+}
+
+.buttons a:hover {
+  letter-spacing: 1px;
+}
+
+.cartao-visita {
+  width: 400px;
+  height: 500px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: linear-gradient(45deg, #71EED0, rgba(94, 244, 136, 0.65));
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  box-shadow: 10px 0px 35px rgba(0, 0, 0, 0.233);
+}
+
+.cartao-visita-texto {
+  margin-top: 35%;
+  padding: 10px;
+  height: 300px;
+  position: relative;
+}
+
+.cartao-visita-texto h1 {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.cartao-visita-texto p {
+  color: rgba(255, 255, 255, 0.795);
+  text-align: center;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.button-cartao {
+  width: 140px;
+  text-align: center;
+  padding: 10px;
+  background: none;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.41);
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.button-cartao a {
+  color: white;
+  transition: .15s ease-in-out;
+  text-decoration: none;
+}
+
+.button-cartao a:hover {
+  letter-spacing: 1px;
+}
+
+form select {
+  border: none;
+  color: rgba(0, 0, 0, 0.644);
+  padding-left: 12px;
+  margin-top: 5px;
+  margin-top: 10px;
+  height: 50px;
+
+}
+
+form select:focus {
+  outline: none;
+
+}

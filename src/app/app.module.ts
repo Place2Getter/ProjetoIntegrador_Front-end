@@ -8,6 +8,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { FooterComponent } from './footer/footer.component';
     CadastroComponent,
     ContatoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,16 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'cadastrar', pathMatch: 'full'},
+  {path: '', redirectTo:'home', pathMatch: 'full'},
   {path: 'contato', component: ContatoComponent},
   {path: 'logar', component: LoginComponent},
-  {path: 'cadastrar', component: CadastroComponent}
+  {path: 'cadastrar', component: CadastroComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

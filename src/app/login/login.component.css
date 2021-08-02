@@ -26,17 +26,10 @@ img.vetor-2 {
   left: 0;
 }
 
-.top-descricao {
-  width: 400px;
-  display: flex;
-  justify-content: center;
-}
-
 .top-descricao h2 {
-  color: #4BB9A3;
-  font-size: 35px;
-  font-weight: 500;
-  text-align: center;
+  color: #7dc9bacb;
+  font-size: 34px;
+  font-weight: 300;
 }
 
 .redes-sociais {
@@ -87,6 +80,9 @@ form {
 .inputs {
   margin-top: 40px;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
 }
 
 .inputs i {
@@ -94,7 +90,7 @@ form {
 }
 
 .inputs input {
-  width: 300px;
+  width: 350px;
   height: 50px;
   border: none;
   padding-left: 15px;
@@ -107,13 +103,15 @@ form {
 
 .buttons {
   width: 140px;
+  height: 48px;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   background-color: #3AB19B;
   border-radius: 20px;
   position: absolute;
-  left: 48%;
+  left: 50%;
   margin-top: 20px;
+  bottom: 25%;
   transform: translateX(-50%);
 }
 

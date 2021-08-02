@@ -53,20 +53,21 @@ img.vetor-2 {
 
 
 form {
-  width: 1000px;
+  width: 500px;
   height: 500px;
   background-color: white;
   border-radius: 25px;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
+  right: 10%;
 }
 
 .login {
   width: 480px;
   height: 450px;
   padding: 25px;
-  margin-left: 90px;
   position: relative;
 }
 
@@ -136,7 +137,7 @@ form {
   border-bottom-right-radius: 20px;
   background: linear-gradient(45deg, #71EED0, rgba(94, 244, 136, 0.65));
   position: absolute;
-  right: 0;
+  right: 10%;
   box-sizing: border-box;
   box-shadow: -10px 0px 35px   rgba(0, 0, 0, 0.233);
 }

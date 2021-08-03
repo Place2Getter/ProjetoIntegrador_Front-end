@@ -11,7 +11,7 @@
           <p>Novos rumos, novas experiências e um único objetivo!</p>
         </div>
         <div class="button-cartao">
-          <a href="">Acessar</a>
+          <button routerLink='/logar' href="">Acessar</button>
         </div>
       </div>
     </section>
@@ -26,33 +26,48 @@
         </div>
         <div class="input-nome">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Informe o seu nome">
+          <input [(ngModel)]='usuario.nome' name="nome" type="text" placeholder="Informe o seu nome">
         </div>
         <div class="input-email ">
           <i class="far fa-envelope"></i>
-          <input type="text" placeholder="Email">
+          <input [(ngModel)]='usuario.usuario' name="usuario" type="text" placeholder="Email">
         </div>
         <div class="input-senha">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Senha">
+          <input (input)="confirmarSenha($event)" name="senha" type="password" placeholder="Senha">
           <a href=""><i class="far fa-eye"></i></a>
         </div>
+
         <div class="input-confirma-senha">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Confima Senha">
+          <input [(ngModel)]="usuario.senha" name="Confirmasenha" type="password" placeholder="Confima Senha">
           <a href=""><i class="far fa-eye"></i></a>
         </div>
-        <i class="far fa-check-square"></i>
 
-        <select class="input-tipo-usuario ">
-          <input type="select" placeholder="Tipo Usuário">
-          <option value="">Qual é seu tipo de usuário?</option>
+        <div class="input-foto">
+          <!-- <label for="">Foto:</label> -->
+          <input [(ngModel)]='usuario.foto' name="foto" id="foto" type="text" placeholder="Foto">
+        </div>
+
+        <div class="input-ocupacao">
+          <!-- <label for="">Foto:</label> -->
+          <input [(ngModel)]='usuario.ocupacaoProfissonal' name="ocupacao" id="ocupacao" type="text" placeholder="Ocupação Profissional">
+        </div>
+
+        <div class="input-habilidade">
+          <!-- <label for="">Foto:</label> -->
+          <input [(ngModel)]='usuario.habilidade' name="habilidade" id="habilidade" type="text" placeholder="Habilidade">
+        </div>
+
+        <i class="far fa-check-square"></i>
+        <select (change)='tipoUsuario($event)' name="tipoUsuario" class="input-tipo-usuario" type="select">
+          <option>Qual é seu tipo de usuário?</option>
           <option value="mentor">Mentor(a)</option>
           <option value="aluno">Aluno(a)</option>
         </select>
 
         <div class="buttons">
-          <a routerLink='/logar' class="button">Cadastrar</a>
+          <button type="submit" (click)='cadastrar()' class="button">Cadastrar</button>
         </div>
       </div>
     </div>

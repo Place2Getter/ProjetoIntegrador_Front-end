@@ -5,5 +5,6 @@ export class UsuarioLogin{
   public usuario: string
   public senha: string
   public token:string
-  public imagemUsuario: string
+  public foto: string
+  public tipo: string
 }

@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { InicioComponent } from './inicio/inicio.component';
     FooterComponent,
     HomeComponent,
     InicioComponent,
+    TemaComponent,
   ],
 
   imports: [

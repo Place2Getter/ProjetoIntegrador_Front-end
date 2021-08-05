@@ -56,13 +56,61 @@ export class HomeComponent implements OnInit {
       scrollTrigger: {
         trigger: this.document.querySelector('.bolha-persona-1'),
         scrub: true,
-        start: '100% center',
+        start: '130% center',
+      },
+      y: 50,
+      duration: 0.8,
+      delay: 8,
+    });
+
+    gsap.to(this.document.querySelector('.bolha-persona-2'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-2'),
+        scrub: true,
+        start: '50% center',
       },
       y: -90,
       duration: 0.8,
       delay: 8,
     });
-    
+
+    gsap.to(this.document.querySelector('.bolha-persona-3'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-3'),
+        scrub: true,
+        start: '50% center',
+      },
+      y: 50,
+      x: -50,
+      duration: 0.8,
+      delay: 8,
+    });
+
+    gsap.to(this.document.querySelector('.bolha-persona-4'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-4'),
+        scrub: true,
+        start: '50% center',
+      },
+      y: 180,
+      x: 50,
+      duration: 0.8,
+      delay: 8,
+    });
+
+    gsap.from(this.document.querySelector('.titulo-mentoria'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.titulo-mentoria'),
+        scrub: true,
+        start: '-800% center',
+        
+      },
+      x: -300,
+      duration: 0.5,
+      delay: 15,
+      opacity: 0,
+    });
+   
   }
 
   inicialAnimation(): void{
@@ -93,6 +141,30 @@ export class HomeComponent implements OnInit {
       },
       opacity: 0
     });
+    gsap.from(this.document.querySelector('.bolha-persona-2'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-2'),
+        scrub: true,
+        start: '-90% center',
+      },
+      opacity: 0
+    });
+    gsap.from(this.document.querySelector('.bolha-persona-3'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-3'),
+        scrub: true,
+        start: '-120% center',
+      },
+      opacity: 0
+    });
+    gsap.from(this.document.querySelector('.bolha-persona-4'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.bolha-persona-4'),
+        scrub: true,
+        start: '-40% center',
+      },
+      opacity: 0
+    });
     
     gsap.from(this.document.querySelector('.texto-persona'),{
       scrollTrigger: {
@@ -100,9 +172,23 @@ export class HomeComponent implements OnInit {
         scrub: true,
         start: '1% center',
       },
-      y: -100,
+      y: -250,
       duration: 2.5,
       opacity: 0
     });
+
+    // gsap.from(this.document.querySelector('.titulo-mentoria'),{
+    //   scrollTrigger: {
+    //     trigger: this.document.querySelector('.titulo-mentoria'),
+    //     scrub: true,
+    //     start: '-800% center',
+        
+    //   },
+    //   x: -300,
+    //   duration: 0.5,
+    //   delay: 15,
+    //   opacity: 0,
+    // });
+  
   }
 }

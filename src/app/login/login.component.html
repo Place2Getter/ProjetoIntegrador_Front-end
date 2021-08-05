@@ -13,11 +13,11 @@
       <div class="inputs ">
         <div class="input-email ">
           <i class="far fa-envelope"></i>
-          <input type="text" placeholder="Email">
+          <input name="email" [(ngModel)]='usuarioLogin.usuario' type="text" placeholder="Email">
         </div>
         <div class="input-senha">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Senha">
+          <input name="senha" [(ngModel)]='usuarioLogin.senha' type="password" placeholder="Senha">
         </div>
       </div>
       <div class="buttons">

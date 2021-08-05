@@ -2,10 +2,6 @@
   overflow: hidden;
 }
 
-.borda {
-  border: 1px solid red;
-}
-
 .conteudo {
   display: flex;
   justify-content: center;
@@ -68,7 +64,6 @@ form {
   display: flex;
   align-items: center;
   position: relative;
-  border: 1px solid red;
 }
 
 .cadastro {

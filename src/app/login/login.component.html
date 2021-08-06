@@ -13,15 +13,15 @@
       <div class="inputs ">
         <div class="input-email ">
           <i class="far fa-envelope"></i>
-          <input type="text" placeholder="Email">
+          <input [(ngModel)]="usuarioLogin.usuario" name="email" type="text" placeholder="Email">
         </div>
         <div class="input-senha">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Senha">
+          <input [(ngModel)]="usuarioLogin.senha" name="password" type="senha-login" placeholder="Senha">
         </div>
       </div>
       <div class="buttons">
-        <a (click)='acessar()'>Acessar</a>
+        <button (click)='acessar()'>Acessar</button>
       </div>
     </div>
   </form>

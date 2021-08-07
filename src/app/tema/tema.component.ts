@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
+
+
 @Component({
   selector: 'app-tema',
   templateUrl: './tema.component.html',
@@ -23,7 +25,7 @@ export class TemaComponent implements OnInit {
 
     if(environment.token == ''){
       alert('Sua seção expirou, faça o login novamente.')
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/home'])
     }
 
     this.findAllTemas()

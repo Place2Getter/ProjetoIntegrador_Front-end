@@ -13,14 +13,14 @@ export class CadastroComponent implements OnInit {
   usuario: Usuario = new Usuario();
   confirmaSenha: string;
   tipoUsuarios: string;
-  
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(){
     window.scroll(0, 0);
-  }
+}
 
-  confirmarSenha(event: any) {
+  confirmeSenha(event: any) {
     this.confirmaSenha = event.target.value;
   }
 
@@ -30,28 +30,16 @@ export class CadastroComponent implements OnInit {
 
   cadastrar() {
     this.usuario.tipo = this.tipoUsuarios;
-
-    console.log(environment.token)
-    console.log(environment.foto)
-    console.log(environment.id)
-
+  console.log(environment.token)
     if (this.usuario.senha != this.confirmaSenha) {
       alert('Senha incorretas');
     } else {
-      this.authService.cadastrar(this.usuario).subscribe(
-      (resp: Usuario) => {
-        this.usuario = resp;
-        this.router.navigate(['/home-mentor']);
-        alert('cadastra efetuada');
-      },
-      (erro) =>{
-        if(erro.status == 400){
-          alert('Usuário já cadastrado')
-        }else if(erro.status == 500){
-          alert('Algum campo não foi preenchido corretamente')
-        }
-      }
-      );
-    }
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+      this.router.navigate(['/home'])
+        alert('Parabéns Cadastrado com sucesso!')
+         })
+
+     }
   }
 }

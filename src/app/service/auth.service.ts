@@ -11,7 +11,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 
 export class AuthService {
 
-  constructor(private http : HttpClient) {
+  constructor(private http: HttpClient) {
 
   }
 
@@ -30,6 +30,6 @@ export class AuthService {
       logado = true;
     }
 
-    return logado;
+    return logado
   }
 }

@@ -2,30 +2,42 @@
   <img class="vetor-1" src="https://i.imgur.com/1gMNFmZ.png" alt="">
   <img class="vetor-2" src="https://i.imgur.com/juEgnty.png" alt="">
   <form action="" class="">
-    <div class="login">
-      <div class="top-descricao">
-        <div class="row">
-          <div class="col-12 texto">
-            <h2>Place2Getter</h2>
+    <div class="row caixa-login ">
+      <div class="col-md-6">
+        <div class="login">
+          <div class="top-descricao">
+            <div class="row">
+              <div class="col-12 texto">
+                <h2>Place2Getter</h2>
+              </div>
+            </div>
+          </div>
+          <div class="inputs ">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="input-email ">
+                  <i class="far fa-envelope"></i>
+                  <input [(ngModel)]="usuarioLogin.usuario" name="email" type="text" placeholder="Email">
+                </div>
+                <div class="input-senha">
+                  <i class="fas fa-lock"></i>
+                  <input [(ngModel)]="usuarioLogin.senha" name="password" type="senha-login" placeholder="Senha">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row  d-flex justify-content-center">
+            <div class="col-md-5">
+              <div>
+                <a class="buttons" (click)='acessar()'>Acessar</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="inputs ">
-        <div class="input-email ">
-          <i class="far fa-envelope"></i>
-          <input [(ngModel)]="usuarioLogin.usuario" name="email" type="text" placeholder="Email">
-        </div>
-        <div class="input-senha">
-          <i class="fas fa-lock"></i>
-          <input [(ngModel)]="usuarioLogin.senha" name="password" type="senha-login" placeholder="Senha">
-        </div>
-      </div>
-      <div class="buttons">
-        <button (click)='acessar()'>Acessar</button>
-      </div>
     </div>
   </form>
-  <section class="cartao-visita d-none d-sm-block">
+  <section class="cartao-visita d-none d-lg-block">
     <div class="row ml-0 mr-0 cartao-visita-texto">
       <div class="col-md-12">
         <h1>Welcome Back!</h1>
@@ -33,7 +45,7 @@
       </div>
       <div class="button-cartao">
         <a routerLink='/cadastrar'>Cadastrar</a>
-        </div>
+      </div>
     </div>
   </section>
 </div>

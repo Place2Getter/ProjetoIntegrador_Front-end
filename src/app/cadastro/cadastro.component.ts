@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
@@ -32,14 +33,37 @@ export class CadastroComponent implements OnInit {
     this.usuario.tipo = this.tipoUsuarios;
   console.log(environment.token)
     if (this.usuario.senha != this.confirmaSenha) {
-      alert('Senha incorretas');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Senhas não conferem',
+      });
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
       this.router.navigate(['/home'])
-        alert('Parabéns Cadastrado com sucesso!')
-         })
-
+      Swal.fire({
+        icon: 'success',
+        title: 'Perfeito',
+        text: 'Usuário cadastratado com sucesso!',
+      });
+      },
+        (erro)=>{
+          if(erro.status == 400){
+            Swal.fire({
+              icon: 'warning',
+              title: 'Usuário já cadastrado!',
+              text: 'Verifique seus dados.',
+            });
+          } else if(erro.status == 500){
+            Swal.fire({
+              icon: 'warning',
+              title: 'Oops...',
+              text: 'Algum campo não foi preenchido corretamente',
+            });
+          }
+        }
+      )
      }
   }
 }

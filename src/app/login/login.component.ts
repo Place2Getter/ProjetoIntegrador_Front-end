@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 
@@ -12,8 +13,6 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
-
-
 
   constructor(
     private auth: AuthService,
@@ -31,16 +30,42 @@ export class LoginComponent implements OnInit {
     environment.nome = this.usuarioLogin.nome
     environment.id = this.usuarioLogin.id
     environment.foto = this.usuarioLogin.foto
-
+    
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2500,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    Toast.fire({
+      icon: 'success',
+      title: 'Acesso autorizado!'
+    })
     this.router.navigate(['/inicio'])
   }, erro=>{
     if(erro.status == 500){
-      alert('Usuário ou senha estão incorretos!')
-       }
-    })
-
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-start',
+        showConfirmButton: false,
+        timerProgressBar: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'error',
+        title: 'Usuário ou senha estão incorretos!'
+      })
+    }
+  })
   }
-
 }
 
 

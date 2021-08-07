@@ -1,22 +1,24 @@
 <div class="container-fluid conteudo">
-  <form action="">
-    <section class="cartao-visita ">
-      <div class="elemento-1"></div>
-      <div class="elemento-2"></div>
-      <div class="elemento-3"></div>
-      <div class="elemento-4"></div>
-      <div class="row ml-0 mr-0 cartao-visita-texto">
-        <div class="col-md-12">
-          <h1>Hello, Friend!</h1>
-          <p>Novos rumos, novas experiências e um único objetivo!</p>
-        </div>
-        <div class="button-cartao">
-          <button routerLink='/logar' href="">Acessar</button>
+  <form action="" class="">
+    <section class="cartao-visita borda row d-none d-md-block">
+      <div class="col-md-12">
+        <div class="elemento-1"></div>
+        <div class="elemento-2"></div>
+        <div class="elemento-3"></div>
+        <div class="elemento-4"></div>
+        <div class="row ml-0 mr-0 cartao-visita-texto">
+          <div class="col-md-12">
+            <h1>Hello, Friend!</h1>
+            <p>Novos rumos, novas experiências e um único objetivo!</p>
+          </div>
+          <div class="button-cartao">
+            <a routerLink='/logar' href="">Acessar</a>
+          </div>
         </div>
       </div>
     </section>
-    <div class="cadastro ">
-      <div class="inputs ">
+    <div class="cadastro row  d-flex">
+      <div class="inputs borda col-md-12 col-xs-6">
         <div class="top-descricao">
           <div class="row">
             <div class="col-12 texto">
@@ -24,51 +26,59 @@
             </div>
           </div>
         </div>
-        <div class="input-nome">
-          <i class="fas fa-user"></i>
-          <input [(ngModel)]='usuario.nome' name="nome" type="text" placeholder="Informe o seu nome">
-        </div>
-        <div class="input-email ">
-          <i class="far fa-envelope"></i>
-          <input [(ngModel)]='usuario.usuario' name="usuario" type="text" placeholder="Email">
-        </div>
-        <div class="input-senha">
-          <i class="fas fa-lock"></i>
-          <input (input)='confirmeSenha($event)' name="senha" type="password" placeholder="Senha">
-          <a href=""><i class="far fa-eye"></i></a>
-        </div>
+        <div class="row d-flex flex-column">
+          <div class="inputs col-md-12">
+            <div class="input">
+              <i class="fas fa-user icons-left-1"></i>
+              <input [(ngModel)]='usuario.nome' name="nome" type="text" placeholder="Informe o seu nome">
+            </div>
+            <div class="input">
+              <i class="far fa-envelope icons-left-2"></i>
+              <input [(ngModel)]='usuario.usuario' name="usuario" type="text" placeholder="Email">
+            </div>
+            <div class="input">
+              <i class="fas fa-lock icons-left-3"></i>
+              <input (input)='confirmeSenha($event)' name="senha" type="password" placeholder="Senha">
+              <a href=""><i class="far fa-eye"></i></a>
+            </div>
 
-        <div class="input-confirma-senha">
-          <i class="fas fa-lock"></i>
-          <input [(ngModel)]="usuario.senha" name="Confirmasenha" type="password" placeholder="Confima Senha">
-          <a href=""><i class="far fa-eye"></i></a>
-        </div>
+            <div class="input">
+              <i class="fas fa-lock icons-left-4"></i>
+              <input [(ngModel)]="usuario.senha" name="Confirmasenha" type="password" placeholder="Confima Senha">
+              <a href=""><i class="far fa-eye"></i></a>
+            </div>
 
-        <div class="input-foto">
-          <!-- <label for="">Foto:</label> -->
-          <input [(ngModel)]='usuario.foto' name="foto" id="foto" type="text" placeholder="Foto">
-        </div>
+            <div class="input">
+              <!-- <label for="">Foto:</label> -->
+              <i class="far fa-images icons-left-5"></i>
+              <input [(ngModel)]='usuario.foto' name="foto" id="foto" type="text" placeholder="Foto">
+            </div>
 
-        <div class="input-ocupacao">
-          <!-- <label for="">Foto:</label> -->
-          <input [(ngModel)]='usuario.ocupacaoProfissonal' name="ocupacao" id="ocupacao" type="text" placeholder="Ocupação Profissional">
-        </div>
+            <div class="input">
+              <!-- <label for="">Foto:</label> -->
+              <i class="fas fa-suitcase icons-left-6"></i>
+              <input [(ngModel)]='usuario.ocupacaoProfissonal' name="ocupacao" id="ocupacao" type="text"
+                placeholder="Ocupação Profissional">
+            </div>
 
-        <div class="input-habilidade">
-          <!-- <label for="">Foto:</label> -->
-          <input [(ngModel)]='usuario.habilidade' name="habilidade" id="habilidade" type="text" placeholder="Habilidade">
-        </div>
+            <!-- <div class="input-habilidade">
+            <label for="">Foto:</label>
+            <input [(ngModel)]='usuario.habilidade' name="habilidade" id="habilidade" type="text"
+              placeholder="Habilidade">
+          </div> -->
 
-        <i class="far fa-check-square"></i>
-        <select (change)='tipoUsuario($event)' name="tipoUsuario" class="input-tipo-usuario" type="select">
-          <option>Qual é seu tipo de usuário?</option>
-          <option value="mentor">Mentor(a)</option>
-          <option value="aluno">Aluno(a)</option>
-        </select>
-
-        <div class="buttons">
-          <button type="submit" (click)='cadastrar()' class="button" >Cadastrar</button>
-          <button type="submit" class="button" routerLink="/home">Cancelar</button>
+            <div class="section">
+              <i class="far fa-check-square icons-left-7"></i>
+              <select (change)='tipoUsuario($event)' name="tipoUsuario" class="input borda" type="select">
+                <option>Qual é seu tipo de usuário?</option>
+                <option value="mentor">Mentor(a)</option>
+                <option value="aluno">Aluno(a)</option>
+              </select>
+            </div>
+            <div class="buttons">
+              <button type="submit" (click)='cadastrar()'>Cadastrar</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

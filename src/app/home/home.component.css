@@ -493,7 +493,6 @@ a.link-categoria {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 800px;
   position: relative;
 }
 
@@ -603,6 +602,14 @@ a.link-categoria {
   color: #969696;
   padding-left: 10px;
 }
+.texto-mentoria-3 h2{
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.texto-mentoria-3 p{
+  margin-left: 25px;
+}
 
 .borda-mentoria {
   border-left: 2px solid rgba(249, 128, 60, 0.62);
@@ -617,6 +624,16 @@ a.link-categoria {
   position: absolute;
   bottom: 0;
   right: 15%;
+  border-radius: 50%;
+}
+
+.circlue-mentor-2{
+  background: #faeaea;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
   border-radius: 50%;
 }
 

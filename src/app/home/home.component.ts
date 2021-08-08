@@ -325,7 +325,7 @@ export class HomeComponent implements OnInit {
 
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter('.mentores-img', 'skewY', 'deg'), // fast
-      clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
+      clamp = gsap.utils.clamp(-150, 150); // don't let the skew go beyond 20 degrees.
 
     ScrollTrigger.create({
       onUpdate: (self) => {
@@ -335,8 +335,8 @@ export class HomeComponent implements OnInit {
           proxy.skew = skew;
           gsap.to(proxy, {
             skew: 0,
-            duration: 0.8,
-            ease: 'expo',
+            duration: 0.5,
+            ease: 'sine',
             overwrite: true,
             onUpdate: () => skewSetter(proxy.skew),
           });

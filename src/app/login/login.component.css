@@ -134,7 +134,7 @@ form {
   transform: translateY(-10%);
 }
 
-a.buttons {
+button.buttons {
   width: 140px;
   text-align: center;
   padding: 12px;
@@ -144,20 +144,19 @@ a.buttons {
   display: block;
 }
 
-a.buttons:hover {
+button.buttons:hover {
   background-color: #60dbc5;
 }
 
-a.buttons  {
+button.buttons  {
   color: white;
   transition: .20s ease-in-out all;
   text-decoration: none;
-
+  border: none;
 }
 
-a.buttons:hover {
+button.buttons:hover {
   letter-spacing: 1px;
-  cursor: pointer;
 }
 
 .cartao-visita {
@@ -192,7 +191,7 @@ a.buttons:hover {
   font-weight: 300;
 }
 
-.button-cartao {
+.button-cartao button {
   width: 140px;
   text-align: center;
   padding: 10px;
@@ -205,13 +204,13 @@ a.buttons:hover {
   transform: translateX(-50%);
 }
 
-.button-cartao a {
+.button-cartao button {
   color: white;
   transition: .15s ease-in-out;
   text-decoration: none;
 }
 
-.button-cartao a:hover {
+.button-cartao button:hover {
   letter-spacing: 1px;
 }
 

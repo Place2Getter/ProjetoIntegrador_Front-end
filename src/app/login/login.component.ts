@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     if(erro.status == 500){
       const Toast = Swal.mixin({
         toast: true,
-        position: 'top-start',
+        position: 'top-end',
         showConfirmButton: false,
         timerProgressBar: false,
         timer: 2500,

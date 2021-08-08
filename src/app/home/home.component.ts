@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { gsap } from 'gsap';
+import gsapCore from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -32,6 +33,18 @@ export class HomeComponent implements OnInit {
   }
 
   initScrollAnimation(): void {
+    gsap.to('.header, .logo, .links, .register',{
+      opacity: 0,
+      duration: 5, 
+      delay: 5,
+      scrollTrigger: {
+        trigger: '.header',
+        scrub: true, 
+        start: '-10% -10%',
+        end: '-150% -150%'
+      }
+    });
+
     gsap.to(this.document.querySelector('.descricaoBanner'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.descricaoBanner'),
@@ -136,13 +149,24 @@ export class HomeComponent implements OnInit {
       delay: 1.5,
       ease: 'bouce',
     });
+    
     gsap.from(this.banner.nativeElement.childNodes, {
       duration: 1.8,
       opacity: 0,
       x: -200,
       stagger: 0.35,
       delay: 0.15,
+      scrub: true
     });
+
+    // gsap.from(this.banner.nativeElement.childNodes, {
+    //   scale: 1.3,
+    //   scrollTrigger: {
+    //     trigger: '.banner',
+    //     start: 'top top',
+    //     scrub: 2
+    //   }
+    // });
 
     gsap.from(this.document.querySelector('.square'), {
       duration: 1.5,
@@ -297,6 +321,8 @@ export class HomeComponent implements OnInit {
       x: -150,
     });
 
+
+
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter('.mentores-img', 'skewY', 'deg'), // fast
       clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
@@ -319,29 +345,40 @@ export class HomeComponent implements OnInit {
     });
 
     // make the right edge "stick" to the scroll bar. force3D: true improves performance
-    gsap.set('.skewElem', { transformOrigin: 'right center', force3D: true });
+    gsap.set('.skewElem', { transformOrigin: 'left center', force3D: true });
 
-    gsap.from('.mentores-img', {
+    gsap.from(document.querySelector('.mentores-img'), {
       scrollTrigger: {
-        trigger: '.mentores-img',
+        trigger: document.querySelector('.mentores-img'), 
         toggleActions: 'restart pause reverese pause',
+        start: '-115% top',
       },
-      x: -150,
-      duration: 1.5,
+      y: 150,
+      duration: 2.2,
       opacity: 0,
     });
 
-    // gsap.from(this.document.querySelector('.titulo-mentoria'),{
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.titulo-mentoria'),
-    //     scrub: true,
-    //     start: '-800% center',
+    gsap.from('.titulo-mentoria-2',{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.titulo-mentoria-2'),
+        toggleActions: 'restart pause reverese pause',
+        start: '-500% top',
+      },
+      x: -300,
+      duration: 2,
+      opacity: 0,
+    });
 
-    //   },
-    //   x: -300,
-    //   duration: 0.5,
-    //   delay: 15,
-    //   opacity: 0,
-    // });
+    gsap.from(this.document.querySelector('.borda-mentoria'),{
+      scrollTrigger: {
+        trigger: this.document.querySelector('.titulo-mentoria-2'),
+        toggleActions: 'restart pause reverese pause',
+      },
+      y: 300,
+      duration: 1,
+      opacity: 0,
+    });
+
+
   }
 }

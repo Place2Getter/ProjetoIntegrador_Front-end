@@ -562,7 +562,7 @@ a.link-categoria {
   position: absolute;
   border-radius: 50%;
   left: 4%;
-  top: 45%;
+  top: 60%;
   z-index: -1;
 }
 
@@ -571,11 +571,10 @@ a.link-categoria {
   height: 400px;
   background: #EAFFFA;
   position: absolute;
-  bottom: -20%;
+  bottom: -40%;
   right: 5%;
   border-radius: 50%;
 }
-
 
 .mentores {
   position: relative;
@@ -593,7 +592,7 @@ a.link-categoria {
   color: #C9C0C0;
   font-size: 54pt;
   font-weight: 800;
-  text-align: end;
+  text-align: start;
   line-height: 100%;
   margin: 8% 0;
 }

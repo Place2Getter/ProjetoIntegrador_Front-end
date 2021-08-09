@@ -37,6 +37,15 @@ body::-webkit-scrollbar {
   }
 
 
+.position-relative{
+  position: relative;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+
   @keyframes scrollbar-animation {
     from{
       transform: scaleY(100%);

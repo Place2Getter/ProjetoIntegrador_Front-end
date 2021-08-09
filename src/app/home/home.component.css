@@ -1,6 +1,6 @@
 header {
   background: rgba(26, 26, 26, 0.233);
-  width: 100%;
+  width: 100vh;
   height: 70px;
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@ header {
   z-index: 100;
 }
 
-.logo{
+.logo {
   margin-left: 5%;
   padding: 10px;
 }
@@ -17,6 +17,7 @@ header {
 .logo img {
   width: 50px;
 }
+
 .links {
   display: flex;
   justify-content: center;
@@ -132,7 +133,7 @@ img.icon-mouse {
 .square {
   position: relative;
   min-height: 100vh;
-  min-width: 423px;
+  width: 423px;
   left: 0px;
   top: 0px;
   background: rgba(113, 238, 208, 0.85);
@@ -525,7 +526,6 @@ a.link-categoria {
 
 .categoria-itens {
   display: flex;
-  width: 1200px;
 }
 
 .categorias h4 {
@@ -577,6 +577,7 @@ a.link-categoria {
 
 .mentores {
   position: relative;
+  padding-bottom: 20px;
 }
 
 .mentores img {
@@ -602,12 +603,13 @@ a.link-categoria {
   color: #969696;
   padding-left: 10px;
 }
-.texto-mentoria-3 h2{
+
+.texto-mentoria-3 h2 {
   margin-top: 50px;
   margin-left: 25px;
 }
 
-.texto-mentoria-3 p{
+.texto-mentoria-3 p {
   margin-left: 25px;
 }
 
@@ -627,7 +629,7 @@ a.link-categoria {
   border-radius: 50%;
 }
 
-.circlue-mentor-2{
+.circlue-mentor-2 {
   background: #faeaea;
   width: 350px;
   height: 350px;
@@ -636,6 +638,265 @@ a.link-categoria {
   left: 30%;
   border-radius: 50%;
 }
+
+.section-impacto {
+  background: linear-gradient(166.91deg, #FFFFFF 7.18%, #D6FAF1 61.05%);
+  padding-top: 50px;
+}
+
+img.impacto-img{
+  background-size: contain;
+  object-fit: cover;
+  width: 280px;
+  height: 400px;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+img.aspas{
+  top: -10%;
+  left: -10%;
+  width: 50px;
+  opacity: 0.5;
+}
+
+img.elemento-style{
+  bottom: 0;
+  right: 8%;
+  width: 300px;
+  opacity: 0.6;
+}
+
+.section-impacto h2 {
+  font-family: Poly;
+  font-size: 100px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #F9803C9E;
+}
+
+.section-impacto p {
+  font-family: Poly;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 52px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-impacto span {
+  color: #F9803C9E;
+  font-family: Poly;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+}
+
+.caixa-persona {
+  top: 0;
+  left: 0;
+  background: #f8dcc9;
+  width: 280px;
+  height: 400px;
+}
+
+.caixa-persona-2 {
+  top: 0;
+  right: 5%;
+  background: #FDFF94;
+  width: 280px;
+  height: 400px;
+}
+
+#bolhas-detalhe{
+  height: 50px;
+  width: 1000px;
+  right: 20%;
+  bottom: 0;
+}
+
+.desenvolvedores{
+  background: linear-gradient(180deg, #D6FAF1 18.78%, #F1F1F1 100%);
+  height: 800px;
+  padding-top: 80px;
+}
+
+.desenvolvedores h4{
+  text-transform: uppercase ;
+  font-weight: 500;
+  color: #919191;
+}
+
+.desenvolvedores h3{
+  font-size: 32px;
+}
+
+.desenvolvedores p{
+  text-align: center;
+  font-size: 18px;
+  color: #a1a1a1;
+  margin-top: 10px;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+
+.desenvolvedores img{
+  width: 300px;
+}
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+ 
+  .header{
+    height: 10%;
+  }
+  .logo img{
+    width: 100px;
+  }
+
+  .links,
+  .register{
+    display: none;
+  }
+
+  .toggler{
+    width: 80px;
+    height: 110px;
+    margin-right: 20px;
+  }
+  .linha-1,
+  .linha-2,
+  .linha-3{
+    background: rgba(255, 255, 255, 0.774);
+    height: 5px;
+    width: 100%;
+    margin: 20px auto;
+  }
+
+
+  .banner{
+    height: 218vh;
+  }
+  .square{
+    /* width: 274px; */
+    min-width: 102vh;
+    opacity: 0.2;
+  }
+  .conteudo{
+    margin-top: 250px;
+  }
+  .conteudo h2{
+    text-align: center;
+    color: white !important;
+    font-size: 70pt;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .conteudo h4{
+    text-align: center;
+    margin-left: 0;
+    font-size: 48pt;
+  }
+  .circlue-1{
+    left: 430px;
+  }
+
+  .content-1{
+    min-width: 100vh;
+    height: 198vh;
+  }
+
+  .content-1 h3{
+    font-size: 4em;
+    width: 100%;
+    border: 1px solid red;
+  }
+  
+  .content-1 img.bolha-persona-1{
+    left: 30%;
+    width: 40%;
+    top: 12%;
+  }
+
+  .content-1 img.bolha-persona-2{
+    left: 70%;
+    top: 52%;
+    width: 27%;
+  }
+
+  .content-1 img.bolha-persona-3{
+    left: 49%;
+    top: 73%;
+    width: 36%;
+  }
+
+  .content-1 img.bolha-persona-4{
+    left: 1%;
+    top: 51%;
+    width: 44%;
+  }
+
+  section img.vetor-1{
+    width: 100%;
+  }
+
+  section img.vetor-2{
+    width: 80%;
+  }
+
+  .texto-persona{
+    border: 1px solid blue;
+    margin-top: 50%;
+  }
+  
+
+  .section-impacto h2{
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 49px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .section-impacto p{
+    font-size: 35px;
+    line-height: 44px;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .texto-mentoria-3 h2{
+    margin-left: 0;
+  }
+
+  .mentores h2{
+    font-size: 30pt;
+    text-align: center;
+  }
+
+  img.aspas{
+    top: 3%;
+    left: 5%;
+    width: 38px;
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }
 
 @keyframes circle-move {
   0% {
@@ -696,13 +957,15 @@ a.link-categoria {
 }
 
 @keyframes img-persona-animation {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  50%{
+
+  50% {
     transform: translateY(-10%);
   }
-  100%{
+
+  100% {
     transform: translateY(0);
   }
 }
@@ -715,18 +978,19 @@ a.link-categoria {
 /*                INICIO DA ESTILIZAÇÃO DO RODAPE DA HOME-PAGE                */
 /* -------------------------------------------------------------------------- */
 
-footer{
-  background-color: rgba(43, 94, 77, 0.651) ;
+footer {
+  background-color: rgba(43, 94, 77, 0.651);
   width: 100%;
   height: 200px;
   text-align: center;
 }
 
-footer h2{
+footer h2 {
   padding-top: 45px;
 }
-footer{
-  background-color: rgba(43, 94, 77, 0.651) ;
+
+footer {
+  background-color: rgba(43, 94, 77, 0.651);
   width: 100%;
   height: 200px;
   text-align: center;

@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.inicialAnimation();
   }
 

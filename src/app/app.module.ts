@@ -35,7 +35,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     TemaEditComponent,
     TemaDeleteComponent,
     PostagemEditComponent,
-    UsuarioEditComponent,
+    UsuarioEditComponent
 
   ],
 

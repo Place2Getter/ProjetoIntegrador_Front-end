@@ -18,6 +18,7 @@ import { TemaService } from '../service/tema.service';
 export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPostagem: []
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -25,6 +26,7 @@ export class InicioComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
+  tipoUsuario = environment.tipo
 
   constructor(
     private router: Router,
@@ -57,13 +59,6 @@ export class InicioComponent implements OnInit {
     })
   }
 
-
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
-      this.tema = resp
-    })
-  }
-
   getAllPostagens(){
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
@@ -73,6 +68,18 @@ export class InicioComponent implements OnInit {
   findByIdUsuario(){
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario)=>{
       this.usuario = resp
+    })
+  }
+
+  findByIdTema(){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+      this.tema = resp
+    })
+  }
+
+  findByTitulo(){
+    this.postagemService.getByTitulo(this.postagem.descricao).subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
     })
   }
 
@@ -89,7 +96,15 @@ export class InicioComponent implements OnInit {
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
-
   }
 
+  verificacaoPerfil(){
+    let permissao: boolean = false;
+
+    if(environment.tipo == 'mentor'){
+      permissao = true;
+    }
+
+    return permissao;
+  }
 }

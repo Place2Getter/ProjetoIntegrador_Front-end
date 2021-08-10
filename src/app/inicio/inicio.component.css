@@ -6,7 +6,7 @@
 
 .banner h2{
     color: white;
-    font-size: 30pt;
+    font-size: 34pt;
     font-weight: 900;
 }
 
@@ -23,11 +23,11 @@
 
 .caixa-busca small{
     font-size: 1.1rem;
-    color: aliceblue;
+    color: rgba(240, 248, 255, 0.719);
     font-weight: 300;
     text-align: center;
     display: inline-block;
-    margin: 5px 0 5px 20px;
+    margin: 15px 0 5px 20px;
 }
 
 .input-busca{
@@ -40,7 +40,7 @@
     transform: translateY(-50%);
     right: 3%;
     font-size: 25px;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 .button{

@@ -22,6 +22,14 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://place2getterteste.herokuapp.com/postagem/${id}`, this.token)
   }
 
+  getByTitulo(titulo: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`https://place2getterteste.herokuapp.com/postagem/buscardescricao/${titulo}`)
+  }
+
+  getByDescricao(descricao: string): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://place2getterteste.herokuapp.com//postagem/buscardescricao/${descricao}`)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://place2getterteste.herokuapp.com/postagem/novo', postagem, this.token)
   }

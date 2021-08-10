@@ -18,8 +18,8 @@
     <div class="col-md-7">
       <h2 class="text-center mb-3">Explore novos caminhos</h2>
       <div class="input-busca">
-        <input type="text" class="form-control">
-        <i class="fas fa-search"></i>
+        <input [(ngModel)]='postagem.descricao' type="text" class="form-control">
+        <i (click)='findByTitulo()'class="fas fa-search"></i>
       </div>
       <div class="row">
         <div class="col-md-12 d-flex justify-content-center">
@@ -28,7 +28,7 @@
       </div>
       <div class="row d-flex justify-content-center ">
         <div class="col-md-8  d-flex justify-content-center">
-          <button class="btn btn-dark mr-3 button" data-toggle="modal" data-target="#novaPostagem">Nova
+          <button *ngIf="verificacaoPerfil" class="btn btn-dark mr-3 button" data-toggle="modal" data-target="#novaPostagem">Nova
             Mentoria</button>
           <button class="btn btn-outline-dark button" href="#postagens">Ver Postagens</button>
         </div>

@@ -57,3 +57,28 @@
     background: none;
     border: 1px solid #377969;
 }
+
+.card-component {
+    box-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.212);
+    transition: .2s ease-in-out;
+    min-height: 400px;
+}
+
+.card-component:hover {
+    transform: translateY(-3%);
+    cursor: pointer;
+}
+
+.card-component img{
+    width: 100%;
+}   
+
+.card-component h5{
+    color: #53b19b;
+    text-align: center;
+    font-weight: 600;
+}   
+
+p.descricao{
+    color: rgba(0, 0, 0, 0.555);
+}   

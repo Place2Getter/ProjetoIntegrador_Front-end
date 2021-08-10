@@ -16,15 +16,15 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]>{
-    return this.http.get<Tema[]>('https://place2getter.herokuapp.com/tema', this.token)
+    return this.http.get<Tema[]>('https://place2getterteste.herokuapp.com/tema', this.token)
   }
 
   getByIdTema(id: number): Observable<Tema>{
-    return this.http.get<Tema>(`https://place2getter.herokuapp.com/tema/${id}`, this.token)
+    return this.http.get<Tema>(`https://place2getterteste.herokuapp.com/tema/${id}`, this.token)
   }
 
   postTema(tema: Tema): Observable<Tema>{
-    return this.http.post<Tema>('https://place2getter.herokuapp.com/tema/novo', tema, this.token)
+    return this.http.post<Tema>('https://place2getterteste.herokuapp.com/tema/novo', tema, this.token)
 
   }
 

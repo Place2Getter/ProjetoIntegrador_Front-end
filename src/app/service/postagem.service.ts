@@ -15,23 +15,22 @@ export class PostagemService {
   }
 
   getAllPostagem(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://place2getter.herokuapp.com/postagem', this.token)
+    return this.http.get<Postagem[]>('https://place2getterteste.herokuapp.com/postagem', this.token)
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://place2getter.herokuapp.com/postagem/${id}`, this.token)
+    return this.http.get<Postagem>(`https://place2getterteste.herokuapp.com/postagem/${id}`, this.token)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://place2getter.herokuapp.com/postagem/novo', postagem, this.token)
-
+    return this.http.post<Postagem>('https://place2getterteste.herokuapp.com/postagem/novo', postagem, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://place2getter.herokuapp.com/postagem/alterar', postagem, this.token)
+    return this.http.put<Postagem>('https://place2getterteste.herokuapp.com/postagem/alterar', postagem, this.token)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://place2getter.herokuapp.com/postagem/apagar/${id}`, this.token)
+    return this.http.delete(`https://place2getterteste.herokuapp.com/postagem/apagar/${id}`, this.token)
   }
 }

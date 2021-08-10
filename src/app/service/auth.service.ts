@@ -16,15 +16,15 @@ export class AuthService {
   }
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://place2getter.herokuapp.com/usuarios/${id}`)
+    return this.http.get<Usuario>(`https://place2getterteste.herokuapp.com/usuarios/${id}`)
   }
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('https://place2getter.herokuapp.com/usuarios/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>('https://place2getterteste.herokuapp.com/usuarios/logar', usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://place2getter.herokuapp.com/usuarios/cadastrar', usuario)
+    return this.http.post<Usuario>('https://place2getterteste.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
   logado(){

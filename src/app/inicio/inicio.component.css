@@ -1,0 +1,59 @@
+.banner{
+    background: url(https://i.imgur.com/7IPNHRa.png);
+    height: 500px;
+    background-size: cover;
+}
+
+.banner h2{
+    color: white;
+    font-size: 30pt;
+    font-weight: 900;
+}
+
+.banner input{
+    background: rgba(255, 255, 255, 0.445);
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+}
+
+.caixa-busca{
+    height: 100%;
+}
+
+.caixa-busca small{
+    font-size: 1.1rem;
+    color: aliceblue;
+    font-weight: 300;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 0 5px 20px;
+}
+
+.input-busca{
+    position: relative;
+}
+
+.input-busca i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+    font-size: 25px;
+    opacity: 0.2;
+}
+
+.button{
+    height: 50px;
+}
+
+.btn-outline-dark {
+    border: 1px solid #53b19b;
+    color: white;
+}
+
+
+.btn-outline-dark:hover {
+    background: none;
+    border: 1px solid #377969;
+}

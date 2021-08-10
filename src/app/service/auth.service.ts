@@ -33,7 +33,6 @@ export class AuthService {
     if(environment.token != ''){
       logado = true;
     }
-
     return logado
   }
 }

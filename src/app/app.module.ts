@@ -18,6 +18,9 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AlertaComponent } from './alerta/alerta.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -35,7 +38,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     TemaEditComponent,
     TemaDeleteComponent,
     PostagemEditComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
+    AlertaComponent
 
   ],
 
@@ -43,7 +47,9 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

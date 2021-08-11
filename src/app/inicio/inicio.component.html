@@ -18,7 +18,9 @@
     <div class="col-md-7">
       <h2 class="text-center mb-3">Explore novos caminhos</h2>
       <div class="input-busca">
-        <input [(ngModel)]='postagem.descricao' type="text" class="form-control">
+        <input type="text" class="form-control"
+        placeholder="Exprore caminhos" [(ngModel)]='tituloPost'
+         (keyup)='findByTituloPostagem()'>
         <i (click)='findByTitulo()'class="fas fa-search"></i>
       </div>
       <div class="row">
@@ -58,31 +60,31 @@
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
       <div class="row row-cols-12 row-cols-md-4 mt-5 d-flex justify-content-center">
-        <div class="card card-component mt-4 mr-4" *ngFor='let item of listaPostagens'>
+        <div class="card card-component mt-4 mr-4" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
           <div class="card-head">
             <img src="{{item.liveLink}}" alt="">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{item.titulo}}</h5>
             <p class="text-center descricao">{{item.tema.descricao}}</p>
-            <p class="card-text text-center">{{item.descricao}}</p>
+            <!--<p class="card-text text-center">{{item.descricao}}</p>-->
             <!-- <p class="text-center">{{item.dataPublicacao | date: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p> -->
-
-
           </div>
-          <div class="card-footer">
+        <div class="card-footer">
             <h6 class="card-subtitle text-center  text-muted">Por: {{item.usuario.nome}}</h6>
           </div>
         </div>
       </div>
+    </div>
 
-    </div>
-    </div>
 
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
 
+
+
+
       <div class="card-columns">
-        <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem'>
+        <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
           <div class="card-body">
             <h5 class="card-title">{{item.titulo}}</h5>
             <p class="">{{item.tema.descricao}}</p>
@@ -101,8 +103,16 @@
 
     <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="postagemTema-tab">
 
+      <!--Teste de barra de pesquisa por tema-->
+  <div class="input-busca">
+    <input type="text" class="form-control"
+    placeholder="Digite um Tema" [(ngModel)]='nomeTema'
+    (keyup)='findByNomeTema()'>
+    <i (click)='findByTitulo()'class="fas fa-search"></i>
+  </div>
+      <!--Teste -->
       <div class="card-columns " *ngFor='let tema of listaTemas'>
-        <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem'>
+        <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
           <div class="card-body">
             <h5 class="card-title">{{item.titulo}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{item.tema.descricao}}</h6>

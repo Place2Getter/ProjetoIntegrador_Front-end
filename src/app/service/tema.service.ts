@@ -1,4 +1,3 @@
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,23 +16,27 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]>{
-    return this.http.get<Tema[]>('https://place2getterteste.herokuapp.com/tema', this.token)
+    return this.http.get<Tema[]>('https://place2getterteste.herokuapp.com/tema')
   }
 
   getByIdTema(id: number): Observable<Tema>{
-    return this.http.get<Tema>(`https://place2getterteste.herokuapp.com/tema/${id}`, this.token)
+    return this.http.get<Tema>(`https://place2getterteste.herokuapp.com/tema/${id}`)
+  }
+
+  getByNomeTema(descricao: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://place2getterteste.herokuapp.com/tema/buscardescricao/${descricao}`)
   }
 
   postTema(tema: Tema): Observable<Tema>{
-    return this.http.post<Tema>('https://place2getterteste.herokuapp.com/tema', tema, this.token)
+    return this.http.post<Tema>('https://place2getterteste.herokuapp.com/tema/novo', tema)
 
   }
 
   putTema(tema: Tema): Observable<Tema>{
-    return this.http.put<Tema>('https://place2getter.herokuapp.com/tema', tema, this.token)
+    return this.http.put<Tema>('https://place2getter.herokuapp.com/tema/alterar', tema)
   }
 
   deleteTema(id: number){
-    return this.http.delete(`https://place2getter.herokuapp.com/tema/${id}`, this.token)
+    return this.http.delete(`https://place2getter.herokuapp.com/tema/apagar/${id}`)
   }
 }

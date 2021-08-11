@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+//import { ok } from 'assert';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
@@ -34,5 +35,14 @@ export class AuthService {
       logado = true;
     }
     return logado
+  }
+
+  mentor(){
+    let ok: boolean = false
+
+    if(environment.tipo == "mentor"){
+    ok = true
+    }
+    return ok
   }
 }

@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     environment.nome = this.usuarioLogin.nome
     environment.id = this.usuarioLogin.id
     environment.foto = this.usuarioLogin.foto
-    
+    environment.tipo = this.usuarioLogin.tipo
+
     const Toast = Swal.mixin({
       toast: true,
       position: 'top-end',

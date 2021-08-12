@@ -70,10 +70,11 @@ export class PostagemEditComponent implements OnInit {
   atualizar(){
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
-
+    this.postagem.usuario.id = environment.id
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       alert('Postagem atualizada com sucesso!')
+
       this.router.navigate(['/inicio'])
     })
   }

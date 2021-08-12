@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 import { Tema } from '../model/Tema';
+import { AlertaService } from '../service/alerta.service';
 import { TemaService } from '../service/tema.service';
 
 
@@ -20,7 +21,8 @@ export class TemaComponent implements OnInit {
   constructor(
 
   private router: Router,
-  private temaService: TemaService
+  private temaService: TemaService,
+  private alerta: AlertaService
 
   ) { }
 
@@ -32,6 +34,11 @@ export class TemaComponent implements OnInit {
         title: 'Oops...',
         text: 'Sua conexão expirou!',
       });
+    }
+
+    if(environment.tipo != 'mentor'){
+      this.alerta.showAlertInfo('Você precisa ser mentor para acessar essa rota')
+      this.router.navigate(['/inicio'])
     }
 
     this.findAllTemas()

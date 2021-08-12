@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AlertaService } from '../service/alerta.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -16,9 +17,16 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   tituloPostagem: []
+
+  //variavel de pesquisa tema
+  nomeTema: string
+
+  //pesquisas
+  tituloPost: string
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -36,6 +44,11 @@ export class InicioComponent implements OnInit {
     private temaService: TemaService,
     private authService: AuthService,
     public sanitizer: DomSanitizer,
+
+    //criação do alerta
+    private alertas: AlertaService
+
+
   ) { }
 
   ngOnInit() {
@@ -103,11 +116,37 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlerSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
   }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else{
+      this.postagemService.getByTitulo(this.tituloPost).subscribe((resp: Postagem[]
+        ) => {
+      this.listaPostagens = resp
+    })
+
+    }
+
+  }
+
+  findByNomeTema(){
+
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
+      })
+    }
+  }
+
 
   verificacaoPerfil(){
     let permissao: boolean = false;

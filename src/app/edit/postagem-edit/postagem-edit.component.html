@@ -15,9 +15,16 @@
         <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
       </div>
 
+
       <div class="form-group">
         <label for="texto">Texto</label>
         <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" cols="" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="texto">Link da Live:</label>
+        <textarea [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink" cols=""
+          rows="3"></textarea>
       </div>
 
 

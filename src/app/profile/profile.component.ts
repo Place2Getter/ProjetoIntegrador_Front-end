@@ -33,19 +33,19 @@ export class ProfileComponent implements OnInit {
     private temaService: TemaService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     
-    if (environment.token == '') {
-      this.router.navigate(['/logar']);
-      Swal.fire({
-        icon: 'info',
-        title: 'Oops...',
-        text: 'Sua conexão expirou!',
-      });
-    } 
+    // if (environment.token == '') {
+    //   this.router.navigate(['/logar']);
+    //   Swal.fire({
+    //     icon: 'info',
+    //     title: 'Oops...',
+    //     text: 'Sua conexão expirou!',
+    //   });
+    // } 
     
-    this.idProfile = this.route.snapshot.params['id']
-    this.findByProfile(this.idProfile);
+    // this.idProfile = this.route.snapshot.params['id']
+    // this.findByProfile(this.idProfile);
   }
 
   findByProfile(id: number){
@@ -53,5 +53,5 @@ export class ProfileComponent implements OnInit {
       this.usuario = resp
     })
   }
-  
+
 }

@@ -1,20 +1,5 @@
 <div class="container-fluid banner">
-  <div class="row caixa-busca d-flex align-items-center justify-content-center">
-    <!-- <div class="col-md-6">
-      <div class="row d-flex justify-content-center ">
-        <div class="col-md-6 text-dark">
-          <h1 class="fs-54">Seja bem vindo(a)!</h1>
-          <h5 class="fs-18">Expresse aqui os seus pensamentos e opniões!</h5>
-        </div>
-      </div>
-
-      <div class="row d-flex justify-content-center mt-3 mb-5">
-        <div class="col-md-6">
-          <button class="btn btn-dark mr-2 " data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-          <a class="btn btn-outline-dark " href="#postagens">Ver Postagens</a>
-        </div>
-      </div>
-    </div> -->
+  <div class="row caixa-busca d-flex align-items-center justify-content-center">    
     <div class="col-md-7">
       <h2 class="text-center mb-3">Explore novos caminhos</h2>
       <div class="input-busca">
@@ -37,7 +22,7 @@
   </div>
 </div>
 
-<div class="container mb-5 mt-5" id="postagens">
+<div class="container-fluid mb-5 mt-5" id="postagens">
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist">
 
@@ -67,11 +52,9 @@
             <p class="text-center descricao">{{item.tema.descricao}}</p>
             <p class="card-text text-center">{{item.descricao}}</p>
             <!-- <p class="text-center">{{item.dataPublicacao | date: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p> -->
-            
-            
           </div>
           <div class="card-footer">
-            <h6 class="card-subtitle text-center  text-muted">Por: {{item.usuario.nome}}</h6>
+            <h6 class="card-subtitle text-center  text-muted">Por: <a [routerLink]="['/profile', item.usuario.id]">{{item.usuario.nome}} </a></h6>
           </div>
         </div>
       </div>
@@ -91,7 +74,6 @@
               class="btn btn-outline-success mr-3">Editar</button>
             <button [routerLink]="['/postagem-delete', item.id]" type="button"
               class="btn btn-outline-danger">Apagar</button>
-
           </div>
         </div>
       </div>
@@ -159,7 +141,7 @@
         </div>
 
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex justify-content-center">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
       </div>

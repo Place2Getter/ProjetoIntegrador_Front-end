@@ -1,7 +1,8 @@
 .banner{
     background: url(https://i.imgur.com/7IPNHRa.png);
-    height: 500px;
     background-size: cover;
+    overflow-x: hidden;
+    height: 500px;
 }
 
 .banner h2{

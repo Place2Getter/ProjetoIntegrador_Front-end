@@ -30,6 +30,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.initScrollAnimation();
     this.inicialAnimation();
+
+    
   }
 
   initScrollAnimation(): void {

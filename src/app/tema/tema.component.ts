@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
@@ -22,15 +23,20 @@ export class TemaComponent implements OnInit {
   private temaService: TemaService
 
   ) { }
-  ngOnInit(){
 
-    if(environment.token == ''){
-      alert('Sua seção expirou, faça o login novamente.')
-      this.router.navigate(['/home'])
+  ngOnInit(){
+    if (environment.token == '') {
+      this.router.navigate(['/logar']);
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua conexão expirou!',
+      });
     }
 
     this.findAllTemas()
   }
+  
   findAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[])=>{
       this.listaTemas = resp

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 import { Postagem } from '../model/Postagem';
@@ -27,9 +27,11 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
   tipoUsuario = environment.tipo
-
+  idProfile: number;
+  
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authService: AuthService,
@@ -40,17 +42,20 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-    // if (environment.token == '') {
-    //   this.router.navigate(['/logar']);
-    //   Swal.fire({
-    //     icon: 'info',
-    //     title: 'Oops...',
-    //     text: 'Sua conexão expirou!',
-    //   });
-    // }
+    if (environment.token == '') {
+      this.router.navigate(['/logar']);
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua conexão expirou!',
+      });
+    }
 
     this.getAllTemas()
     this.getAllPostagens()
+
+    this.idProfile = this.route.snapshot.params['id']
+    this.findByProfile(this.idProfile);
   }
 
   getAllTemas(){
@@ -67,6 +72,12 @@ export class InicioComponent implements OnInit {
 
   findByIdUsuario(){
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario)=>{
+      this.usuario = resp
+    })
+  }
+
+  findByProfile(id: number){
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario)=>{
       this.usuario = resp
     })
   }

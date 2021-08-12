@@ -7,7 +7,6 @@
           <h5 class="fs-18">Expresse aqui os seus pensamentos e opniões!</h5>
         </div>
       </div>
-
       <div class="row d-flex justify-content-center mt-3 mb-5">
         <div class="col-md-6">
           <button class="btn btn-dark mr-2 " data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
@@ -71,7 +70,7 @@
             <!-- <p class="text-center">{{item.dataPublicacao | date: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p> -->
           </div>
         <div class="card-footer">
-            <h6 class="card-subtitle text-center  text-muted">Por: {{item.usuario.nome}}</h6>
+            <h6 class="card-subtitle text-center  text-muted">Por:{{item.usuario.nome}}</h6>
           </div>
         </div>
       </div>
@@ -88,8 +87,12 @@
           <div class="card-body">
             <h5 class="card-title">{{item.titulo}}</h5>
             <p class="">{{item.tema.descricao}}</p>
+            <!--Teste de input-->
+            <div class="card-head">
+              <img src="{{item.liveLink}}" alt="">
+            </div>
             <p class="card-text">{{item.descricao}}</p>
-            <p class="">{{item.dataPublicacao | date: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p>
+            <!--<p class="">{{item.dataPublicacao | dataPubicacao: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p>-->
             <button [routerLink]="['/postagem-edit', item.id]" type="button"
               class="btn btn-outline-success mr-3">Editar</button>
             <button [routerLink]="['/postagem-delete', item.id]" type="button"
@@ -117,8 +120,7 @@
             <h5 class="card-title">{{item.titulo}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{item.tema.descricao}}</h6>
             <p class="card-text">{{item.descricao}}</p>
-            <p class="">{{item.dataPublicacao | date: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p>
-          </div>
+          <!-- <p class="">{{item.dataPublicacao | data: 'dd/MM/yyyy'}} às {{item.dataPublicacao | date: 'HH:mm'}}</p>-->          </div>
         </div>
       </div>
     </div>

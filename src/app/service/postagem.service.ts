@@ -16,33 +16,33 @@ export class PostagemService {
   }
 
   getAllPostagem(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://place2getterteste.herokuapp.com/postagem')
+    return this.http.get<Postagem[]>('https://place2getterbackend.herokuapp.com/postagem')
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://place2getterteste.herokuapp.com/postagem/${id}`)
+    return this.http.get<Postagem>(`https://place2getterbackend.herokuapp.com/postagem/${id}`)
   }
 
- 
+
 
   getByTitulo(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://place2getterteste.herokuapp.com/postagem/buscardescricao/${titulo}`)
+    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${titulo}`)
   }
 
   getByDescricao(descricao: string): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://place2getterteste.herokuapp.com//postagem/buscardescricao/${descricao}`)
+    return this.http.get<Postagem>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${descricao}`)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://place2getterteste.herokuapp.com/postagem/novo', postagem)
+    return this.http.post<Postagem>('https://place2getterbackend.herokuapp.com/postagem/novo', postagem)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://place2getterteste.herokuapp.com/postagem/alterar', postagem)
+    return this.http.put<Postagem>('https://place2getterbackend.herokuapp.com/postagem/alterar', postagem)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://place2getterteste.herokuapp.com/postagem/apagar/${id}`)
+    return this.http.delete(`https://place2getterbackend.herokuapp.com/postagem/apagar/${id}`)
   }
 
 

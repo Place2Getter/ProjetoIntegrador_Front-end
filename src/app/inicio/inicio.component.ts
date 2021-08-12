@@ -56,14 +56,14 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-    // if (environment.token == '') {
-    //   this.router.navigate(['/logar']);
-    //   Swal.fire({
-    //     icon: 'info',
-    //     title: 'Oops...',
-    //     text: 'Sua conexão expirou!',
-    //   });
-    // }
+     if (environment.token == '') {
+       this.router.navigate(['/logar']);
+       Swal.fire({
+         icon: 'info',
+         title: 'Oops...',
+         text: 'Sua conexão expirou!',
+       });
+   }
 
     this.getAllTemas()
     this.getAllPostagens()

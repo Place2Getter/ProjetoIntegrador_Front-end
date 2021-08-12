@@ -4,16 +4,17 @@ import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
+
 @Component({
   selector: 'app-usuario-edit',
   templateUrl: './usuario-edit.component.html',
   styleUrls: ['./usuario-edit.component.css']
 })
 export class UsuarioEditComponent implements OnInit {
-  usuario: Usuario = new Usuario();
-  idUsuario: number;
-  confirmarSenha: string;
-  tipoUsuario: string;
+  usuario: Usuario = new Usuario()
+  idUsuario: number
+  confirmarSenha: string
+  tipoUsuario: string
 
   constructor(
     private authService: AuthService,
@@ -54,7 +55,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-        this.router.navigate(['/entrar'])
+        this.router.navigate(['/login'])
       });
     }
   }

@@ -1,38 +1,31 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Place2Getter</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="#">Mentores<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="#">Sobre nós<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" routerLink='/contato'>Contato<span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+<nav class="navbar container-fluid navbar-expand-lg navbar-dark  header">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto d-flex align-items-center">
+      <div class="logo ml-5">
+        <a class="logo" routerLink='/home'><img src="https://i.imgur.com/SKyw9eR.png" alt=""></a>
+      </div>
+    </ul>
+    <div class="profile d-flex align-items-center mr-5">
+      <div class="">
+        <div class="input-busca position-relative">
+          <input type="text" class="form-control" placeholder="Faça uma busca">
+          <i class="fas fa-search position-absolute"></i>
+        </div>
+      </div>
+      <!-- <h2 class="mr-4">{{nome}}</h2> -->
+      <div class="caixa-imagem position-relative ">
+        <img src="{{foto}}" class="img-profile img-fluid">
+        <div class="icon-online position-absolute"></div>
+      </div>
     </div>
-  </nav>
- -->
 
-<!-- <header class="" #header>
-  <div class="logo">
-    <a href=""><img src="https://i.imgur.com/LTOXyzg.png" alt=""></a>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <button class="btn my-2 my-sm-0  btn-exit" type="submit" (click)='sair()'>Sair<i
+          class="fas fa-sign-out-alt ml-2"></i></button>
+    </form> -->
   </div>
-  <div class="links">
-    <a href="">Seja um mentor</a>
-    <a href="">Quem somos</a>
-    <a routerLink='/contato'>Contato</a>
-  </div>
-  <div class="register">
-    <a routerLink='/logar' class="button-1">SING IN</a>
-    <a routerLink='/cadastrar' href="" class="button-2">REGISTER</a>
-  </div>
-</header> -->
+</nav>

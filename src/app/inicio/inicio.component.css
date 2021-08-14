@@ -1,84 +1,205 @@
-.banner{
-    background: url(https://i.imgur.com/7IPNHRa.png);
-    height: 500px;
-    background-size: cover;
+.banner {
+  background: url(https://i.imgur.com/7IPNHRa.png);
+  height: 500px;
+  background-size: cover;
 }
 
-.banner h2{
-    color: white;
-    font-size: 34pt;
-    font-weight: 900;
+.banner h2 {
+  color: white;
+  font-size: 34pt;
+  font-weight: 900;
 }
 
-.banner input{
-    background: rgba(255, 255, 255, 0.445);
-    height: 50px;
-    border-radius: 10px;
-    border: none;
+.banner input {
+  background: rgba(255, 255, 255, 0.445);
+  height: 50px;
+  border-radius: 10px;
+  border: none;
 }
 
-.caixa-busca{
-    height: 100%;
+.caixa-busca {
+  height: 100%;
 }
 
-.caixa-busca small{
-    font-size: 1.1rem;
-    color: rgba(240, 248, 255, 0.719);
-    font-weight: 300;
-    text-align: center;
-    display: inline-block;
-    margin: 15px 0 5px 20px;
+.caixa-busca small {
+  font-size: 1.1rem;
+  color: rgba(240, 248, 255, 0.719);
+  font-weight: 300;
+  text-align: center;
+  display: inline-block;
+  margin: 15px 0 5px 20px;
 }
 
-.input-busca{
-    position: relative;
+.input-busca {
+  position: relative;
 }
 
-.input-busca i{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 3%;
-    font-size: 25px;
-    opacity: 0.5;
+.input-busca i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
+  font-size: 25px;
+  opacity: 0.5;
 }
 
-.button{
-    height: 50px;
+.button {
+  height: 50px;
 }
 
 .btn-outline-dark {
-    border: 1px solid #53b19b;
-    color: white;
+  border: 1px solid #53b19b;
+  color: white;
 }
 
 
 .btn-outline-dark:hover {
-    background: none;
-    border: 1px solid #377969;
+  background: none;
+  border: 1px solid #377969;
 }
 
 .card-component {
-    box-shadow: 10px 10px 30px  rgba(0, 0, 0, 0.212);
-    transition: .2s ease-in-out;
-    min-height: 400px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.212);
+  transition: .2s ease-in-out;
+  min-height: 400px;
 }
 
 .card-component:hover {
-    transform: translateY(-3%);
-    cursor: pointer;
+  transform: translateY(-3%);
+  cursor: pointer;
 }
 
-.card-component img{
-    width: 100%;
-}   
+.card-component img {
+  width: 100%;
+}
 
-.card-component h5{
+.card-component h5 {
+  color: #53b19b;
+  text-align: center;
+  font-weight: 600;
+}
+
+p.descricao {
+  color: rgba(0, 0, 0, 0.555);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                           VERSÃO FINAL DO PROJETO                          */
+/* -------------------------------------------------------------------------- */
+
+.content {
+  background: linear-gradient(180deg, rgba(214, 214, 214, 0.719) 60%, white);
+}
+h5{
     color: #53b19b;
-    text-align: center;
-    font-weight: 600;
-}   
+    margin-left: 20px;
+}
+.nav-left {
+  min-height: 635px;
+}
 
-p.descricao{
-    color: rgba(0, 0, 0, 0.555);
-}   
+.nav-left a {}
+
+
+.button-nav-left {
+  height: 50px;
+  border-radius: 20px;
+}
+
+.button-nav-left i {
+  color: rgb(115, 223, 187);
+}
+
+.button-nav-left a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #bbbbbb;
+  transition: 0.3s ease-in-out;
+}
+
+.button-altertive a {
+  color: rgb(115, 223, 187);
+  font-weight: 300;
+  transition: .5s ease-in-out;
+}
+
+.button-altertive a:hover {
+  letter-spacing: 0.5px;
+}
+
+.button-nav-left a:hover {
+  color: rgb(115, 223, 187);
+  letter-spacing: 0.5px;
+
+}
+
+.button-nav-left {
+  height: 50px;
+  border-radius: 5px;
+}
+
+.caixa-left {
+  box-shadow: 1px 1px 2px rgba(49, 49, 49, 0.144);
+  height: 1px;
+  width: 260px;
+  margin-top: 20px;
+}
+
+.box-last-post{
+    background: rgba(255, 255, 255, 0.575);
+    border-radius: 10px;
+    width: 260px;
+    height: 100%;
+    padding: 5px 0;
+    box-shadow: 2px 5px 10px rgba(27, 27, 27, 0.034);
+    transition: .2s ease-in-out;
+    margin-left: 1px;
+}
+
+.box-last-post:hover{
+    transform: translateX(2px);
+}
+
+.last-post img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+}
+
+.last-post h6{
+    font-weight: 300;
+    color: #a3a3a3;
+}
+
+.perfil-post{
+    width: 500px;
+    height: 190px;
+    background: url(https://i.imgur.com/2Phu8yf.jpg);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+    box-shadow: 10px 50px 60px rgba(27, 27, 27, 0.185);
+}
+
+.perfil-post img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.post-center h3{
+    color: #53b19b;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.post-add{
+    height: 80px;
+    border-radius: 15px;
+}

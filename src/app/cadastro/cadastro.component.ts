@@ -41,7 +41,7 @@ export class CadastroComponent implements OnInit {
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/home'])
+      this.router.navigate(['/logar'])
       Swal.fire({
         icon: 'success',
         title: 'Perfeito',

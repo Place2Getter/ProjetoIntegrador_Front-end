@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 import { Tema } from '../model/Tema';
 import { AlertaService } from '../service/alerta.service';
 import { TemaService } from '../service/tema.service';
@@ -27,12 +28,20 @@ export class TemaComponent implements OnInit {
   ngOnInit(){
 
     if(environment.token == ''){
-      alert('Sua seção expirou, faça o login novamente.')
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua conexão expirou!',
+      });
       this.router.navigate(['/home'])
     }
 
     if(environment.tipo != 'mentor'){
-      this.alerta.showAlertInfo('Você precisa ser mentor para acessar essa rota')
+      Swal.fire({
+        icon: 'warning',
+        title: 'Essa função é especifica para Mentores',
+        text: 'Você precisa ser mentor para acessar essa rota',
+      });
       this.router.navigate(['/inicio'])
     }
 
@@ -47,7 +56,11 @@ export class TemaComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema) =>{
       this.tema = resp
-      alert('Tema cadastrado com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Perfeito',
+        text: 'Tema cadastrado com sucesso',
+      });
       this.findAllTemas()
       this.tema = new Tema()
     })

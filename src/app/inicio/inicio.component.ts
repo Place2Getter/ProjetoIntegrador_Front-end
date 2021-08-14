@@ -35,6 +35,7 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
   tipoUsuario = environment.tipo
+  foto = environment.foto
 
   //ordem de postagem
     key = 'data'
@@ -56,14 +57,14 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-     if (environment.token == '') {
-       this.router.navigate(['/logar']);
-       Swal.fire({
-         icon: 'info',
-         title: 'Oops...',
-         text: 'Sua conexão expirou!',
-       });
-   }
+  //    if (environment.token == '') {
+  //      this.router.navigate(['/logar']);
+  //      Swal.fire({
+  //        icon: 'info',
+  //        title: 'Oops...',
+  //        text: 'Sua conexão expirou!',
+  //      });
+  //  }
 
     this.getAllTemas()
     this.getAllPostagens()
@@ -108,7 +109,11 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      this.alertas.showAlerSuccess('Postagem realizada com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Perfeito',
+        text: 'Postagem realizado com sucesso!',
+      });
       this.postagem = new Postagem()
       this.getAllPostagens()
     })

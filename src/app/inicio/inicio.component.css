@@ -89,12 +89,14 @@ p.descricao {
 /* -------------------------------------------------------------------------- */
 
 .content {
-  background: linear-gradient(180deg, rgba(214, 214, 214, 0.719) 60%, white);
+  background: linear-gradient(180deg, rgba(214, 214, 214, 0.548) 100%, white);
 }
-h5{
-    color: #53b19b;
-    margin-left: 20px;
+
+h5 {
+  color: #53b19b;
+  margin-left: 20px;
 }
+
 .nav-left {
   min-height: 635px;
 }
@@ -146,60 +148,115 @@ h5{
   margin-top: 20px;
 }
 
-.box-last-post{
-    background: rgba(255, 255, 255, 0.575);
-    border-radius: 10px;
-    width: 260px;
-    height: 100%;
-    padding: 5px 0;
-    box-shadow: 2px 5px 10px rgba(27, 27, 27, 0.034);
-    transition: .2s ease-in-out;
-    margin-left: 1px;
+.box-last-post {
+  /* background: rgba(255, 255, 255, 0.575); */
+  border-radius: 10px;
+  width: 260px;
+  height: 100%;
+  padding: 5px 0;
+  /* box-shadow: 2px 5px 10px rgba(27, 27, 27, 0.034); */
+  transition: .2s ease-in-out;
+  margin-left: 1px;
 }
 
-.box-last-post:hover{
-    transform: translateX(2px);
+.box-last-post:hover {
+  transform: translateX(2px);
 }
 
-.last-post img{
-    width: 50px;
-    height: 50px;
-    border-radius: 20%;
+.last-post img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
 }
 
-.last-post h6{
-    font-weight: 300;
-    color: #a3a3a3;
+.last-post h6 {
+  font-weight: 300;
+  color: #a3a3a3;
 }
 
-.perfil-post{
-    width: 500px;
-    height: 190px;
-    background: url(https://i.imgur.com/2Phu8yf.jpg);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: relative;
-    box-shadow: 10px 50px 60px rgba(27, 27, 27, 0.185);
+.perfil-post {
+  height: 190px;
+  background: url(https://i.imgur.com/2Phu8yf.jpg);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: relative;
+  box-shadow: 10px 50px 60px rgba(27, 27, 27, 0.185);
 }
 
-.perfil-post img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -30%;
-    left: 50%;
-    transform: translateX(-50%);
+.perfil-post img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.post-center h3{
-    color: #53b19b;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 24px;
+.post-center{
 }
 
-.post-add{
-    height: 80px;
-    border-radius: 15px;
+.post-center h3 {
+  color: #53b19b;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.post {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.575);
+  margin: 1px;
+}
+
+.post h6 {
+  color: rgba(0, 0, 0, 0.801);
+}
+
+.post small {
+  color: #a3a3a3;
+}
+
+.post-profile {
+  width: 100%;
+}
+
+.post-profile img {
+  width: 60px;
+  height: 60px;
+}
+
+.post-profile-config .button-config {
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.582);
+  margin-top: 3px;
+}
+
+.post-content h6{
+  color: #377969;
+}
+
+.post-content p {
+  color: #414141ce;
+  margin-bottom: 3px;
+}
+
+.post-content span{
+  color: #53b19b;
+}
+
+.post-content-image img{
+  width: 100%;
+  margin: 10px 0;
+}
+
+.nav-right{
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.event-item img{
+  width: 80px;
+  height: 80px;
 }

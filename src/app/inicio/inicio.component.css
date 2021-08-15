@@ -90,7 +90,7 @@ p.descricao {
 
 .content {
   background: linear-gradient(180deg, rgba(214, 214, 214, 0.548) 100%, white);
-  margin-bottom: 25px;
+  padding-bottom: 120px;
 }
 
 .nav-left {
@@ -269,6 +269,9 @@ button.button-new-post:hover{
   font-size: 24px;
 }
 
+.nav-tabs{
+  border: none;
+}
 .post {
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.575);

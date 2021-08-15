@@ -36,6 +36,7 @@ export class InicioComponent implements OnInit {
   idUsuario = environment.id
   tipoUsuario = environment.tipo
   foto = environment.foto
+  nomeUsuario = environment.nome
 
   //ordem de postagem
     key = 'data'

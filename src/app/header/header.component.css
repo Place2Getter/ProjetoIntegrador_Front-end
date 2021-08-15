@@ -8,6 +8,8 @@ a .button-edit {
 .header {
   background-color: #292929;
   height: 54px;
+  position: fixed;
+  z-index: 1000;
 }
 
 .logo img{

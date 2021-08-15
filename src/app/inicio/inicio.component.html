@@ -1,6 +1,11 @@
 <div class="container-fluid content">
-  <div class="row borda">
-    <div class="col-md-3 nav-left  p-3">
+  <div class="row">
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                         INICIO DA NAV ESQUERDA                          -->
+    <!-- ----------------------------------------------------------------------- -->
+
+
+    <div class="col-md-3 nav-left  p-3 d-none d-md-block">
       <div class="row  d-flex flex-column align-items-center">
         <div class="col-md-9 m-0 p-0">
           <div class="button-nav-left button-1 d-flex justify-content-center align-items-center">
@@ -8,7 +13,9 @@
               <i class="fas fa-globe-americas"></i>
             </div>
             <div class="col-md-10">
-              <a href="">Todas as Postagens</a>
+              <a lass="nav-link active font-weight-bold txt-cor" id="nav-todasPostagens-tab" data-toggle="tab"
+                href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as
+                Postagens</a>
             </div>
           </div>
         </div>
@@ -92,14 +99,25 @@
     </div>
 
     <!-- ----------------------------------------------------------------------- -->
-    <!--                     FIM DO CARD DA LATERAL ESQUERDA                     -->
+    <!--                     FIM DA NAV DA LATERAL ESQUERDA                     -->
     <!-- ----------------------------------------------------------------------- -->
 
-    <div class="col-md-6 post-center ">
-      <div class="row ">
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                     INICIO SECTION DE POST                              -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <div class="col-md-6 post-center">
+      <div class="row">
         <div class="col-md-12 perfil-post">
           <!-- <img src="{{foto}}" alt=""> -->
           <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+        </div>
+        <div class="button">
+          <button class="button-new-post" data-toggle="modal" data-target="#novaPostagem">Nova Mentoria</button>
+          <div class="button-hover-1"></div>
+          <div class="button-hover-2"></div>
         </div>
       </div>
       <div class="row">
@@ -107,7 +125,28 @@
           <!-- <h3 class="text-center">Lucas Cruz</h3> -->
         </div>
       </div>
-      <div class="row mt-2 post">
+      <nav>
+        <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist">
+
+          <a class="nav-link active font-weight-bold txt-cor" id="nav-todasPostagens-tab" data-toggle="tab"
+            href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as
+            Postagens</a>
+
+          <a (click)='findByIdUsuario()' class="nav-link font-weight-bold txt-cor" id="nav-minhasPostagens-tab"
+            data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens"
+            aria-selected="false">Minhas Postagens</a>
+
+          <a class="nav-link font-weight-bold txt-cor" id="nav-postagemTema-tab" data-toggle="tab" href="#postagemTema"
+            role="tab" aria-controls="postagemTema" aria-selected="false">Postagens por Tema</a>
+
+        </div>
+      </nav>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                    INICIO DO COMPONENTE DE POSTAGEM                     -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <div class="row mt-2 post borda">
         <div class="col-md-12 ">
           <div class="row mt-2">
             <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
@@ -142,32 +181,170 @@
           </div>
         </div>
       </div>
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                    FIM DO COMPONENTE DE POSTAGEM                        -->
+      <!-- ----------------------------------------------------------------------- -->
     </div>
 
     <!-- ----------------------------------------------------------------------- -->
     <!--                       FIM DA SECTION DE POSTAGEM                        -->
     <!-- ----------------------------------------------------------------------- -->
 
-    <div class="col-md-3 nav-right p-3">
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                     INICIO DA NAV LATEREAL DIREIRA                      -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <div class="col-md-3 nav-right p-3 d-none d-md-block">
       <div class="row events">
         <div class="col-md-12">
           <h5>Próximos eventos</h5>
         </div>
-        <div class="col-md-12 event-item borda d-flex justify-content-between">
-          <div class="col-md-4 m-0 p-0 borda d-flex justify-content-center">
+        <div class="col-md-12 event-item  d-flex justify-content-between mt-2 mb-2">
+          <div class="col-md-4 m-0 p-0  d-flex justify-content-center">
             <img src="https://i.imgur.com/reyl1z6.png" alt="">
           </div>
-          <div class="col-md-8 borda">
+          <div class="col-md-8  m-0 p-0 mt-2 ">
+            <h6 class="">Marketing Digital</h6>
+            <i class="fas fa-suitcase mr-2"></i>
+            <span class="">Luana Dias</span>
+            <div class="col-md-12 d-flex justify-content-end ">
+              <a href="">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 event-item  d-flex justify-content-between mt-2">
+          <div class="col-md-4 m-0 p-0  d-flex justify-content-center">
+            <img src="https://i.imgur.com/ipJmavy.png" alt="">
+          </div>
+          <div class="col-md-8  m-0 p-0 mt-2 ">
+            <h6 class="">Inteligência Artificial</h6>
+            <i class="fas fa-suitcase mr-2"></i>
+            <span class="">Pedro Nunes</span>
+            <div class="col-md-12 d-flex justify-content-end ">
+              <a href="">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row nav-right-box">
+        <div class="col-md-12 ">
+          <img src="https://i.imgur.com/H90LDsl.png" alt="">
+        </div>
+      </div>
+      <div class="row  mt-1">
+        <div class="col-md-12 ">
+          <h5>Nossos mentores</h5>
+        </div>
+        <div class="col-md-12 mentores-online d-flex mb-2">
+          <div class="col-md-3  d-flex justify-content-center position-relative">
+            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+            <div class="perfil-online position-absolute"></div>
+          </div>
+          <div class="col-md-9  d-flex justify-content-center flex-column">
+            <div class="row">
+              <h6 class="m-0">Lucas Cruz</h6>
+            </div>
+            <div class="row ">
+              <small>Desenvolvedor Front-end</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mentores-online d-flex mb-2">
+          <div class="col-md-3  d-flex justify-content-center position-relative">
+            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+            <div class="perfil-online position-absolute"></div>
+          </div>
+          <div class="col-md-9  d-flex justify-content-center flex-column">
+            <div class="row">
+              <h6 class="m-0">Lucas Cruz</h6>
+            </div>
+            <div class="row ">
+              <small>Desenvolvedor Front-end</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mentores-online d-flex mb-2 ">
+          <div class="col-md-3  d-flex justify-content-center position-relative">
+            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+            <div class="perfil-online position-absolute"></div>
+          </div>
+          <div class="col-md-9  d-flex justify-content-center flex-column">
+            <div class="row">
+              <h6 class="m-0">Lucas Cruz</h6>
+            </div>
+            <div class="row ">
+              <small>Desenvolvedor Front-end</small>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                     FIM DA NAV DA LATERAL DIREITA                       -->
+    <!-- ----------------------------------------------------------------------- -->
+
   </div>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                  MODAL                                  -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="titulo">Título</label>
+            <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+              placeholder="Digite o título">
+          </div>
+
+          <div class="form-group">
+            <label for="texto">Texto</label>
+            <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" cols=""
+              rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="texto">Link da Live:</label>
+            <textarea [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink" cols=""
+              rows="3"></textarea>
+          </div>
+
+
+          <div class="form-group">
+            <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:
+            </label>
+            <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema'>
+              <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-
-
-
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              FIM DO MODAL                               -->
+  <!-- ----------------------------------------------------------------------- -->
 
 <!-- <div class="container-fluid banner">
   <div class="row caixa-busca d-flex align-items-center justify-content-center">

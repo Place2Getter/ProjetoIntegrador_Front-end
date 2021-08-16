@@ -9,6 +9,7 @@ import {
 import { gsap } from 'gsap';
 import gsapCore from 'gsap/gsap-core';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { environment } from 'src/environments/environment.prod';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.initScrollAnimation();
     this.inicialAnimation();
+    environment.token = ''
   }
 
   initScrollAnimation(): void {

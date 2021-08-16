@@ -202,6 +202,7 @@ h5 {
   border-bottom-right-radius: 15px;
   position: relative;
   box-shadow: 10px 50px 60px rgba(27, 27, 27, 0.185);
+  z-index: -1;
 }
 
 .perfil-post img {
@@ -217,7 +218,8 @@ h5 {
 .button {
   position: relative;
   width: 200px;
-  left: 5%;
+  left: 0;
+  top: -200px;
 }
 
 button.button-new-post {
@@ -280,6 +282,34 @@ button.button-new-post:hover {
   margin: 1px;
 }
 
+.input-busca input {
+  border-radius: 20px;
+  border: none;
+  background: rgba(167, 166, 166, 0.267);
+  color: #66d8bd;
+  font-weight: 400;
+  width: 350px;
+  margin-right: 10px;
+  padding: 20px;
+  height: 26px;
+  left: 100%;
+}
+
+.input-busca input::placeholder {
+  color: rgba(146, 146, 146, 0.514);
+}
+
+.input-busca input:focus {
+  box-shadow: none;
+}
+
+.input-busca i {
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  color: #66d8bd;
+}
+
 .post h6 {
   color: rgba(0, 0, 0, 0.801);
 }
@@ -293,11 +323,10 @@ button.button-new-post:hover {
 }
 
 .post-profile img {
-  width: 60px;
-  height: 60px;
-  border: 1px solid red;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  object-fit: contain;
+  background-position: center center;
 }
 
 .post-profile-config .button-config {
@@ -380,7 +409,8 @@ button.button-new-post:hover {
 }
 
 .mentores-online img {
-  width: 60px;
+  width: 45px;
+  border-radius: 50%;
 }
 
 .perfil-online {
@@ -392,7 +422,6 @@ button.button-new-post:hover {
   left: 10px;
   border: 1px solid white;
 }
-
 
 @keyframes move-button-1 {
   0% {

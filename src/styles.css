@@ -44,6 +44,9 @@ body::-webkit-scrollbar {
   position: absolute;
 }
 
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
 
   @keyframes scrollbar-animation {
     from{

@@ -59,14 +59,24 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-  //    if (environment.token == '') {
-  //      this.router.navigate(['/logar']);
-  //      Swal.fire({
-  //        icon: 'info',
-  //        title: 'Oops...',
-  //        text: 'Sua conexão expirou!',
-  //      });
-  //  }
+     if (environment.token == '') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+       this.router.navigate(['/logar']);
+         Toast.fire({
+          icon: 'info',
+          title: 'Sua conexão expirou!'
+       });
+   }
+  
 
     this.getAllTemas()
     this.getAllPostagens()
@@ -163,4 +173,14 @@ export class InicioComponent implements OnInit {
     }
       return permissao;
   }
+
+
+   alertaImplementacaoFutura(){
+    Swal.fire({
+      icon: 'info',
+      title: 'Place2Getter',
+      text: 'Essa opção fará parte de implementações futuras!',
+    });
+}
+
 }

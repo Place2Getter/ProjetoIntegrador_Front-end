@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'postagem-delete/:id' , component: PostagemDeleteComponent},
 
   {path: 'usuario-edit/:id', component: UsuarioEditComponent}
-
+  
 
 
 ];

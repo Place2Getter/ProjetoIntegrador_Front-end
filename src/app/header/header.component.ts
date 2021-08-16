@@ -9,6 +9,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router';
+import { Postagem } from '../model/Postagem';
+import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,14 +22,22 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('header', { static: true }) header: ElementRef<HTMLDivElement>;
+  postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+  tituloPostagem: []
+  tituloPost: string
+
 
   nome = environment.nome;
   foto = environment.foto;
 
-  constructor(public router: Router) {}
+  constructor(public router: Router , 
+    private postagemService: PostagemService,
+    ) {}
 
   ngOnInit() {
     // this.inicialAnimation();
+    this.findByTituloPostagem()
   }
 
   // inicialAnimation(){
@@ -52,4 +63,23 @@ export class HeaderComponent implements OnInit {
     
   }
 
+  findByTitulo(){
+    this.postagemService.getByTitulo(this.postagem.titulo).subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.postagemService.getAllPostagem()
+    } else{
+      this.postagemService.getByTitulo(this.tituloPost).subscribe((resp: Postagem[]
+        ) => {
+      this.listaPostagens = resp
+    })
+
+    }
+
+  }
 }

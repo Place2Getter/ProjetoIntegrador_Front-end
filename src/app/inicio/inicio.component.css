@@ -19,6 +19,7 @@
 
 .caixa-busca {
   height: 100%;
+  border: 1px solid red;
 }
 
 .caixa-busca small {
@@ -90,7 +91,11 @@ p.descricao {
 
 .content {
   background: linear-gradient(180deg, rgba(214, 214, 214, 0.548) 100%, white);
-  padding-bottom: 120px;
+  padding-bottom: 140px;
+}
+
+.content a {
+  cursor: pointer;
 }
 
 .nav-left {

@@ -27,6 +27,7 @@ export class InicioComponent implements OnInit {
 
   //pesquisas
   tituloPost: string
+  descricaoPostagem: string
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -59,23 +60,23 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-     if (environment.token == '') {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2500,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-       this.router.navigate(['/logar']);
-         Toast.fire({
-          icon: 'info',
-          title: 'Sua conexão expirou!'
-       });
-   }
+  //    if (environment.token == '') {
+  //     const Toast = Swal.mixin({
+  //       toast: true,
+  //       position: 'top-end',
+  //       showConfirmButton: false,
+  //       timer: 2500,
+  //       didOpen: (toast) => {
+  //         toast.addEventListener('mouseenter', Swal.stopTimer)
+  //         toast.addEventListener('mouseleave', Swal.resumeTimer)
+  //       }
+  //     })
+  //      this.router.navigate(['/logar']);
+  //        Toast.fire({
+  //         icon: 'info',
+  //         title: 'Sua conexão expirou!'
+  //      });
+  //  }
   
 
     this.getAllTemas()
@@ -114,11 +115,7 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  findByTitulo(){
-    this.postagemService.getByTitulo(this.postagem.descricao).subscribe((resp: Postagem[])=>{
-      this.listaPostagens = resp
-    })
-  }
+  
 
   publicar(){
     this.tema.id = this.idTema
@@ -150,7 +147,12 @@ export class InicioComponent implements OnInit {
     })
 
     }
+  }
 
+  findByDescricao(){
+    this.postagemService.getByDescricao(this.descricaoPostagem).subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
   }
 
   findByNomeTema(){

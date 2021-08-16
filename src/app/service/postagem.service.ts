@@ -26,11 +26,11 @@ export class PostagemService {
 
 
   getByTitulo(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${titulo}`)
+    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscartitulo/${titulo}`)
   }
 
-  getByDescricao(descricao: string): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${descricao}`)
+  getByDescricao(descricao: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${descricao}`)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{

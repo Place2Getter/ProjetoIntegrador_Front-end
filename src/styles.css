@@ -25,7 +25,6 @@ body::-webkit-scrollbar {
     background-color: rgba(59, 59, 59, 0.226);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 2px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
-    
   }
 
   body::-webkit-scrollbar-thumb:hover {

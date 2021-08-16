@@ -37,6 +37,7 @@ export class InicioComponent implements OnInit {
   tipoUsuario = environment.tipo
   foto = environment.foto
   nomeUsuario = environment.nome
+  listaUsuarios: Usuario[]
 
   //ordem de postagem
     key = 'data'
@@ -69,6 +70,8 @@ export class InicioComponent implements OnInit {
 
     this.getAllTemas()
     this.getAllPostagens()
+    this.findByIdUsuario()
+    this.findAllUsuarios()
   }
 
   getAllTemas(){
@@ -86,6 +89,12 @@ export class InicioComponent implements OnInit {
   findByIdUsuario(){
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario)=>{
       this.usuario = resp
+    })
+  }
+
+  findAllUsuarios(){
+    this.authService.getAllUsuarios().subscribe((resp: Usuario[])=>{
+      this.listaUsuarios = resp
     })
   }
 
@@ -152,7 +161,6 @@ export class InicioComponent implements OnInit {
     if(environment.tipo == 'mentor'){
       permissao = true;
     }
-
-    return permissao;
+      return permissao;
   }
 }

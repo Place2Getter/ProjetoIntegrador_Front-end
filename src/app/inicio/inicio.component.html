@@ -52,49 +52,32 @@
         </div>
       </nav>
 
-      <div class="last-post">
+      <div class="last-post" *ngIf="verificacaoPerfil();">
         <div class="row  mt-4">
           <div class="col-md-12 p-3 ">
             <h5>Seus últimos posts</h5>
           </div>
         </div>
-        <div class="row d-flex justify-content-center mb-2 box-last-post ">
-          <div class="box-last-post d-flex justify-content-center">
-            <div class="col-md-2  d-flex justify-content-center align-items-center mr-2">
-              <img src="https://i.imgur.com/AfOVVeN.png" alt="">
-            </div>
-            <div class="col-md-8  d-flex ml-0 pl-0 justify-content-start align-items-center">
-              <h6>titulo da postagem</h6>
+        <div class="row d-flex justify-content-center box-last-post"
+          *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
+          <div class="box-last-post d-flex ">
+            <div class="col-md-12  d-flex  justify-content-start align-items-center ">
+              <h6>{{item.titulo}}</h6>
             </div>
           </div>
         </div>
-        <div class="row d-flex justify-content-center mb-2  box-last-post ">
-          <div class="box-last-post d-flex justify-content-center">
-            <div class="col-md-2  d-flex justify-content-center align-items-center mr-2">
-              <img src="https://i.imgur.com/AfOVVeN.png" alt="">
-            </div>
-            <div class="col-md-8  d-flex ml-0 pl-0 justify-content-start align-items-center">
-              <h6>titulo da postagem</h6>
-            </div>
+      </div>
+      <div class="last-post" *ngIf="verificacaoPerfil() == false;">
+        <div class="row  mt-4">
+          <div class="col-md-12 p-3 ">
+            <h5>Top mentorias</h5>
           </div>
         </div>
-        <div class="row d-flex justify-content-center mb-2  box-last-post ">
-          <div class="box-last-post d-flex justify-content-center">
-            <div class="col-md-2  d-flex justify-content-center align-items-center mr-2">
-              <img src="https://i.imgur.com/AfOVVeN.png" alt="">
-            </div>
-            <div class="col-md-8  d-flex ml-0 pl-0 justify-content-start align-items-center">
-              <h6>titulo da postagem</h6>
-            </div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center mb-2  box-last-post ">
-          <div class="box-last-post d-flex justify-content-center">
-            <div class="col-md-2  d-flex justify-content-center align-items-center mr-2">
-              <img src="https://i.imgur.com/AfOVVeN.png" alt="">
-            </div>
-            <div class="col-md-8  d-flex ml-0 pl-0 justify-content-start align-items-center">
-              <h6>titulo da postagem</h6>
+        <div class="row d-flex justify-content-center box-last-post"
+          *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
+          <div class="box-last-post d-flex ">
+            <div class="col-md-12  d-flex  justify-content-start align-items-center ">
+              <h6>{{item.titulo}}</h6>
             </div>
           </div>
         </div>
@@ -102,7 +85,7 @@
     </div>
 
     <!-- ----------------------------------------------------------------------- -->
-    <!--                     FIM DA NAV DA LATERAL ESQUERDA                     -->
+    <!--                     FIM DA NAV DA LATERAL ESQUERDA                      -->
     <!-- ----------------------------------------------------------------------- -->
 
 
@@ -114,10 +97,9 @@
     <div class="col-md-6 post-center">
       <div class="row">
         <div class="col-md-12 perfil-post">
-          <!-- <img src="{{foto}}" alt=""> -->
-          <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+          <img src="{{foto}}" alt="">
         </div>
-        <div class="button">
+        <div class="button" *ngIf='verificacaoPerfil()'>
           <button class="button-new-post" data-toggle="modal" data-target="#novaPostagem">Nova Mentoria</button>
           <div class="button-hover-1"></div>
           <div class="button-hover-2"></div>
@@ -135,7 +117,7 @@
       <div class="tab-content mt-4" id="nav-tabContent">
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
           aria-labelledby="nav-todasPostagens-tab">
-          <div class="row mt-2 post mb-3" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+          <div class="row mt-2 post mb-4" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="col-md-12 ">
               <div class="row mt-2">
                 <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
@@ -147,7 +129,7 @@
                       <h6 class="m-0">{{item.usuario.nome}}</h6>
                     </div>
                     <div class="row">
-                      <small>{{item.dataPublicacao}}</small>
+                      <small>{{item.dataPublicacao | date: 'MMMM  d /y'}} ás {{item.dataPublicacao | date: 'HH:MM'}}</small>
                     </div>
                   </div>
                   <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
@@ -260,49 +242,23 @@
           <img src="https://i.imgur.com/H90LDsl.png" alt="">
         </div>
       </div>
-      <div class="row  mt-1">
+      <div class="row mt-1">
         <div class="col-md-12 ">
           <h5>Nossos mentores</h5>
         </div>
-        <div class="col-md-12 mentores-online d-flex mb-2">
-          <div class="col-md-3  d-flex justify-content-center position-relative">
-            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
-            <div class="perfil-online position-absolute"></div>
-          </div>
-          <div class="col-md-9  d-flex justify-content-center flex-column">
-            <div class="row">
-              <h6 class="m-0">Lucas Cruz</h6>
+        <div class="caixa-online">
+          <div class="col-md-12 mentores-online d-flex mb-2" *ngFor='let item of listaUsuarios | orderBy : key : reverse'>
+            <div class="col-md-3  d-flex justify-content-center position-relative" *ngIf='item.tipo =="mentor" '>
+              <img src="{{item.foto}}" alt="">
+              <div class="perfil-online position-absolute"></div>
             </div>
-            <div class="row ">
-              <small>Desenvolvedor Front-end</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 mentores-online d-flex mb-2">
-          <div class="col-md-3  d-flex justify-content-center position-relative">
-            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
-            <div class="perfil-online position-absolute"></div>
-          </div>
-          <div class="col-md-9  d-flex justify-content-center flex-column">
-            <div class="row">
-              <h6 class="m-0">Lucas Cruz</h6>
-            </div>
-            <div class="row ">
-              <small>Desenvolvedor Front-end</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 mentores-online d-flex mb-2 ">
-          <div class="col-md-3  d-flex justify-content-center position-relative">
-            <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
-            <div class="perfil-online position-absolute"></div>
-          </div>
-          <div class="col-md-9  d-flex justify-content-center flex-column">
-            <div class="row">
-              <h6 class="m-0">Lucas Cruz</h6>
-            </div>
-            <div class="row ">
-              <small>Desenvolvedor Front-end</small>
+            <div class="col-md-9 ml-2 d-flex justify-content-center flex-column" *ngIf='item.tipo =="mentor"'>
+              <div class="row">
+                <h6 class="m-0">{{item.nome}}</h6>
+              </div>
+              <div class="row ">
+                <small>{{item.ocupacaoProfissonal}}</small>
+              </div>
             </div>
           </div>
         </div>

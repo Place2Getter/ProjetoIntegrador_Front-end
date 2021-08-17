@@ -122,7 +122,7 @@
       <div class="tab-content mt-4" id="nav-tabContent">
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
           aria-labelledby="nav-todasPostagens-tab">
-          <div class="row mt-2 post mb-4" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+          <div class="row mt-2 post mb-4" *ngFor="let item of listaPostagens | orderBy : key : reverse">
             <div class="col-md-12 ">
               <div class="row mt-2">
                 <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
@@ -151,6 +151,23 @@
                 <p>{{item.descricao}}</p>
                 <span>#Mysql #SqlServer</span>
               </div>
+              <!--Curti e Descutir-->
+            <p class="card-text">
+                <small class="text-muter">
+
+            <button class="btn" (click)='getByIdPostagem(postagem.id)' (click)='descurtida(postagem.id)'><i class="fa fa-thumbs-down"
+              aria-hidden="true"></i>
+            </button>
+            Curtidas: {{postagem.curtir}}
+
+            <button class="btn" (click)='getByIdPostagem(postagem.id)' (click)='curtida(postagem.id)'>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </button>
+
+                </small>
+              </p>
+
+              <!--Fim-->
               <div class="col-md-12 post-content-image ">
                 <img src="{{item.liveLink}}" alt="">
               </div>
@@ -173,6 +190,8 @@
                     <div class="row">
                       <small>{{item.dataPublicacao}}</small>
                     </div>
+
+
                   </div>
                   <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
                     <div class="div button-config"></div>
@@ -187,6 +206,7 @@
                 <h6>{{item.titulo}}</h6>
                 <p>{{item.descricao}}</p>
                 <span>#Mysql #SqlServer</span>
+
               </div>
               <div class="col-md-12 post-content-image ">
                 <img src="{{item.liveLink}}" alt="">
@@ -432,7 +452,7 @@
     <i (click)='findByTitulo()'class="fas fa-search"></i>
   </div>
 
-      
+
       <div class="card-columns " *ngFor='let tema of listaTemas'>
         <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
           <div class="card-body">

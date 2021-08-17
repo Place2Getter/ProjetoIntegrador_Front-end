@@ -7,7 +7,8 @@ export class Postagem {
   public id: number
   public titulo: string
   public descricao: string
-  public curtidas: number
+  public curtir: number
+  public descurtir: number
   public dataPublicacao: Date
   public liveLink: string
   public urlSafe: SafeResourceUrl

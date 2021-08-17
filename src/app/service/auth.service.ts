@@ -21,21 +21,27 @@ export class AuthService {
   }
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://place2getterbackend.herokuapp.com/usuarios/${id}`)
+    return this.http.get<Usuario>(`https://place2getterback.herokuapp.com/usuarios/${id}`)
   }
 
-  getAllUsuarios(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>('https://place2getterbackend.herokuapp.com/usuarios/mostrar')
+  putUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>(`https://place2getterback.herokuapp.com/usuarios/alterar`, usuario)
   }
-  
+
+
+
+  getAllUsuarios(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>('https://place2getterback.herokuapp.com/usuarios/mostrar')
+  }
+
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('https://place2getterbackend.herokuapp.com/usuarios/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>('https://place2getterback.herokuapp.com/usuarios/logar', usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://place2getterbackend.herokuapp.com/usuarios/cadastrar', usuario)
+    return this.http.post<Usuario>('https://place2getterback.herokuapp.com/usuarios/cadastrar', usuario)
   }
-  
+
   logado(){
     let logado: boolean = false;
 

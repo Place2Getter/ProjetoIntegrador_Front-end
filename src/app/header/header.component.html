@@ -7,16 +7,23 @@
     <ul class="navbar-nav mr-auto d-flex align-items-center">
       <div class="logo ml-5">
         <a class="logo" routerLink='/home'><img src="https://i.imgur.com/SKyw9eR.png" alt=""></a>
-      </div>
+    </div>
     </ul>
     <div class="profile d-flex align-items-center mr-5">
-      
-      <!-- <h2 class="mr-4">{{nome}}</h2> -->
+
+      <!--Teste de editar usuario-->
+      <a [routerLink]="['/usuario-edit', id]">
+      <p class="mr-4">{{nome}}</p>
+      </a>
+      <!--teste-->
       <div class="caixa-imagem position-relative ">
         <img src="{{foto}}" class="img-profile img-fluid">
         <div class="icon-online position-absolute"></div>
       </div>
     </div>
+
+
+
 
     <!-- <form class="form-inline my-2 my-lg-0">
       <button class="btn my-2 my-sm-0  btn-exit" type="submit" (click)='sair()'>Sair<i

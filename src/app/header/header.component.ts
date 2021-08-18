@@ -30,8 +30,11 @@ export class HeaderComponent implements OnInit {
 
   nome = environment.nome;
   foto = environment.foto;
+  //teste editar usuario
+  token = environment.token;
+  id = environment.id;
 
-  constructor(public router: Router , 
+  constructor(public router: Router ,
     private postagemService: PostagemService,
     ) {}
 
@@ -51,7 +54,7 @@ export class HeaderComponent implements OnInit {
   // }
 
   sair() {
-    this.router.navigate(['/logar']);
+    this.router.navigate(['/home']);
     environment.token = '';
     environment.nome = '';
     environment.foto = '';
@@ -60,7 +63,7 @@ export class HeaderComponent implements OnInit {
 
   dropMenu(){
     let img = document.querySelector('img-profile')
-    
+
   }
 
   findByTitulo(){

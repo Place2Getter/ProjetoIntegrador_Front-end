@@ -15,34 +15,48 @@ export class PostagemService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+
+
   getAllPostagem(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://place2getterbackend.herokuapp.com/postagem')
+    return this.http.get<Postagem[]>('https://place2getterback.herokuapp.com/postagem')
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://place2getterbackend.herokuapp.com/postagem/buscar/${id}`)
+    return this.http.get<Postagem>(`https://place2getterback.herokuapp.com/postagem/buscar/${id}`)
   }
 
 
 
   getByTitulo(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscartitulo/${titulo}`)
+    return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscardescricao/${titulo}`)
   }
 
   getByDescricao(descricao: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://place2getterbackend.herokuapp.com/postagem/buscardescricao/${descricao}`)
+    return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscardescricao/${descricao}`)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://place2getterbackend.herokuapp.com/postagem/novo', postagem)
+    return this.http.post<Postagem>('https://place2getterback.herokuapp.com/postagem/novo', postagem)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://place2getterbackend.herokuapp.com/postagem/alterar', postagem)
+    return this.http.put<Postagem>('https://place2getterback.herokuapp.com/postagem/alterar', postagem)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://place2getterbackend.herokuapp.com/postagem/apagar/${id}`)
+    return this.http.delete(`https://place2getterback.herokuapp.com/postagem/apagar/${id}`)
+  }
+
+  //curtir
+
+  putCurtir(curtidas: number): Observable<Postagem>{
+    return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/curtidas/{curtidas}`, this.token)
+
+  }
+  //descurtir
+  putDescurtir(id: number): Observable<Postagem>{
+    return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/descurtir/{descurtir}/${id}`, this.token)
+
   }
 
 

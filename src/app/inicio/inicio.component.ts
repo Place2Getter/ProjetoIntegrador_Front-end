@@ -39,6 +39,7 @@ export class InicioComponent implements OnInit {
   foto = environment.foto
   nomeUsuario = environment.nome
   listaUsuarios: Usuario[]
+  id = environment.id;
 
   //ordem de postagem
     key = 'data'
@@ -77,7 +78,7 @@ export class InicioComponent implements OnInit {
   //         title: 'Sua conexão expirou!'
   //      });
   //  }
-  
+
 
     this.getAllTemas()
     this.getAllPostagens()
@@ -133,6 +134,7 @@ export class InicioComponent implements OnInit {
       });
       this.postagem = new Postagem()
       this.getAllPostagens()
+
     })
   }
 
@@ -189,6 +191,24 @@ export class InicioComponent implements OnInit {
       title: 'Place2Getter',
       text: 'Essa opção fará parte de implementações futuras!',
     });
+}
+
+getByIdPostagem(id: number){
+  this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem)=>{
+    this.postagem = resp
+  })
+}
+
+curtida(id: number){
+  this.postagemService.putCurtir(id).subscribe(()=> {
+    this.getAllPostagens()
+  })
+}
+
+descurtida(id: number){
+  this.postagemService.putDescurtir(id).subscribe(()=> {
+    this.getAllPostagens()
+  })
 }
 
 }

@@ -14,7 +14,7 @@
                 <i class="fas fa-globe-americas"></i>
               </div>
               <div class="col-md-10">
-                <a  id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
+                <a id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
                   aria-controls="nav-todasPostagens" aria-selected="true">Todas as
                   Postagens</a>
               </div>
@@ -26,7 +26,7 @@
                 <i class="fas fa-list"></i>
               </div>
               <div class="col-md-10">
-                <a  (click)='findByIdUsuario()' id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens"
+                <a (click)='findByIdUsuario()' id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens"
                   role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
               </div>
             </div>
@@ -96,9 +96,10 @@
 
     <div class="col-md-6 post-center position-relative">
       <div class="row">
-        <div class="col-md-12 perfil-post">
+        <div class="col-md-12 perfil-post borda">
           <img src="{{foto}}" alt="">
         </div>
+        <a [routerLink]="['/usuario-edit', id]"><i class="fas fa-cog position-absolute config"></i></a>
         <div class="button" *ngIf='verificacaoPerfil()'>
           <button class="button-new-post" data-toggle="modal" data-target="#novaPostagem">Nova Mentoria</button>
           <div class="button-hover-1"></div>
@@ -110,7 +111,8 @@
           <!-- <h3 class="text-center">Lucas Cruz</h3> -->
           <div class="input-busca position-relative">
             <input type="text" class="form-control" name="pesquisa" placeholder="Faça uma busca"
-           [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'  [(ngModel)]='descricaoPostagem' (keyup)='findByDescricao()'>
+              [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' [(ngModel)]='descricaoPostagem'
+              (keyup)='findByDescricao()'>
             <i class="fas fa-search position-absolute"></i>
           </div>
         </div>
@@ -122,7 +124,7 @@
       <div class="tab-content mt-4" id="nav-tabContent">
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
           aria-labelledby="nav-todasPostagens-tab">
-          <div class="row mt-2 post mb-4" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+          <div class="row mt-2 post mb-4 borda" *ngFor="let item of listaPostagens | orderBy : key : reverse">
             <div class="col-md-12 ">
               <div class="row mt-2">
                 <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
@@ -134,7 +136,11 @@
                       <h6 class="m-0">{{item.usuario.nome}}</h6>
                     </div>
                     <div class="row">
-                      <small>{{item.dataPublicacao | date: 'MMMM  d /y'}} ás {{item.dataPublicacao | date: 'HH:MM'}}</small>
+                      <small class="m-0">{{item.usuario.cargo}}</small>
+                    </div>
+                    <div class="row">
+                      <small>{{item.dataPublicacao | date: 'MMMM  d/y'}} ás
+                        {{item.dataPublicacao | date: 'HH:MM'}}</small>
                     </div>
                   </div>
                   <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
@@ -149,11 +155,29 @@
               <div class="col-md-12 post-content-text">
                 <h6>{{item.titulo}}</h6>
                 <p>{{item.descricao}}</p>
-                <span>#Mysql #SqlServer</span>
+                <a class="d-block mb-1" href="{{item.liveLink}}">{{item.liveLink}}</a>
+                <span>{{item.hashtag}}</span>
               </div>
               <div class="col-md-12 post-content-image ">
-                <img src="{{item.liveLink}}" alt="">
+                <img src="{{item.fotoPost}}" alt="">
               </div>
+              <!--Curti e Descutir-->
+              <p class="card-text">
+                <small class="text-muter">
+
+                  <button class="btn" (click)='getByIdPostagem(postagem.id)' (click)='descurtida(postagem.id)'><i
+                      class="fa fa-thumbs-down" aria-hidden="true"></i>
+                  </button>
+                  Curtidas: {{postagem.curtir}}
+
+                  <button class="btn" (click)='getByIdPostagem(postagem.id)' (click)='curtida(postagem.id)'>
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                  </button>
+
+                </small>
+              </p>
+
+              <!--Fim-->
             </div>
           </div>
         </div>
@@ -171,7 +195,8 @@
                       <h6 class="m-0">{{nomeUsuario}}</h6>
                     </div>
                     <div class="row">
-                      <small>{{item.dataPublicacao}}</small>
+                      <small>{{item.dataPublicacao | date: 'MMMM  d/y'}} ás
+                        {{item.dataPublicacao | date: 'HH:MM'}}</small>
                     </div>
                   </div>
                   <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
@@ -186,10 +211,11 @@
               <div class="col-md-12 post-content-text">
                 <h6>{{item.titulo}}</h6>
                 <p>{{item.descricao}}</p>
-                <span>#Mysql #SqlServer</span>
+                <a class="d-block mb-1" href="{{item.liveLink}}">{{item.liveLink}}</a>
+                <span>{{item.hashtag}}</span>
               </div>
               <div class="col-md-12 post-content-image ">
-                <img src="{{item.liveLink}}" alt="">
+                <img src="{{item.fotoPost}}" alt="">
               </div>
             </div>
           </div>
@@ -252,7 +278,8 @@
           <h5>Nossos mentores</h5>
         </div>
         <div class="caixa-online">
-          <div class="col-md-12 mentores-online d-flex mb-2" *ngFor='let item of listaUsuarios | orderBy : key : reverse'>
+          <div class="col-md-12 mentores-online d-flex mb-2"
+            *ngFor='let item of listaUsuarios | orderBy : key : reverse'>
             <div class="col-md-3  d-flex justify-content-center position-relative" *ngIf='item.tipo =="mentor" '>
               <img src="{{item.foto}}" alt="">
               <div class="perfil-online position-absolute"></div>
@@ -262,7 +289,7 @@
                 <h6 class="m-0">{{item.nome}}</h6>
               </div>
               <div class="row ">
-                <small>{{item.ocupacaoProfissonal}}</small>
+                <small>{{item.cargo}}</small>
               </div>
             </div>
           </div>
@@ -285,7 +312,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
+          <h5 class="modal-title text-center" id="staticBackdropLabel">Nova Mentoria</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -295,35 +322,43 @@
           <div class="form-group">
             <label for="titulo">Título</label>
             <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
-              placeholder="Digite o título">
+              placeholder="Digite o título da sua mentoria">
           </div>
 
           <div class="form-group">
-            <label for="texto">Texto</label>
-            <textarea [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" cols=""
-              rows="3"></textarea>
+            <label for="texto">Descrição</label>
+            <textarea placeholder="Informe uma descrição para a sua mentoria" [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" cols="" rows="2"></textarea>
           </div>
 
           <div class="form-group">
             <label for="texto">Link da Live:</label>
-            <textarea [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink" cols=""
-              rows="3"></textarea>
+            <input [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink" placeholder="Insira o link da sua Live">
+          </div>
+
+          <div class="form-group">
+            <label for="texto">Foto da postagem:</label>
+            <input [(ngModel)]='postagem.fotoPost' class="form-control" name="fotoPost" id="fotoPost" placeholder="Adicione uma foto a sua postagem">
+          </div>
+
+          <div class="form-group">
+            <label for="texto">#Hashtags</label>
+            <input [(ngModel)]='postagem.hashtag' class="form-control" name="hashtag" id="hashtag" placeholder="Gere mais engajamento ao seu post">
           </div>
 
 
           <div class="form-group">
-            <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:
+            <label for="tema">Escolha um setor Profissional ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo:</a>
             </label>
             <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema'>
               <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
             </select>
           </div>
-
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-danger mr-2" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -432,7 +467,7 @@
     <i (click)='findByTitulo()'class="fas fa-search"></i>
   </div>
 
-      
+
       <div class="card-columns " *ngFor='let tema of listaTemas'>
         <div class="card" style="width: 18rem;" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
           <div class="card-body">

@@ -210,6 +210,19 @@ h5 {
   z-index: -1;
 }
 
+i.config{
+  z-index: 1000;
+  color: rgba(133, 250, 205, 0.719);
+  right: 25px;
+  top: 10px;
+  font-size: 24px;
+  transition: 2s ease-in-out all;
+}
+
+i.config:hover{
+  transform: rotate(300deg);
+}
+
 .perfil-post img {
   width: 200px;
   height: 200px;
@@ -427,6 +440,45 @@ button.button-new-post:hover {
   left: 10px;
   border: 1px solid white;
 }
+
+.modal-body label {
+  margin-bottom: 0;
+  color: #7d7d7d;
+  font-size: 15px;
+}
+
+.modal-body input,
+textarea,
+select {
+  border-radius: 8px;
+  background-color: #ffffff6e;
+  border: none;
+}
+
+.modal-body input::placeholder,
+textarea::placeholder,
+select::placeholder{
+    color: rgb(189, 189, 189);
+    font-size: 15px;
+}
+
+.modal-header {
+  background-color: rgb(115 223 187);
+  padding: 8px;
+}
+
+.modal-header h5{
+  color: white;
+}
+
+.modal-body {
+  background-color: #dededec2;
+}
+
+.modal-body a{
+  color: rgb(115 223 187) ;
+}
+
 
 @keyframes move-button-1 {
   0% {

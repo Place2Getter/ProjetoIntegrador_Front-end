@@ -7,9 +7,12 @@ export class Postagem {
   public id: number
   public titulo: string
   public descricao: string
-  public curtidas: number
+  public curtir: number
+  public descurtir: number
   public dataPublicacao: Date
   public liveLink: string
+  public fotoPost: string
+  public hashtag: string
   public urlSafe: SafeResourceUrl
   public usuario: Usuario
   public tema: Tema

@@ -1,0 +1,26 @@
+.caixa-edit {
+  height: 100vh;
+}
+
+.caixa-input {
+    background: rgba(245, 245, 245, 0.575);
+    border-radius: 20px;
+}
+
+img.waves-1 {
+  left: 0;
+  top: 0;
+  background-size: cover;
+  height: 100%;
+  animation: waves-animation-2 8s ease-in-out infinite;
+}
+
+
+img.waves-2 {
+  left: 0;
+  top: 0;
+  background-size: cover;
+  height: 100%;
+  animation: waves-animation-1 8s ease-in-out infinite;
+}
+

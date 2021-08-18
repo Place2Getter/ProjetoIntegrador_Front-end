@@ -25,9 +25,9 @@ export class UsuarioEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0);
 
-    if (environment.token == '') {
-      this.router.navigate(['/entrar']);
-    }
+    // if (environment.token == '') {
+    //   this.router.navigate(['/entrar']);
+    // }
 
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
@@ -47,7 +47,7 @@ export class UsuarioEditComponent implements OnInit {
     if (this.usuario.senha != this.confirmarSenha) {
       alert('As senhas estão incorretas');
     } else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+      this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/inicio']);
         alert('Usuário atualizado com sucesso! Faça o login novamente.');
@@ -55,7 +55,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-        this.router.navigate(['/login'])
+        this.router.navigate(['/home'])
       });
     }
   }

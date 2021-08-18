@@ -10,7 +10,7 @@ export class Usuario
   public senha: string
   public foto: string
   public tipo: string
-  public ocupacaoProfissonal: string
+  public cargo: string
   public habilidade: string
   public postagem: Postagem[]
 }

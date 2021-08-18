@@ -150,9 +150,15 @@ export class InicioComponent implements OnInit {
   }
 
   findByDescricao(){
-    this.postagemService.getByDescricao(this.descricaoPostagem).subscribe((resp: Postagem[])=>{
-      this.listaPostagens = resp
-    })
+
+    if(this.descricaoPostagem == ''){
+      this.getAllPostagens()
+    }
+    else{
+      this.postagemService.getByDescricao(this.descricaoPostagem).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
   }
 
   findByNomeTema(){

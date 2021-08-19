@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 import { gsap } from 'gsap';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuario-edit',
@@ -15,8 +16,8 @@ export class UsuarioEditComponent implements OnInit {
   idUsuario: number;
   confirmarSenha: string;
   tipoUsuario: string;
-  foto = environment.foto 
-  
+  foto = environment.foto;
+
   @ViewChild('img-personas', { static: true })
   divisorBanner: ElementRef<HTMLDivElement>;
   document: any;
@@ -28,11 +29,25 @@ export class UsuarioEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    window.scroll(0, 0);
+    window.scroll(0,0);
 
-    // if (environment.token == '') {
-    //   this.router.navigate(['/entrar']);
-    // }
+    if (environment.token == '') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+       this.router.navigate(['/logar']);
+         Toast.fire({
+          icon: 'info',
+          title: 'Sua conexão expirou!'
+       });
+   }
 
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
@@ -50,18 +65,49 @@ export class UsuarioEditComponent implements OnInit {
     this.usuario.tipo = this.tipoUsuario;
 
     if (this.usuario.senha != this.confirmarSenha) {
-      alert('As senhas estão incorretas');
-    } else {
-      this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp;
-        this.router.navigate(['/inicio']);
-        alert('Usuário atualizado com sucesso! Faça o login novamente.');
-        environment.token = '';
-        environment.nome = '';
-        environment.foto = '';
-        environment.id = 0;
-        this.router.navigate(['/logar']);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Senhas não conferem',
+        timer: 2000,
       });
+    } else {
+      this.authService.putUsuario(this.usuario).subscribe(
+        (resp: Usuario) => {
+          this.usuario = resp;
+          this.router.navigate(['/inicio']);
+          Swal.fire({
+            icon: 'success',
+            title: 'Perfeito',
+            text: 'Dados atualizado com sucesso, faça o login novamente!',
+            timer: 2500,
+          });
+          environment.token = '';
+          environment.nome = '';
+          environment.foto = '';
+          environment.id = 0;
+          this.router.navigate(['/logar']);
+        },
+        (erro) => {
+          if (erro.status == 500) {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timerProgressBar: false,
+              timer: 2500,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+              },
+            });
+            Toast.fire({
+              icon: 'error',
+              title: 'Algum dado não foi preenchido corretamente!',
+            });
+          }
+        }
+      );
     }
   }
 

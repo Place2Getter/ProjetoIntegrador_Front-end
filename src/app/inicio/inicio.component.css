@@ -92,6 +92,7 @@ p.descricao {
 .content {
   background: linear-gradient(180deg, rgba(214, 214, 214, 0.548) 100%, white);
   padding-bottom: 140px;
+  animation: initial-animatio 2s ease-in-out;
 }
 
 .content a {
@@ -212,7 +213,7 @@ h5 {
 
 i.config{
   z-index: 1000;
-  color: rgba(133, 250, 205, 0.719);
+  color: rgba(255, 255, 255, 0.555);
   right: 25px;
   top: 10px;
   font-size: 24px;
@@ -298,6 +299,7 @@ button.button-new-post:hover {
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.575);
   margin: 1px;
+  animation: card-animation 2s ease-in-out;
 }
 
 .input-busca input {
@@ -509,5 +511,24 @@ select::placeholder{
   100% {
     transform: translateX(0);
     transform: translateY(0);
+  }
+}
+
+@keyframes card-animation {
+  from{
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
+@keyframes initial-animatio {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }

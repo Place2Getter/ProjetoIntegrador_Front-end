@@ -28,13 +28,17 @@ export class PostagemService {
 
 
   getByTitulo(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscardescricao/${titulo}`)
+    return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscartitulo/${titulo}`)
   }
 
   getByDescricao(descricao: string): Observable<Postagem[]>{
     return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscardescricao/${descricao}`)
   }
 
+  getHashtag(hashtag: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`https://place2getterback.herokuapp.com/postagem/buscarhashtag/${hashtag}`)
+  }
+  
   postPostagem(postagem: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://place2getterback.herokuapp.com/postagem/novo', postagem)
   }

@@ -66,6 +66,9 @@
             </div>
           </div>
         </div>
+        <ng-container *ngIf='usuario.postagem.length == 0'>
+          <h6>Você ainda não fez nenhum post</h6>
+        </ng-container>
       </div>
       <div class="last-post" *ngIf="verificacaoPerfil() == false;">
         <div class="row  mt-4">
@@ -112,7 +115,7 @@
           <div class="input-busca position-relative mb-3">
             <input type="text" class="form-control " name="pesquisa" placeholder="Faça uma busca"
               [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' [(ngModel)]='descricaoPostagem'
-              (keyup)='findByDescricao()'>
+              (keyup)='findByDescricao()' [(ngModel)]='hashtagPost' (keyup)='findByHashtag()'>
             <i class="fas fa-search position-absolute"></i>
           </div>
         </div>

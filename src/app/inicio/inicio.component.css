@@ -128,9 +128,6 @@ h5 {
   min-height: 635px;
 }
 
-.nav-left a {}
-
-
 .button-nav-left {
   height: 50px;
   border-radius: 20px;
@@ -249,7 +246,7 @@ button.button-new-post {
   top: 30px;
   left: 10px;
   margin-left: 20px;
-  transition: 3.5s ease-in-out;
+  transition: .3s ease-in-out;
   border: none;
   border-radius: 5px;
 }

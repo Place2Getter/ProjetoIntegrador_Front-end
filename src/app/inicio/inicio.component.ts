@@ -1,5 +1,11 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -23,6 +29,8 @@ export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   tituloPostagem: [];
+  hashtagPost: string;
+  listaHashtag: Postagem[];
 
   //variavel de pesquisa tema
   nomeTema: string;
@@ -60,23 +68,23 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-       if (environment.token == '') {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 2500,
-          didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-          }
-        })
-         this.router.navigate(['/logar']);
-           Toast.fire({
-            icon: 'info',
-            title: 'Sua conexão expirou!'
-         });
-     }
+    // if (environment.token == '') {
+    //   const Toast = Swal.mixin({
+    //     toast: true,
+    //     position: 'top-end',
+    //     showConfirmButton: false,
+    //     timer: 2500,
+    //     didOpen: (toast) => {
+    //       toast.addEventListener('mouseenter', Swal.stopTimer);
+    //       toast.addEventListener('mouseleave', Swal.resumeTimer);
+    //     },
+    //   });
+    //   this.router.navigate(['/logar']);
+    //   Toast.fire({
+    //     icon: 'info',
+    //     title: 'Sua conexão expirou!',
+    //   });
+    // }
     this.getAllTemas();
     this.getAllPostagens();
     this.findByIdUsuario();
@@ -169,6 +177,17 @@ export class InicioComponent implements OnInit {
         .subscribe((resp: Tema[]) => {
           this.listaTemas = resp;
         });
+    }
+  }
+
+
+  findByHashtag(){
+    if(this.hashtagPost == ''){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getHashtag(this.hashtagPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp;
+      })
     }
   }
 

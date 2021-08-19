@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
-
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-usuario-edit',
   templateUrl: './usuario-edit.component.html',
-  styleUrls: ['./usuario-edit.component.css']
+  styleUrls: ['./usuario-edit.component.css'],
 })
 export class UsuarioEditComponent implements OnInit {
-  usuario: Usuario = new Usuario()
-  idUsuario: number
-  confirmarSenha: string
-  tipoUsuario: string
+  usuario: Usuario = new Usuario();
+  idUsuario: number;
+  confirmarSenha: string;
+  tipoUsuario: string;
+  foto = environment.foto 
+  
+  @ViewChild('img-personas', { static: true })
+  divisorBanner: ElementRef<HTMLDivElement>;
+  document: any;
 
   constructor(
     private authService: AuthService,
@@ -55,7 +60,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.nome = '';
         environment.foto = '';
         environment.id = 0;
-        this.router.navigate(['/home'])
+        this.router.navigate(['/logar']);
       });
     }
   }

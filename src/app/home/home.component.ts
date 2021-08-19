@@ -31,20 +31,20 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.initScrollAnimation();
     this.inicialAnimation();
-    environment.token = ''
+    environment.token = '';
   }
 
-  initScrollAnimation(): void {
-    gsap.to('.header, .logo, .links, .register',{
+  initScrollAnimation() {
+    gsap.to('.header, .logo, .links, .register', {
       opacity: 0,
-      duration: 5, 
+      duration: 5,
       delay: 5,
       scrollTrigger: {
         trigger: '.header',
-        scrub: true, 
+        scrub: true,
         start: '-10% -10%',
-        end: '-150% -150%'
-      }
+        end: '-150% -150%',
+      },
     });
 
     gsap.to(this.document.querySelector('.descricaoBanner'), {
@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
       duration: 0.2,
       y: -90,
     });
+
     gsap.to(this.document.querySelector('.textoBanner'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.textoBanner'),
@@ -151,14 +152,14 @@ export class HomeComponent implements OnInit {
       delay: 1.5,
       ease: 'bouce',
     });
-    
+
     gsap.from(this.banner.nativeElement.childNodes, {
       duration: 1.8,
       opacity: 0,
       x: -200,
       stagger: 0.35,
       delay: 0.15,
-      scrub: true
+      scrub: true,
     });
 
     // gsap.from(this.banner.nativeElement.childNodes, {
@@ -217,7 +218,6 @@ export class HomeComponent implements OnInit {
       duration: 2,
       opacity: 0,
     });
-
 
     gsap.to(this.document.querySelector('.bolha-persona-3'), {
       scrollTrigger: {
@@ -310,7 +310,7 @@ export class HomeComponent implements OnInit {
         start: '-30% center',
       },
       y: -300,
-      ease: 'bouce'
+      ease: 'bouce',
     });
 
     gsap.to(this.document.querySelector('.circlue-categoria-2'), {
@@ -322,8 +322,6 @@ export class HomeComponent implements OnInit {
       y: -300,
       x: -150,
     });
-
-
 
     let proxy = { skew: 0 },
       skewSetter = gsap.quickSetter('.mentores-img', 'skewY', 'deg'), // fast
@@ -351,7 +349,7 @@ export class HomeComponent implements OnInit {
 
     gsap.from(document.querySelector('.mentores-img'), {
       scrollTrigger: {
-        trigger: document.querySelector('.mentores-img'), 
+        trigger: document.querySelector('.mentores-img'),
         toggleActions: 'restart pause reverese pause',
         start: '-115% top',
       },
@@ -360,7 +358,7 @@ export class HomeComponent implements OnInit {
       opacity: 0,
     });
 
-    gsap.from('.titulo-mentoria-2',{
+    gsap.from('.titulo-mentoria-2', {
       scrollTrigger: {
         trigger: this.document.querySelector('.titulo-mentoria-2'),
         toggleActions: 'restart pause reverese pause',
@@ -371,7 +369,7 @@ export class HomeComponent implements OnInit {
       opacity: 0,
     });
 
-    gsap.from(this.document.querySelector('.borda-mentoria'),{
+    gsap.from(this.document.querySelector('.borda-mentoria'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.titulo-mentoria-2'),
         toggleActions: 'restart pause reverese pause',
@@ -380,7 +378,5 @@ export class HomeComponent implements OnInit {
       duration: 1,
       opacity: 0,
     });
-
-
   }
 }

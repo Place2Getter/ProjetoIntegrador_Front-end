@@ -1,11 +1,20 @@
-<div class="container-fluid  caixa-edit position-relative">
-  <img class="position-absolute waves-1"src="https://i.imgur.com/HKGQmPA.png" alt="">
-  <img class="position-absolute waves-2"src="https://i.imgur.com/lQE1Yzl.png" alt="">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-md-6 caixa-input borda mt-3  d-flex align-items-center justify-content-center">
-      <div class="col-md-11  mt-5">
-        <h3 class="text-center" id="h1">Atualizar meu Usuário</h3>
+<div class="container-fluid position-relative edit">
+  <img class="position-absolute waves-1 d-none d-md-block" src="https://i.imgur.com/HKGQmPA.png" alt="">
+  <img class="position-absolute waves-2 d-none d-md-block" src="https://i.imgur.com/lQE1Yzl.png" alt="">
 
+  <div class="img-personas">
+    <img class="img-blob-2 position-absolute" src="https://i.imgur.com/ukUmwhN.png" alt="">
+    <img class="img-blob-4 position-absolute" src="https://i.imgur.com/pmozOFx.png" alt="">
+    <img class="img-blob-5 position-absolute" src="https://i.imgur.com/xj9wn0B.png" alt="">
+    <img class="img-blob-6 position-absolute" src="https://i.imgur.com/WaEB5Vi.png" alt="">
+    <img class="img-blob-7 position-absolute" src="https://i.imgur.com/gv9CB1l.png" alt="">
+  </div>
+  <div class="row d-flex caixa-edit justify-content-center align-items-center ">
+    <div class="col-md-6 caixa-input  mt-5  m-3 d-flex align-items-center justify-content-center ">
+      <div class="col-md-11  mt-3">
+        <div class="img-edit d-flex justify-content-center">
+          <img src="https://i.imgur.com/7Y4FG5P.png" alt="">
+        </div>
         <div class="form-group">
           <label for="nome">Nome</label>
           <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="nome" id="nome"
@@ -42,12 +51,12 @@
           <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
             <option>Selecione um tipo de usúario:</option>
             <option value="normal">Aluno</option>
-            <option value="adm">Mentor</option>
+            <option value="mentor">Mentor</option>
           </select>
         </div>
 
         <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-success" (click)='atualizar()'>Salvar alterações</button>
+          <button type="submit" class="button-edit" (click)='atualizar()'>Salvar alterações</button>
         </div>
       </div>
     </div>

@@ -31,23 +31,23 @@ export class UsuarioEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
-    if (environment.token == '') {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2500,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-       this.router.navigate(['/logar']);
-         Toast.fire({
-          icon: 'info',
-          title: 'Sua conexão expirou!'
-       });
-   }
+  //   if (environment.token == '') {
+  //     const Toast = Swal.mixin({
+  //       toast: true,
+  //       position: 'top-end',
+  //       showConfirmButton: false,
+  //       timer: 2500,
+  //       didOpen: (toast) => {
+  //         toast.addEventListener('mouseenter', Swal.stopTimer)
+  //         toast.addEventListener('mouseleave', Swal.resumeTimer)
+  //       }
+  //     })
+  //      this.router.navigate(['/logar']);
+  //        Toast.fire({
+  //         icon: 'info',
+  //         title: 'Sua conexão expirou!'
+  //      });
+  //  }
 
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);
@@ -78,9 +78,9 @@ export class UsuarioEditComponent implements OnInit {
           this.router.navigate(['/inicio']);
           Swal.fire({
             icon: 'success',
-            title: 'Perfeito',
-            text: 'Dados atualizado com sucesso, faça o login novamente!',
-            timer: 2500,
+            title: 'Place2Getter',
+            text: 'Dados atualizados com sucesso, faça o login novamente!',
+            timer: 3000,
           });
           environment.token = '';
           environment.nome = '';

@@ -195,12 +195,13 @@ h5 {
 
 .last-post h6 {
   font-weight: 300;
-  color: #a3a3a3;
+  color: #a3a3a396;
 }
 
 .perfil-post {
   height: 190px;
-  background: url(https://i.imgur.com/2Phu8yf.jpg);
+  background: url(https://i.imgur.com/qcqPfVB.jpg);
+  background-size: cover;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   position: relative;
@@ -350,6 +351,26 @@ button.button-new-post:hover {
   height: 3px;
   background: rgba(0, 0, 0, 0.582);
   margin-top: 3px;
+  cursor: pointer;
+}
+
+.post-profile-config .button-delete{
+  right: 35px;
+  font-size: 24px;
+  top: -6px;
+  color: rgb(255, 93, 93);
+  cursor: pointer;
+  transition: .8s ease-in-out;
+  border:  none;
+}
+
+.post-profile-config .button-delete:hover{
+  color: rgb(255, 132, 132);
+  transform: translateY(-3px);
+}
+
+.post-profile-config .button-edit{
+ border: none;
 }
 
 .post-content h6 {

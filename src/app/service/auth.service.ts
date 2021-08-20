@@ -28,7 +28,7 @@ export class AuthService {
     return this.http.put<Usuario>(`https://place2getterback.herokuapp.com/usuarios/alterar`, usuario)
   }
 
-
+  
 
   getAllUsuarios(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://place2getterback.herokuapp.com/usuarios/mostrar')

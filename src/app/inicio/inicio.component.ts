@@ -134,14 +134,36 @@ export class InicioComponent implements OnInit {
       .postPostagem(this.postagem)
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
-        Swal.fire({
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        Toast.fire({
           icon: 'success',
-          title: 'Perfeito',
-          text: 'Postagem realizado com sucesso!',
-        });
+          title: 'Mentoria registrada!'
+        })
         this.postagem = new Postagem();
         this.getAllPostagens();
-      });
+        this.findByIdUsuario();
+        this.verificacaoPerfil();
+      }
+      , (erro)=>{
+        if(erro.status == 500){
+          Swal.fire({
+            icon: 'error',
+            timer: 3000,
+            text: 'Algum dado não foi preenchido corretamente!',
+          });
+          this.postagem = new Postagem();
+        }
+      }
+      );
   }
 
   findByTituloPostagem() {

@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit() {
+    window.scroll(0,0)
+
     this.initScrollAnimation();
     this.inicialAnimation();
     environment.token = '';

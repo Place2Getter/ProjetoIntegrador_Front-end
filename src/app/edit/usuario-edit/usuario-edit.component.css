@@ -47,7 +47,7 @@ img.img-blob-2{
   transform: rotate(20deg);
   top: 40%;
   width: 80px;
-  animation: blobs-animation 1.5s ease-in-out;
+  animation: blobs-animation 1.5s ease-in-out, animation-default 7s ease-in-out infinite;
 }
 
 img.img-blob-3{
@@ -55,7 +55,7 @@ img.img-blob-3{
   right: 5%;
   width: 100px;
   transform: rotate(10deg);
-  animation:  blobs-animation 1.5s ease-in-out;
+  animation:  blobs-animation 1.5s ease-in-out animation-default 10s ease-in-out infinite;
 
 }
 
@@ -64,7 +64,7 @@ img.img-blob-4{
   transform: rotate(15deg);
   bottom: 5%;
   width: 140px;
-  animation:  blobs-animation 1.5s ease-in-out;
+  animation:  blobs-animation 1.5s ease-in-out, animation-default 10s ease-in-out infinite;
 
 }
 
@@ -74,7 +74,7 @@ img.img-blob-5{
   transform: rotate(-30deg);
   top: 10%;
   width: 120px;
-  animation:  blobs-animation 1.5s ease-in-out;
+  animation:  blobs-animation 1.5s ease-in-out, animation-default 12s ease-in-out infinite;
 
 }
 
@@ -83,7 +83,7 @@ img.img-blob-6{
   right: 10%;
   width: 130px;
   transform: rotate(-10deg);
-  animation:  blobs-animation 1.5s ease-in-out;
+  animation:  blobs-animation 1.5s ease-in-out , animation-default 15s ease-in-out infinite;
 
 }
 
@@ -91,12 +91,13 @@ img.img-blob-7{
   left: 5%;
   bottom: 20%;
   width: 130px;
-  animation:  blobs-animation 1.5s ease-in-out;
+  animation:  blobs-animation 1.5s ease-in-out , animation-default 10s ease-in-out infinite;
 }
 
 
 .img-edit img{
   width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
@@ -178,5 +179,17 @@ button.button-edit:hover{
   100%{
     transform: translate(0);
 
+  }
+}
+
+@keyframes animation-default{
+  0%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: translate(20%  , 20%);
+  }
+  100%{
+    transform: rotate(10deg);
   }
 }

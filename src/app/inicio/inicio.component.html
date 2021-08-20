@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="col-md-9  m-0 p-0" *ngIf='verificacaoPerfil()'>
-            <div class="button-nav-left d-flex justify-content-center align-items-center">
-              <div class="col-md-2  m-0 p-0 pl-4 d-flex justify-content-center ">
+            <div class="button-nav-left d-flex justify-content-center align-items-center" *ngIf='usuario.postagem.length != 0'>
+              <div class="col-md-2  m-0 p-0 pl-4 d-flex justify-content-center">
                 <i class="fas fa-list"></i>
               </div>
               <div class="col-md-10">
@@ -54,7 +54,7 @@
 
       <div class="last-post" *ngIf="verificacaoPerfil();">
         <div class="row  mt-4">
-          <div class="col-md-12 p-3 ">
+          <div class="col-md-12 p-3 ml-3">
             <h5>Seus últimos posts</h5>
           </div>
         </div>
@@ -127,9 +127,9 @@
       <div class="tab-content mt-4" id="nav-tabContent">
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
           aria-labelledby="nav-todasPostagens-tab">
-          <div class="row mt-2 post mb-4 " *ngFor="let item of listaPostagens | orderBy : key : reverse">
+          <div class="row mt-3 post mb-5 " *ngFor="let item of listaPostagens | orderBy : key : reverse">
             <div class="col-md-12 ">
-              <div class="row mt-2">
+              <div class="row mt-3">
                 <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
                   <div class="col-md-1  post-profile-picture p-0 d-flex justify-content-center m-1">
                     <img src="{{item.usuario.foto}}" alt="">
@@ -146,7 +146,7 @@
                         {{item.dataPublicacao | date: 'HH:MM'}}</small>
                     </div>
                   </div>
-                  <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
+                  <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3">
                     <div class="div button-config"></div>
                     <div class="div button-config"></div>
                     <div class="div button-config"></div>
@@ -156,7 +156,8 @@
             </div>
             <div class="row post-content m-2 ">
               <div class="col-md-12 post-content-text">
-                <h6>{{item.titulo}}</h6>
+                <h6 class="mb-0">{{item.titulo}}</h6>
+                <small>{{item.tema.descricao}}</small>
                 <p>{{item.descricao}}</p>
                 <a class="d-block mb-1" href="{{item.liveLink}}">{{item.liveLink}}</a>
                 <span>{{item.hashtag}}</span>
@@ -186,7 +187,7 @@
         </div>
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-          <div class="row mt-2 post mb-4 " *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
+          <div class="row mt-2 post mb-4" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
             <div class="col-md-12 ">
               <div class="row mt-2">
                 <div class="col-md-12  post-profile m-0 p-0 d-flex justify-content-around">
@@ -202,19 +203,23 @@
                         {{item.dataPublicacao | date: 'HH:MM'}}</small>
                     </div>
                   </div>
-                  <div class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2">
-                    <div class="div button-config"></div>
-                    <div class="div button-config"></div>
-                    <div class="div button-config"></div>
+                  <div
+                    class="col-md-1  post-profile-config d-flex flex-column align-items-end ml-3 mt-2 position-relative">
+                    <button [routerLink]="['/postagem-delete', item.id]" class="button-delete position-absolute"><i class="fas fa-times"></i></button>
+                    <button [routerLink]="['/postagem-edit', item.id]" class="button-edit">
+                      <div class="div button-config"></div>
+                      <div class="div button-config"></div>
+                      <div class="div button-config"></div>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row post-content m-2 ">
-              <div class="col-md-12 post-content-text">
+              <div class="col-md-12 post-content-text d-flex flex-column">
                 <h6>{{item.titulo}}</h6>
                 <p>{{item.descricao}}</p>
-                <a class="d-block mb-1" href="{{item.liveLink}}">{{item.liveLink}}</a>
+                <a class="mb-1" href="{{item.liveLink}}">{{item.liveLink}}</a>
                 <span>{{item.hashtag}}</span>
               </div>
               <div class="col-md-12 post-content-image ">
@@ -330,27 +335,32 @@
 
           <div class="form-group">
             <label for="texto">Descrição</label>
-            <textarea placeholder="Informe uma descrição para a sua mentoria" [(ngModel)]='postagem.descricao' class="form-control" name="texto" id="texto" cols="" rows="2"></textarea>
+            <textarea placeholder="Informe uma descrição para a sua mentoria" [(ngModel)]='postagem.descricao'
+              class="form-control" name="texto" id="texto" cols="" rows="2"></textarea>
           </div>
 
           <div class="form-group">
             <label for="texto">Link da Live:</label>
-            <input [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink" placeholder="Insira o link da sua Live">
+            <input [(ngModel)]='postagem.liveLink' class="form-control" name="liveLink" id="liveLink"
+              placeholder="Insira o link da sua Live">
           </div>
 
           <div class="form-group">
             <label for="texto">Foto da postagem:</label>
-            <input [(ngModel)]='postagem.fotoPost' class="form-control" name="fotoPost" id="fotoPost" placeholder="Adicione uma foto a sua postagem">
+            <input [(ngModel)]='postagem.fotoPost' class="form-control" name="fotoPost" id="fotoPost"
+              placeholder="Adicione uma foto a sua postagem">
           </div>
 
           <div class="form-group">
             <label for="texto">#Hashtags</label>
-            <input [(ngModel)]='postagem.hashtag' class="form-control" name="hashtag" id="hashtag" placeholder="Gere mais engajamento ao seu post">
+            <input [(ngModel)]='postagem.hashtag' class="form-control" name="hashtag" id="hashtag"
+              placeholder="Gere mais engajamento ao seu post">
           </div>
 
 
           <div class="form-group">
-            <label for="tema">Escolha um setor Profissional ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo:</a>
+            <label for="tema">Escolha um setor Profissional ou <a data-dismiss="modal" routerLink='/tema'>cadastre um
+                novo:</a>
             </label>
             <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema'>
               <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
@@ -361,7 +371,7 @@
             <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
           </div>
         </div>
-       
+
       </div>
     </div>
   </div>

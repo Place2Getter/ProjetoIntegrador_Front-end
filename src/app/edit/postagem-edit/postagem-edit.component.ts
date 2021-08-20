@@ -35,14 +35,14 @@ export class PostagemEditComponent implements OnInit {
 
     window.scroll(0,0)
 
-    if (environment.token == '') {
-      this.router.navigate(['/logar']);
-      Swal.fire({
-        icon: 'info',
-        title: 'Oops...',
-        text: 'Sua conexão inspirou!',
-      });
-    }
+    // if (environment.token == '') {
+    //   this.router.navigate(['/logar']);
+    //   Swal.fire({
+    //     icon: 'info',
+    //     title: 'Oops...',
+    //     text: 'Sua conexão inspirou!',
+    //   });
+    // }
 
     let id = this.route.snapshot.params['id']
     this.findByIdPostagem(id)

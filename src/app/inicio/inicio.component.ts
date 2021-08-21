@@ -1,11 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  Inject,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -24,8 +17,6 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  @ViewChild('post', { static: true }) post: ElementRef<HTMLDivElement>;
-
   postagem: Postagem = new Postagem();
   listaPostagens: Postagem[];
   tituloPostagem: [];
@@ -54,14 +45,12 @@ export class InicioComponent implements OnInit {
   //ordem de postagem
   key = 'data';
   reverse = true;
-  document: any;
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authService: AuthService,
     public sanitizer: DomSanitizer,
-
     //criação do alerta
     private alertas: AlertaService
   ) {}
@@ -130,9 +119,8 @@ export class InicioComponent implements OnInit {
     this.usuario.id = this.idUsuario;
     this.postagem.usuario = this.usuario;
 
-    this.postagemService
-      .postPostagem(this.postagem)
-      .subscribe((resp: Postagem) => {
+    this.postagemService.postPostagem(this.postagem).subscribe(
+      (resp: Postagem) => {
         this.postagem = resp;
         const Toast = Swal.mixin({
           toast: true,
@@ -140,21 +128,21 @@ export class InicioComponent implements OnInit {
           showConfirmButton: false,
           timer: 3000,
           didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-          }
-        })
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        });
         Toast.fire({
           icon: 'success',
-          title: 'Mentoria registrada!'
-        })
+          title: 'Mentoria registrada!',
+        });
         this.postagem = new Postagem();
         this.getAllPostagens();
         this.findByIdUsuario();
         this.verificacaoPerfil();
-      }
-      , (erro)=>{
-        if(erro.status == 500){
+      },
+      (erro) => {
+        if (erro.status == 500) {
           Swal.fire({
             icon: 'error',
             timer: 3000,
@@ -163,7 +151,7 @@ export class InicioComponent implements OnInit {
           this.postagem = new Postagem();
         }
       }
-      );
+    );
   }
 
   findByTituloPostagem() {
@@ -202,14 +190,15 @@ export class InicioComponent implements OnInit {
     }
   }
 
-
-  findByHashtag(){
-    if(this.hashtagPost == ''){
-      this.getAllPostagens()
-    }else{
-      this.postagemService.getHashtag(this.hashtagPost).subscribe((resp: Postagem[])=>{
-        this.listaPostagens = resp;
-      })
+  findByHashtag() {
+    if (this.hashtagPost == '') {
+      this.getAllPostagens();
+    } else {
+      this.postagemService
+        .getHashtag(this.hashtagPost)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
     }
   }
 

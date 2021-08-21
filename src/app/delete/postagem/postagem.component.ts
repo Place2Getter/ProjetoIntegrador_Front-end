@@ -60,7 +60,7 @@ export class PostagemDeleteComponent implements OnInit {
       })
       Toast.fire({
         icon: 'success',
-        title: 'Postagem apaga com sucesso!'
+        title: 'Postagem apagada com sucesso!'
       })
       this.router.navigate(['/inicio']);
     });

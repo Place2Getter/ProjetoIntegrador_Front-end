@@ -73,12 +73,39 @@ export class PostagemEditComponent implements OnInit {
     this.postagem.usuario.id = environment.id
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      alert('Postagem atualizada com sucesso!')
-
-      this.router.navigate(['/inicio'])
-    })
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'success',
+        title: 'Postagem atualizada com sucesso!'
+      })
+      this.router.navigate(['/inicio']);
+    }
+    ,(erro)=>{
+      if(erro.status == 500){
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 2500,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        Toast.fire({
+          icon: 'error',
+          title: 'Algum campo não foi preenchido corretamente!'
+        })
+      }
+    });
   }
-
-
-
 }

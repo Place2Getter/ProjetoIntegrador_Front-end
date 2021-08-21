@@ -321,7 +321,7 @@ header {
   transform: translate(-50%);
   text-align: center;
   font-weight: 800;
-  font-size: 3em;
+  font-size: 2.5em;
   width: 750px;
   z-index: 1000000;
   background: -webkit-linear-gradient(45deg, rgba(149, 161, 185, 0.644), rgba(228, 152, 152, 0.574));
@@ -549,9 +549,11 @@ a.link-categoria {
 }
 
 .texto-categoria p {
-  font-size: 18pt;
-  text-align: start;
-  color: #7e7e7ec2;
+  color: #bebcbc9c;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  margin-bottom: 80px;
 }
 
 .circlue-categoria {
@@ -566,9 +568,9 @@ a.link-categoria {
 }
 
 .circlue-categoria-2 {
-  width: 400px;
-  height: 400px;
-  background: #EAFFFA;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(120deg , rgba(184, 184, 255, 0.356) 30%, white );
   position: absolute;
   bottom: -40%;
   right: 5%;
@@ -583,9 +585,10 @@ a.link-categoria {
 .mentores img {
   width: 550px;
   background-size: auto;
-  height: 720px;
+  height: 650px;
   object-fit: cover;
-  border-radius: 2%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 .mentores h2 {
@@ -606,11 +609,23 @@ a.link-categoria {
 
 .texto-mentoria-3 h2 {
   margin-top: 50px;
+  font-size: 4em;
+}
+
+.texto-mentoria-2 p {
   margin-left: 25px;
+  color: #bebcbc9c;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
 }
 
 .texto-mentoria-3 p {
   margin-left: 25px;
+  color: #bebcbc9c;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
 }
 
 .borda-mentoria {
@@ -620,7 +635,7 @@ a.link-categoria {
 }
 
 .circlue-mentor {
-  background: rgba(249, 128, 60, 0.18);
+  background: linear-gradient(45deg , rgba(243, 112, 36, 0.363) , white 100%) ;
   width: 350px;
   height: 350px;
   position: absolute;
@@ -647,8 +662,8 @@ a.link-categoria {
 img.impacto-img{
   background-size: contain;
   object-fit: cover;
-  width: 280px;
-  height: 400px;
+  width: 225px;
+  height: 325px;
   margin-top: 50px;
   z-index: 1;
 }
@@ -696,19 +711,19 @@ img.elemento-style{
 }
 
 .caixa-persona {
-  top: 0;
-  left: 0;
+  top: 1%;
+  left: 5%;
   background: #f8dcc9;
-  width: 280px;
-  height: 400px;
+  width: 250px;
+  height: 320px;
 }
 
 .caixa-persona-2 {
-  top: 0;
-  right: 5%;
-  background: #FDFF94;
-  width: 280px;
-  height: 400px;
+  top: 2%;
+  right: 8%;
+  background: #feffab;
+  width: 250px;
+  height: 320px;
 }
 
 #bolhas-detalhe{

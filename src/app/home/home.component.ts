@@ -309,9 +309,11 @@ export class HomeComponent implements OnInit {
       scrollTrigger: {
         trigger: this.document.querySelector('.circlue-categoria'),
         scrub: true,
-        start: '-30% center',
+        start: '-150% center',
       },
       y: -300,
+      x: 300,
+      scale: 0.5,
       ease: 'bouce',
     });
 
@@ -319,10 +321,12 @@ export class HomeComponent implements OnInit {
       scrollTrigger: {
         trigger: this.document.querySelector('.circlue-categoria-2'),
         scrub: true,
-        start: '-30% center',
+        start: '-80% center',
       },
-      y: -300,
+      y: -500,
       x: -150,
+      scale: 0.5,
+      ease: 'power',
     });
 
     let proxy = { skew: 0 },
@@ -349,13 +353,23 @@ export class HomeComponent implements OnInit {
     // make the right edge "stick" to the scroll bar. force3D: true improves performance
     gsap.set('.skewElem', { transformOrigin: 'left center', force3D: true });
 
+    gsap.to(this.document.querySelector('.circlue-mentor'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.circlue-mentor'),
+        scrub: true,
+        start: '-80% center',
+      },
+      x: -300,
+      y: -300,
+    });
+
     gsap.from(document.querySelector('.mentores-img'), {
       scrollTrigger: {
         trigger: document.querySelector('.mentores-img'),
         toggleActions: 'restart pause reverese pause',
         start: '-115% top',
       },
-      y: 150,
+      x: -150,
       duration: 2.2,
       opacity: 0,
     });

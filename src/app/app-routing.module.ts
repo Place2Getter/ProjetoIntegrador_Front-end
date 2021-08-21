@@ -32,8 +32,6 @@ const routes: Routes = [
 
   {path: 'usuario-edit/:id', component: UsuarioEditComponent}
   
-
-
 ];
 
 @NgModule({

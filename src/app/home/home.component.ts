@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
       color: '#ffffff00',
       duration: 0.2,
       y: -90,
+      opacity: 0
     });
 
     gsap.to(this.document.querySelector('.textoBanner'), {
@@ -69,15 +70,18 @@ export class HomeComponent implements OnInit {
       color: '#ffffff00',
       duration: 0.2,
       y: -90,
+      opacity: 0
     });
+
     gsap.to(this.document.querySelector('.banner'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.banner'),
         scrub: true,
         start: '10% top',
       },
-      opacity: 0.75,
+      opacity: 0.95,
     });
+
     gsap.to(this.document.querySelector('.bolha-persona-1'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.bolha-persona-1'),
@@ -88,41 +92,6 @@ export class HomeComponent implements OnInit {
       duration: 0.8,
       delay: 8,
     });
-
-    // gsap.to(this.document.querySelector('.bolha-persona-2'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-2'),
-    //     scrub: true,
-    //     start: '50% center',
-    //   },
-    //   y: -90,
-    //   duration: 0.8,
-    //   delay: 8,
-    // });
-
-    // gsap.to(this.document.querySelector('.bolha-persona-3'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-3'),
-    //     scrub: true,
-    //     start: '50% center',
-    //   },
-    //   y: 50,
-    //   x: -50,
-    //   duration: 0.8,
-    //   delay: 8,
-    // });
-
-    // gsap.to(this.document.querySelector('.bolha-persona-4'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-4'),
-    //     scrub: true,
-    //     start: '50% center',
-    //   },
-    //   y: 180,
-    //   x: 50,
-    //   duration: 0.8,
-    //   delay: 8,
-    // });
 
     gsap.from(this.document.querySelector('.titulo-mentoria'), {
       scrollTrigger: {
@@ -162,36 +131,23 @@ export class HomeComponent implements OnInit {
       stagger: 0.35,
       delay: 0.15,
       scrub: true,
+      ease: "bouce"
     });
 
-    // gsap.from(this.banner.nativeElement.childNodes, {
-    //   scale: 1.3,
-    //   scrollTrigger: {
-    //     trigger: '.banner',
-    //     start: 'top top',
-    //     scrub: 2
-    //   }
-    // });
 
     gsap.from(this.document.querySelector('.square'), {
-      duration: 1.5,
+      duration: 1.8,
       opacity: 0,
       stagger: 1,
       width: 2000,
+      ease: 'power'
     });
+
     gsap.from(this.document.querySelector('.circleBanner'), {
       duration: 8,
       opacity: 0,
       stagger: 1,
     });
-
-    // gsap.from(this.document.querySelector('.bolha-persona-1'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-1'),
-    //     scrub: true,
-    //     start: '50% center',
-    //   },
-    // });
 
     gsap.from('.bolha-persona-1', {
       scrollTrigger: {
@@ -202,14 +158,6 @@ export class HomeComponent implements OnInit {
       duration: 2,
       opacity: 0,
     });
-
-    // gsap.from(this.document.querySelector('.bolha-persona-2'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-2'),
-    //     scrub: true,
-    //     start: '-90% center',
-    //   },
-    // });
 
     gsap.from('.bolha-persona-2', {
       scrollTrigger: {
@@ -232,24 +180,6 @@ export class HomeComponent implements OnInit {
       rotate: 50,
       duration: 6,
     });
-
-    // gsap.from('.bolha-persona-3',{
-    //   scrollTrigger: {
-    //     trigger: ".bolha-persona-3",
-    //     toggleActions: "restart pause reverese pause"
-    //   },
-    //   x: -200,
-    //   y: 20,
-    //   duration: 2,
-    // });
-
-    // gsap.from(this.document.querySelector('.bolha-persona-4'), {
-    //   scrollTrigger: {
-    //     trigger: this.document.querySelector('.bolha-persona-4'),
-    //     scrub: true,
-    //     start: '-40% center',
-    //   },
-    // });
 
     gsap.from(this.document.querySelector('.bolha-persona-4'), {
       scrollTrigger: {
@@ -305,15 +235,56 @@ export class HomeComponent implements OnInit {
       ease: 'bouce',
     });
 
+    gsap.from(('.item' ),{
+      scrollTrigger: {
+        trigger: '.categoria-itens ',
+        toggleActions: 'restart pause reverese pause',        
+      },
+      y: 100,
+      duration: 1.8,
+      delay: 0.5,
+      opacity: 0,
+      stagger: 0.1, 
+      ease: 'power4',
+      scale: 0.4, 
+    });
+
+    gsap.from(('.titulo-categoria'),{
+      scrollTrigger: {
+        trigger: '.texto-categoria-2',
+        toggleActions: 'restart pause reverse pause',
+      },
+      x: -300,
+      duration: 1.5,
+      delay: 1,
+      opacity: 0,
+      stagger: 1, 
+      ease: 'bouce',
+    });
+
+    gsap.from(('.paragrafo-padrao'),{
+      scrollTrigger: {
+        trigger: '.texto-categoria-2',
+        toggleActions: 'restart pause reverse pause',
+      },
+      x: -300,
+      duration: 1.5,
+      delay: 0.5,
+      opacity: 0,
+      stagger: 2, 
+      ease: 'bouce',
+    });
+
+
     gsap.to(this.document.querySelector('.circlue-categoria'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.circlue-categoria'),
         scrub: true,
-        start: '-150% center',
+        start: '-110% center',
       },
-      y: -300,
+      y: -200,
       x: 300,
-      scale: 0.5,
+      scale: 2,
       ease: 'bouce',
     });
 
@@ -359,8 +330,8 @@ export class HomeComponent implements OnInit {
         scrub: true,
         start: '-80% center',
       },
-      x: -300,
-      y: -300,
+      x: -150,
+      y: -400,
     });
 
     gsap.from(document.querySelector('.mentores-img'), {
@@ -376,14 +347,91 @@ export class HomeComponent implements OnInit {
 
     gsap.from('.titulo-mentoria-2', {
       scrollTrigger: {
-        trigger: this.document.querySelector('.titulo-mentoria-2'),
+        trigger: this.document.querySelector('.mentores-img'),
         toggleActions: 'restart pause reverese pause',
-        start: '-500% top',
       },
       x: -300,
       duration: 2,
       opacity: 0,
+      delay: 0.8
     });
+
+    gsap.from('.paragrafro-mentoria', {
+      scrollTrigger: {
+        trigger: this.document.querySelector('.titulo-mentoria-2'),
+        toggleActions: 'restart pause reverese pause',
+      },
+      x: -300,
+      duration: 3,
+      opacity: 0,
+      delay: 0.8,
+      ease: 'power3'
+    });
+
+    gsap.from((".titulo-impacto"),{
+      scrollTrigger: {
+        trigger: '.section-impacto',
+        toggleActions: 'restart pause reverse pause',
+      },
+      y: -250,
+      opacity: 0,
+      duration: 2,
+      delay: 1,
+      ease: 'circ'
+    });
+
+    gsap.from((".impacto-img"),{
+      scrollTrigger: {
+        trigger: '.section-impacto',
+        toggleActions: 'restart pause reverse pause',
+      },
+      y: 150,
+      opacity: 0,
+      delay: 0.8,
+      duration: 2,
+      ease: 'back',
+      stagger: 0.20, 
+      width: 0
+    })
+
+    gsap.from((".box-color"),{
+      scrollTrigger: {
+        trigger: '.section-impacto',
+        toggleActions: 'restart pause reverse pause',
+      },
+      y: 150,
+      opacity: 0,
+      delay: 0.8,
+      duration: 2.5,
+      ease: 'ease',
+    })
+
+    gsap.from((".paragrafo-impacto"),{
+      scrollTrigger: {
+        trigger: '.section-impacto',
+        toggleActions: 'restart pause reverse pause',
+      },
+      x: -200,
+      opacity: 0,
+      delay: 0.8,
+      duration: 2.5,
+      ease: 'circlue',
+    })
+
+
+
+    // gsap.from(('.titulo-categoria'),{
+    //   scrollTrigger: {
+    //     trigger: '.texto-categoria-2',
+    //     toggleActions: 'restart pause reverse pause',
+    //   },
+    //   x: -300,
+    //   duration: 1.5,
+    //   delay: 1,
+    //   opacity: 0,
+    //   stagger: 1, 
+    //   ease: 'bouce',
+    // });
 
     gsap.from(this.document.querySelector('.borda-mentoria'), {
       scrollTrigger: {

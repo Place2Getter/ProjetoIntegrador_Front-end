@@ -495,6 +495,7 @@ a.link-categoria {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-bottom: 50px;
 }
 
 .categorias a {
@@ -559,7 +560,7 @@ a.link-categoria {
 .circlue-categoria {
   width: 350px;
   height: 350px;
-  background: #F5E7E7;
+  background: linear-gradient(200deg , rgb(253, 225, 225) , white 110%);
   position: absolute;
   border-radius: 50%;
   left: 4%;
@@ -635,7 +636,7 @@ a.link-categoria {
 }
 
 .circlue-mentor {
-  background: linear-gradient(45deg , rgba(243, 112, 36, 0.363) , white 100%) ;
+  background: linear-gradient(45deg , rgba(243, 112, 36, 0.247) , white 100%) ;
   width: 350px;
   height: 350px;
   position: absolute;
@@ -656,14 +657,16 @@ a.link-categoria {
 
 .section-impacto {
   background: linear-gradient(166.91deg, #FFFFFF 7.18%, #D6FAF1 61.05%);
-  padding-top: 50px;
+  margin-top: 2%;
+  padding-top: 5%;
+  padding-bottom: 10%;
 }
 
 img.impacto-img{
   background-size: contain;
   object-fit: cover;
-  width: 225px;
-  height: 325px;
+  width: 200px;
+  height: 300px;
   margin-top: 50px;
   z-index: 1;
 }
@@ -684,13 +687,13 @@ img.elemento-style{
 
 .section-impacto h2 {
   font-family: Poly;
-  font-size: 100px;
+  font-size: 85px;
   font-style: italic;
   font-weight: 400;
   line-height: 80px;
   letter-spacing: 0em;
   text-align: left;
-  color: #F9803C9E;
+  color: #ff823a7e;
 }
 
 .section-impacto p {
@@ -711,19 +714,21 @@ img.elemento-style{
 }
 
 .caixa-persona {
-  top: 1%;
-  left: 5%;
-  background: #f8dcc9;
-  width: 250px;
-  height: 320px;
+  top: 12%;
+  left: 12%;
+  /* background: #f8dcc9; */
+  border: 3px solid #f8dcc9;
+  width: 200px;
+  height: 300px;
 }
 
 .caixa-persona-2 {
-  top: 2%;
-  right: 8%;
-  background: #feffab;
-  width: 250px;
-  height: 320px;
+  top: 5%;
+  right: 13%;
+  /* background: #feffab; */
+  border: 3px solid #feffab;
+  width: 200px;
+  height: 300px;
 }
 
 #bolhas-detalhe{

@@ -245,7 +245,7 @@ export class HomeComponent implements OnInit {
       delay: 0.5,
       opacity: 0,
       stagger: 0.1, 
-      ease: 'power4',
+      ease: 'back',
       scale: 0.4, 
     });
 
@@ -390,8 +390,8 @@ export class HomeComponent implements OnInit {
       delay: 0.8,
       duration: 2,
       ease: 'back',
-      stagger: 0.20, 
-      width: 0
+      stagger: 0.50, 
+      width: -10,
     })
 
     gsap.from((".box-color"),{

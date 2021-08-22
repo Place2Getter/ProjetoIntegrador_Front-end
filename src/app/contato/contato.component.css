@@ -1,34 +1,189 @@
 .contato{
     min-width: 100vw;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background: rgb(236, 236, 236);
 }
 
+img.img-vetor{
+    width: 200px;
+    bottom: 5%;
+    right: 9.5%;
+    opacity: 0.25;
+}
+
+.inputs h4{
+    color: #19ccc6;
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.inputs p{
+    color: rgba(0, 0, 0, 0.459);
+    font-size: 1em;
+    text-align: center;
+}
+
+.icone-contatos i{
+    color: #0ab1ab;
+    font-size: 1.4em;
+    opacity: 0.45;
+}
+
+.icone-contatos span{
+    color: #0ab1ab;
+    opacity: 0.45;
+}
 .caixa-contato{
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.144);
+    box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.075);
     border-radius: 20px;
+}
+
+.link-item {
+    background: #009d97;
+    width: 15px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.link-item:hover {
+    transform: translateY(-10%);
+    background: #018682;
+}
+
+.links-social-midias i{
+    font-size: 1.4;
+    color: white;
+    padding: 10px;
+}
+
+.links-social-midias h5{
+    color: rgba(0, 0, 0, 0.39);
 }
 
 .inputs{
     width: 450px;
-    height: 450px;
+    height: 500px;
     border-top-left-radius: 20px ;
     border-bottom-left-radius: 20px ;
+    background: white;
+}
+
+
+.inputs::before{
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: none;
+    border: 3px solid #009d97;
+    position: absolute;
+    bottom: -8.5%;
+    left: -9%;
 }
 
 h4.text-input-contato{
-    color: white;
+    color: rgb(236, 236, 236);
     margin-left: 10px;
 }
 
-
-
 .social-midias{
     width: 450px;
-    height: 450px;
+    height: 500px;
     border-top-right-radius: 20px ;
     border-bottom-right-radius: 20px ;
-    background: linear-gradient(180deg, #45F3C9 0%, rgba(94, 244, 136, 0.65) 100%);
+    background: #009d97;
 }
+
+.social-midias::before{
+    content: '';
+    background: #009d97;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    left: -8%;
+    top: 20%;
+}
+
+.input-contato label{
+   color: rgba(245, 245, 220, 0.747);
+   font-weight: 400;
+}
+
+.input-contato input{
+    width: 400px;
+    height: 45px;
+    background: none;
+    border-radius: 50px;
+    border: 2px solid beige;
+    margin-bottom: 4%;
+    color: white;
+}
+
+.input-contato textarea{
+    width: 400px;
+    background: none;
+    border-radius: 20px;
+    border: 2px solid beige;
+    resize: none;
+    color: white;
+}
+
+.input-contato input::placeholder{
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.171);
+}
+
+.input-contato textarea::placeholder{
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.171);
+}
+
+.input-contato input:focus{
+    padding: 10px;
+}
+
+.input-contato textarea::placeholder{
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.226);
+}
+
+button.button-contato {
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.658);
+    background: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.8s ease-in-out;
+}
+
+button.button-contato:hover {
+    background: rgb(243, 243, 243);
+    letter-spacing: 0.5px;
+    background: white;
+    color: #0ab1ab;
+}
+
+.circlue-one{
+    background: linear-gradient(45deg, rgba(206, 206, 206, 0.048) , #0479755b);
+    top: 0;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.circlue-two{
+    background: linear-gradient(300deg, rgba(253, 253, 253, 0.041) , #0479755b);
+    bottom: 1%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+

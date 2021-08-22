@@ -21,7 +21,6 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { AlertaComponent } from './alerta/alerta.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
-import { PerfilEditComponent } from './edit/perfil-edit/perfil-edit.component';
 
 
 
@@ -40,8 +39,7 @@ import { PerfilEditComponent } from './edit/perfil-edit/perfil-edit.component';
     TemaDeleteComponent,
     PostagemEditComponent,
     UsuarioEditComponent,
-    AlertaComponent,
-    PerfilEditComponent
+    AlertaComponent
 
   ],
 

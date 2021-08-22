@@ -1,0 +1,68 @@
+.banner-tema{
+    background: url(https://i.imgur.com/Ewfc6Rt.png);
+    height: 500px;
+    background-size: cover;
+}
+
+.banner-tema h2{
+    color: white;
+    font-size: 34pt;
+    font-weight: 900;
+}
+
+.banner-tema input{
+    background: rgba(255, 255, 255, 0.445);
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+}
+
+.caixa-busca{
+    height: 100%;
+    position: relative;
+}
+
+.caixa-busca a{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 25px;
+    color: white;
+}
+
+.caixa-busca small{
+    font-size: 1.1rem;
+    color: rgba(240, 248, 255, 0.719);
+    font-weight: 300;
+    text-align: center;
+    display: inline-block;
+    margin: 15px 0 5px 20px;
+}
+
+.input-busca{
+    position: relative;
+}
+
+.input-busca i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+    font-size: 25px;
+    opacity: 0.5;
+}
+
+.button{
+    height: 50px;
+}
+
+.btn-outline-dark {
+    border: 1px solid #53b19b;
+    color: white;
+}
+
+
+.btn-outline-dark:hover {
+    background: none;
+    border: 1px solid #377969;
+}

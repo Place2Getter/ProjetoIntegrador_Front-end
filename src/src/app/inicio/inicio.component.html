@@ -289,7 +289,7 @@
           <div class="col-md-12 mentores-online d-flex mb-2"
             *ngFor='let item of listaUsuarios | orderBy : key : reverse'>
             <div class="col-md-3  d-flex justify-content-center position-relative" *ngIf='item.tipo =="mentor" '>
-              <a [routerLink]="['/perfil-edit', item.id]"><img  src="{{item.foto}}" alt=""></a><!--Mexer aqui pra editar-->
+              <img src="{{item.foto}}" alt="">
               <div class="perfil-online position-absolute"></div>
             </div>
             <div class="col-md-9 ml-2 d-flex justify-content-center flex-column" *ngIf='item.tipo =="mentor"'>

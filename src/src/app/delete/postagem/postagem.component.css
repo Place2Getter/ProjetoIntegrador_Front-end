@@ -1,0 +1,234 @@
+.caixa-deleter {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(214, 214, 214, 0.548) 100%, white);
+  animation: initial-animatio 2s ease-in-out;
+
+}
+
+img.img-persona-1{
+  width: 120px;
+  top: 10%;
+  left: 5%;
+  animation: animation-default 20s ease-in-out infinite;
+}
+img.img-persona-2{
+  width: 190px;
+  bottom: 35%;
+  left: 15%;
+  animation: animation-default 15s ease-in-out infinite;
+}
+
+img.img-persona-3{
+  width: 180px;
+  bottom: 10%;
+  right: 20%;
+  animation: animation-default 10s ease-in-out infinite;
+}
+
+img.img-persona-4{
+  width: 180px;
+  top: 30%;
+  right: 15%;
+  animation: animation-default 18s ease-in-out infinite;
+}
+
+
+.caixa-deleter h3{
+  font-size: 50px;
+  background: -webkit-linear-gradient(180deg, rgba(125, 146, 189, 0.644), rgba(228, 152, 152, 0.574));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  margin-bottom: 30px;
+  animation: animationtext 2.5s ease-in-out;
+  z-index: 1000;
+  transition: 5s ease-in-out all;
+}
+
+h3.line1{
+  -webkit-text-stroke: 1.6px rgb(243, 243, 243);
+  top: 20px;
+  background: none !important;
+  z-index: -100 !important;
+  animation: lineStroke 2s ease-in-out infinite !important;
+  font-size: 60px;
+}
+
+h3.line2{
+  -webkit-text-stroke: 1.6px rgba(255, 255, 255, 0.432);
+  top: -15px;
+  background: none !important;
+  z-index: -100;
+  animation: lineStroke2 3s ease-in-out infinite !important;
+}
+
+.post {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.575);
+  animation: card-animation 2s ease-in-out;
+}
+
+.post h6 {
+  color: rgba(0, 0, 0, 0.801);
+}
+
+.post small {
+  color: #a3a3a3;
+}
+
+.post-profile {
+  width: 100%;
+}
+
+.post-profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-position: center center;
+}
+
+.post-profile-config .button-config {
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.582);
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.post-profile-config .button-delete {
+  right: 35px;
+  font-size: 24px;
+  top: -6px;
+  color: rgb(255, 93, 93);
+  cursor: pointer;
+  transition: .8s ease-in-out;
+  border: none;
+}
+
+.post-profile-config .button-delete:hover {
+  color: rgb(255, 132, 132);
+  transform: translateY(-3px);
+}
+
+.post-profile-config .button-edit {
+  border: none;
+}
+
+.post {
+  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.055);
+}
+
+.post-content h6 {
+  color: rgb(115, 223, 187);
+}
+
+.post-content p {
+  color: #414141ce;
+  margin-bottom: 3px;
+}
+
+.post-content span {
+  color: #53b19b;
+}
+
+.post-content-image img {
+  width: 100%;
+  margin: 10px 0;
+}
+
+button{
+  width: 120px;
+  height: 50px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  transition: .5s ease-in-out;
+}
+
+button.btn-1 {
+  border: 1px solid rgb(255, 93, 93);
+  color: rgb(255, 93, 93);
+  background: none;
+}
+
+button.btn-1:hover {
+  background: rgb(255, 114, 114);
+  font-weight: 2px;
+  transform: translateY(-2px);
+  color: white;
+  border: none;
+}
+
+button.btn-2 {
+  background: aquamarine;
+  color: white;
+}
+
+button.btn-2:hover {
+  background: rgb(81, 241, 188);
+  font-weight: 2px;
+  color: white;
+  transform: translateY(-2px);
+  border: none;
+}
+
+
+
+
+
+@keyframes animationtext{
+  from{
+    transform: translateY(30%);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes initial-animatio {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes lineStroke {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineStroke2 {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(5px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation-default{
+  0%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: translate(20%  , 20%);
+  }
+  100%{
+    transform: rotate(10deg);
+  }
+}

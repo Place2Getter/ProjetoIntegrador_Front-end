@@ -1,0 +1,87 @@
+<div class="container-fluid conteudo">
+  <a class="logo" routerLink='/home'><img src="https://i.imgur.com/SKyw9eR.png" alt=""></a>
+  <img src="https://i.imgur.com/fWt2h8B.png" class="vetor-top" alt="">
+  <img src="https://i.imgur.com/mQUg9JH.png" class="vetor-bottom" alt="">
+
+  <img src="https://i.imgur.com/eKupvT7.png" alt="" class="vetor-1-bolha">
+  <img src="https://i.imgur.com/Sbu77WS.png" alt="" class="vetor-2-bolha">
+  <img src="https://i.imgur.com/pXhl08c.png" alt="" class="vetor-3-bolha">
+  <img src="https://i.imgur.com/rkYx10z.png" alt="" class="vetor-4-bolha d-none d-lg-block">
+  <form action="" class="form">
+    <section class="cartao-visita row d-none d-md-block">
+      <div class="col-md-12">
+        <div class="elemento-1"></div>
+        <div class="elemento-2"></div>
+        <div class="elemento-3"></div>
+        <div class="elemento-4"></div>
+        <div class="row ml-0 mr-0 cartao-visita-texto">
+          <div class="col-md-12">
+            <h1>Hello, Friend!</h1>
+            <p>Novos rumos, novas experiências e um único objetivo!</p>
+          </div>
+          <div class="button-cartao">
+            <button routerLink='/logar'>Acessar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cadastro  row m-0 p-0">
+      <div class="inputs col-md-12 mr-0 pr-0 col-xs-6">
+        <div class="row d-flex flex-column">
+          <div class="inputs col-md-12">
+            <div class="input">
+              <i class="fas fa-user icons-left-1"></i>
+              <input [(ngModel)]='usuario.nome' name="nome" type="text" placeholder="Informe o seu nome">
+            </div>
+            <div class="input">
+              <i class="far fa-envelope icons-left-2"></i>
+              <input [(ngModel)]='usuario.usuario' name="usuario" type="text" placeholder="Email">
+            </div>
+            <div class="input">
+              <i class="fas fa-lock icons-left-3"></i>
+              <input (input)='confirmeSenha($event)' name="senha" type="password" placeholder="Senha">
+              <!-- <a href=""><i class="far fa-eye"></i></a> -->
+            </div>
+
+            <div class="input">
+              <i class="fas fa-lock icons-left-4"></i>
+              <input [(ngModel)]="usuario.senha" name="Confirmasenha" type="password" placeholder="Confima Senha">
+              <!-- <a href=""><i class="far fa-eye"></i></a> -->
+            </div>
+
+            <div class="input">
+              <!-- <label for="">Foto:</label> -->
+              <i class="far fa-images icons-left-5"></i>
+              <input [(ngModel)]='usuario.foto' name="foto" id="foto" type="text" placeholder="Foto">
+            </div>
+
+            <div class="input">
+              <!-- <label for="">Foto:</label> -->
+              <i class="fas fa-suitcase icons-left-6"></i>
+              <input [(ngModel)]='usuario.cargo' name="cargo" id="cargo" type="text"
+                placeholder="Ocupação atual">
+            </div>
+
+            <!-- <div class="input-habilidade">
+            <label for="">Foto:</label>
+            <input [(ngModel)]='usuario.habilidade' name="habilidade" id="habilidade" type="text"
+              placeholder="Habilidade">
+          </div> -->
+
+            <div class="section">
+              <i class="far fa-check-square icons-left-7"></i>
+              <select (change)='tipoUsuario($event)' name="tipoUsuario" class="input" type="select">
+                <option>Qual é seu tipo de usuário?</option>
+                <option value="mentor">Mentor(a)</option>
+                <option value="aluno">Aluno(a)</option>
+              </select>
+            </div>
+            <div class="buttons mt-2 p-2">
+              <button type="submit" (click)='cadastrar()'>Cadastrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

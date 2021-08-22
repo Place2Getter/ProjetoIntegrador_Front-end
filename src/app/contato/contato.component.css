@@ -1,189 +1,309 @@
-.contato{
-    min-width: 100vw;
-    min-height: 100vh;
-    background: rgb(236, 236, 236);
+.contato {
+  max-width: 100%;
+  min-height: 100vh;
+  background: rgb(236, 236, 236);
+  animation: initial-animation 2s ease-in-out;
 }
 
-img.img-vetor{
-    width: 200px;
-    bottom: 5%;
-    right: 9.5%;
-    opacity: 0.25;
+.logo {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  z-index: 100;
+  padding: 18px;
 }
 
-.inputs h4{
-    color: #19ccc6;
-    font-size: 2em;
-    margin-bottom: 10px;
-    font-weight: 500;
+img.img-vetor {
+  width: 200px;
+  bottom: 5%;
+  right: 9.5%;
+  opacity: 0.25;
+  animation: items-animation 2s ease-in-out, bloco-vetor 8.5s ease-in-out infinite;
 }
 
-.inputs p{
-    color: rgba(0, 0, 0, 0.459);
-    font-size: 1em;
-    text-align: center;
+
+.circlue-top {
+  width: 200px;
+  height: 200px;
+  background: #009d97;
+  top: 0%;
+  left: 7%;
+  border-radius: 50%;
 }
 
-.icone-contatos i{
-    color: #0ab1ab;
-    font-size: 1.4em;
-    opacity: 0.45;
+
+.inputs h4 {
+  color: #19ccc6;
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
-.icone-contatos span{
-    color: #0ab1ab;
-    opacity: 0.45;
+.inputs p {
+  color: rgba(0, 0, 0, 0.459);
+  font-size: 1em;
+  text-align: center;
 }
-.caixa-contato{
-    box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.075);
-    border-radius: 20px;
+
+.icone-contatos i {
+  color: #0ab1ab;
+  font-size: 1.4em;
+  opacity: 0.45;
+}
+
+.icone-contatos span {
+  color: #0ab1ab;
+  opacity: 0.45;
+}
+
+.caixa-contato {
+  box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.075);
+  border-radius: 20px;
 }
 
 .link-item {
-    background: #009d97;
-    width: 15px;
-    height: 35px;
-    border-radius: 5px;
-    margin: 5px;
-    transition: 0.3s ease-in-out;
+  background: #009d97;
+  width: 15px;
+  height: 35px;
+  border-radius: 5px;
+  margin: 5px;
+  transition: 0.3s ease-in-out;
 }
 
 .link-item:hover {
-    transform: translateY(-10%);
-    background: #018682;
+  transform: translateY(-10%);
+  background: #018682;
 }
 
-.links-social-midias i{
-    font-size: 1.4;
-    color: white;
-    padding: 10px;
+.links-social-midias i {
+  font-size: 1.4;
+  color: white;
+  padding: 10px;
 }
 
-.links-social-midias h5{
-    color: rgba(0, 0, 0, 0.39);
+.links-social-midias h5 {
+  color: rgba(0, 0, 0, 0.39);
 }
 
-.inputs{
-    width: 450px;
-    height: 500px;
-    border-top-left-radius: 20px ;
-    border-bottom-left-radius: 20px ;
-    background: white;
+.inputs {
+  width: 450px;
+  height: 500px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: white;
 }
 
 
-.inputs::before{
-    content: '';
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: none;
-    border: 3px solid #009d97;
-    position: absolute;
-    bottom: -8.5%;
-    left: -9%;
+.inputs::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: none;
+  border: 3px solid #009d97;
+  position: absolute;
+  bottom: -8.5%;
+  left: -9%;
+  animation: circlue-animation-2 8s ease-in-out infinite;
 }
 
-h4.text-input-contato{
-    color: rgb(236, 236, 236);
-    margin-left: 10px;
+h4.text-input-contato {
+  color: rgb(236, 236, 236);
+  margin-left: 10px;
 }
 
-.social-midias{
-    width: 450px;
-    height: 500px;
-    border-top-right-radius: 20px ;
-    border-bottom-right-radius: 20px ;
-    background: #009d97;
+.social-midias {
+  width: 450px;
+  height: 500px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #009d97;
 }
 
-.social-midias::before{
-    content: '';
-    background: #009d97;
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    border-radius: 50%;
-    left: -8%;
-    top: 20%;
+.social-midias::before {
+  content: '';
+  background: #009d97;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  left: -8%;
+  top: 20%;
 }
 
-.input-contato label{
-   color: rgba(245, 245, 220, 0.747);
-   font-weight: 400;
+.input-contato label {
+  color: rgba(245, 245, 220, 0.747);
+  font-weight: 400;
 }
 
-.input-contato input{
-    width: 400px;
-    height: 45px;
-    background: none;
-    border-radius: 50px;
-    border: 2px solid beige;
-    margin-bottom: 4%;
-    color: white;
+.input-contato input {
+  width: 100%;
+  height: 45px;
+  background: none;
+  border-radius: 50px;
+  border: 2px solid beige;
+  margin-bottom: 4%;
+  color: white;
 }
 
-.input-contato textarea{
-    width: 400px;
-    background: none;
-    border-radius: 20px;
-    border: 2px solid beige;
-    resize: none;
-    color: white;
+.input-contato textarea {
+  width: 400px;
+  background: none;
+  border-radius: 20px;
+  border: 2px solid beige;
+  resize: none;
+  color: white;
 }
 
-.input-contato input::placeholder{
-    padding: 5px;
-    color: rgba(255, 255, 255, 0.171);
+.input-contato input::placeholder {
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.171);
 }
 
-.input-contato textarea::placeholder{
-    padding: 5px;
-    color: rgba(255, 255, 255, 0.171);
+.input-contato textarea::placeholder {
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.171);
 }
 
-.input-contato input:focus{
-    padding: 10px;
+.input-contato input:focus {
+  padding: 10px;
 }
 
-.input-contato textarea::placeholder{
-    padding: 5px;
-    color: rgba(255, 255, 255, 0.226);
+.input-contato textarea::placeholder {
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.226);
 }
 
 button.button-contato {
-    width: 120px;
-    height: 40px;
-    border-radius: 50px;
-    border: 2px solid rgba(255, 255, 255, 0.658);
-    background: none;
-    color: white;
-    font-weight: 400;
-    transition: 0.8s ease-in-out;
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.658);
+  background: none;
+  color: white;
+  font-weight: 400;
+  transition: 0.8s ease-in-out;
 }
 
 button.button-contato:hover {
-    background: rgb(243, 243, 243);
-    letter-spacing: 0.5px;
-    background: white;
-    color: #0ab1ab;
+  background: rgb(243, 243, 243);
+  letter-spacing: 0.5px;
+  background: white;
+  color: #0ab1ab;
 }
 
-.circlue-one{
-    background: linear-gradient(45deg, rgba(206, 206, 206, 0.048) , #0479755b);
-    top: 0;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.circlue-one {
+  background: linear-gradient(45deg, rgba(206, 206, 206, 0.048), #0479755b);
+  top: 0;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-.circlue-two{
-    background: linear-gradient(300deg, rgba(253, 253, 253, 0.041) , #0479755b);
-    bottom: 1%;
-    left: 10%;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.circlue-two {
+  background: linear-gradient(300deg, rgba(253, 253, 253, 0.041), #0479755b);
+  bottom: 1%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
+
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+ 
+  .social-midias::before {
+    display: none;
+  }
+
+  .inputs::before {
+    display: none;
+  }
+
+  .caixa-icone {
+    width: 50px;
+  }
+
+  .logo::before{
+      content: '';
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #05c4bd2a;
+      position: absolute;
+      z-index: -2;
+      top: 0;
+      left: -38%;
+      transition: 2s ease-in;
+  }
+}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+
+
+@keyframes circlue-animation-1 {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes circlue-animation-2 {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translate(10%, 15%)
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes initial-animation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bloco-vetor {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5%)
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 

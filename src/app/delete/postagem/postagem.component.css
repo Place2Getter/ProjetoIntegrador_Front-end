@@ -5,6 +5,17 @@
 
 }
 
+a.button-left{
+  z-index: 1000;
+  color: rgba(0, 0, 0, 0.589);
+  position: absolute;
+  top: 11%;
+  left: 5%;
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+}
+
 img.img-persona-1{
   width: 120px;
   top: 10%;

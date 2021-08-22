@@ -5,6 +5,16 @@
     height: 100vh;
   }
   
+  a.button-left{
+    z-index: 1000;
+    color: rgba(0, 0, 0, 0.589);
+    position: absolute;
+    top: 11%;
+    left: 5%;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+  }
   
   
   .caixa-input {

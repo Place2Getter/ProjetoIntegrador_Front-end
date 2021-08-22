@@ -1,68 +1,78 @@
-.banner-tema{
-    background: url(https://i.imgur.com/Ewfc6Rt.png);
-    height: 500px;
-    background-size: cover;
+.banner-tema {
+  background: url(https://i.imgur.com/Ewfc6Rt.png);
+  height: 500px;
+  background-size: cover;
 }
 
-.banner-tema h2{
-    color: white;
-    font-size: 34pt;
-    font-weight: 900;
+.banner-tema h2 {
+  color: white;
+  font-size: 34pt;
+  font-weight: 900;
 }
 
-.banner-tema input{
-    background: rgba(255, 255, 255, 0.445);
-    height: 50px;
-    border-radius: 10px;
-    border: none;
+a.button-left {
+  z-index: 1000;
+  color: rgba(0, 0, 0, 0.589);
+  position: absolute;
+  top: 11%;
+  left: 5%;
+  font-size: 24px;
+  padding: 8px;
 }
 
-.caixa-busca{
-    height: 100%;
-    position: relative;
+.banner-tema input {
+  background: rgba(255, 255, 255, 0.445);
+  height: 50px;
+  border-radius: 10px;
+  border: none;
 }
 
-.caixa-busca a{
-    position: absolute;
-    top: 0;
-    left: 5%;
-    width: 25px;
-    color: white;
+.caixa-busca {
+  height: 100%;
+  position: relative;
 }
 
-.caixa-busca small{
-    font-size: 1.1rem;
-    color: rgba(240, 248, 255, 0.719);
-    font-weight: 300;
-    text-align: center;
-    display: inline-block;
-    margin: 15px 0 5px 20px;
+.caixa-busca a {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 25px;
+  color: white;
 }
 
-.input-busca{
-    position: relative;
+.caixa-busca small {
+  font-size: 1.1rem;
+  color: rgba(240, 248, 255, 0.719);
+  font-weight: 300;
+  text-align: center;
+  display: inline-block;
+  margin: 15px 0 5px 20px;
 }
 
-.input-busca i{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 3%;
-    font-size: 25px;
-    opacity: 0.5;
+.input-busca {
+  position: relative;
 }
 
-.button{
-    height: 50px;
+.input-busca i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
+  font-size: 25px;
+  opacity: 0.5;
+}
+
+.button {
+  height: 50px;
 }
 
 .btn-outline-dark {
-    border: 1px solid #53b19b;
-    color: white;
+  border: 1px solid #53b19b;
+  color: white;
 }
 
 
 .btn-outline-dark:hover {
-    background: none;
-    border: 1px solid #377969;
+  background: none;
+  border: 1px solid #377969;
 }

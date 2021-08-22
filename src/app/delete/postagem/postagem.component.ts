@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Postagem } from 'src/app/model/Postagem';
 import { Usuario } from 'src/app/model/Usuario';
 import { PostagemService } from 'src/app/service/postagem.service';
@@ -19,8 +20,8 @@ export class PostagemDeleteComponent implements OnInit {
   idPostagem: number;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
+    public router: Router,
+    public route: ActivatedRoute,
     private postagemService: PostagemService,
     private temaService: TemaService
   ) {}
@@ -65,4 +66,9 @@ export class PostagemDeleteComponent implements OnInit {
       this.router.navigate(['/inicio']);
     });
   }
+
+  voltar(){
+    this.router.navigate(['/inicio'])
+  }
+  
 }

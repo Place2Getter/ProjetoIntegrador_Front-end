@@ -1,7 +1,9 @@
 <div class="container-fluid contato d-flex justify-content-center align-items-center position-relative">
-  <img class="img-vetor position-absolute d-none d-md-block"
+  <a class="logo" routerLink='/home'><img src="https://i.imgur.com/SKyw9eR.png" alt=""></a>
+  <img class="img-vetor position-absolute d-none d-lg-block"
     src="https://raw.githubusercontent.com/sefyudem/Contact-Form-HTML-CSS/master/img/shape.png" alt="">
-  <div class="row caixa-contato">
+  <div class="circlue-top position-absolute d-none d-md-block"></div>
+  <div class="row caixa-contato p-0 m-0">
     <div class="col-md-6 inputs m-auto">
       <div class="row">
         <div class="col-md-12 mt-4">
@@ -14,82 +16,88 @@
       </div>
 
       <div class="row d-flex ">
-        <div class="col-md-12">
-          <div class="row m-3 icone-contatos">
-            <div class="col-md-2  d-flex justify-content-center">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
+        <div class="col-md-12 col-sm-6">
+          <div class="row m-3 icone-contatos ">
             <div class="col-md-8 d-flex align-items-center m-0 p-0">
-              <span>Brazil São Paulo</span>
+              <div class="col-md-3  d-flex justify-content-end caixa-icone">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="col-md-11">
+                <span>Brazil São Paulo</span>
+              </div>
             </div>
           </div>
 
           <div class="row m-3 icone-contatos">
-            <div class="col-md-2  d-flex justify-content-center">
-              <i class="far fa-envelope"></i>
-            </div>
             <div class="col-md-8 d-flex align-items-center m-0 p-0">
-              <span>place2getter@gmail.com</span>
+              <div class="col-md-3  d-flex justify-content-end caixa-icone">
+                <i class="far fa-envelope"></i>
+              </div>
+              <div class="col-md-11">
+                <span>place2getter@gmail.com</span>
+              </div>
             </div>
           </div>
 
           <div class="row m-3 icone-contatos">
-            <div class="col-md-2  d-flex justify-content-center">
-              <i class="fas fa-phone-alt"></i>
-            </div>
             <div class="col-md-8 d-flex align-items-center m-0 p-0">
-              <span>(11) 77777-7777</span>
-            </div>
+              <div class="col-md-3  d-flex justify-content-end caixa-icone">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="col-md-12">
+                <span>(11) 77777-7777</span>
+              </div>
           </div>
-        </div>
-      </div>
-      <div class="row mt-5 links-social-midias">
-        <div class="col-md-12 ">
-          <h5 class="text-center">Nossas redes Sociais</h5>
-        </div>
-      </div>
-      <div class="row links-social-midias d-flex justify-content-center">
-        <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
-          <a href=""><i class="fab fa-github"></i></a>
-        </div>
-        <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
-          <a href=""><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
-          <a href=""><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-6 social-midias position-relative m-auto">
-      <div class="row mt-4 ">
-        <div class="col-md-12">
-          <h4 class="text-input-contato">Contato</h4>
-        </div>
-        <div class="row  p-2 ml-0 pl-0">
-          <div class="col-md-12">
-            <div class="form-group input-contato">
-
-              <label for="">Nome:</label>
-              <input type="text" name="nome-input" class="form-control" placeholder="Informe o seu nome">
-
-              <label for="">E-mail:</label>
-              <input type="text" name="nome-input" class="form-control" placeholder="Informe o seu E-mail">
-
-              <label for="">Mensagem:</label>
-              <textarea type="text" name="nome-input" class="form-control"
-                placeholder="Nos conte o motivo do seu contato" aria-expanded="false" rows="4"></textarea>
-            </div>
-          </div>
-        </div>
+    <div class="row mt-5 links-social-midias">
+      <div class="col-md-12 ">
+        <h5 class="text-center">Nossas redes Sociais</h5>
       </div>
-      <div class="row  d-flex justify-content-center">
-        <div class="col-md-3  m-0 p-0">
-          <button class="button-contato">Enviar</button>
-        </div>
+    </div>
+    <div class="row links-social-midias d-flex justify-content-center">
+      <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
+        <a href="https://github.com/Place2Getter"><i class="fab fa-github"></i></a>
       </div>
-      <div class="circlue-one position-absolute"></div>
-      <div class="circlue-two position-absolute"></div>
+      <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="col-md-1  d-flex justify-content-center align-items-center link-item">
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
   </div>
+
+  <div class="col-md-6 social-midias position-relative m-auto ">
+    <div class="row mt-4 ">
+      <div class="col-md-12">
+        <h4 class="text-input-contato">Contato</h4>
+      </div>
+      <div class="row  p-2 ml-0 pl-0 ">
+        <div class="col-md-12">
+          <div class="form-group input-contato">
+
+            <label for="">Nome:</label>
+            <input type="text" name="nome-input" class="form-control" placeholder="Informe o seu nome">
+
+            <label for="">E-mail:</label>
+            <input type="text" name="nome-input" class="form-control" placeholder="Informe o seu E-mail">
+
+            <label for="">Mensagem:</label>
+            <textarea type="text" name="nome-input" class="form-control" placeholder="Nos conte o motivo do seu contato"
+              aria-expanded="false" rows="4"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row  d-flex justify-content-center">
+      <div class="col-md-3  m-0 p-0 d-flex justify-content-center">
+        <button class="button-contato" (click)='enviarEmail()'>Enviar</button>
+      </div>
+    </div>
+    <div class="circlue-one position-absolute"></div>
+    <div class="circlue-two position-absolute"></div>
+  </div>
+</div>
 </div>

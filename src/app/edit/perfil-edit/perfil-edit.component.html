@@ -1,18 +1,113 @@
-<div class="container-fluid m-0 p-0 borda caixa-perfil">
-   <div class="row ">
-       <div class="col-md-12 capa-perfil ">
-            <img src="{{usuario.foto}}" alt="">
-       </div>
-       <div class="row  dados-usuario d-flex justify-content-center">
-           <div class="col-md-4  d-flex justify-content-center caixa-nome">
-               <h4>{{usuario.nome}}</h4>
-           </div>
-       </div>
-   </div>
+<div class="container-fluid m-0 p-0  caixa-perfil position-relative">
+<a routerLink='/inicio' class="button-left"><i class="fas fa-arrow-left"></i></a>
+  <div class="row ">
+    <div class="col-md-12 capa-perfil">
+      <img src="{{usuario.foto}}" alt="">
+    </div>
+    <div class="row  dados-usuario d-flex justify-content-center">
+      <div class="col-md-4  d-flex justify-content-center caixa-nome">
+        <h4>{{usuario.nome}}</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row  descricao-usuario d-flex justify-content-center ">
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                    CARD COM AS DESCRIÇÕES DO USUÁRIO                    -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="col-md-6 caixa-descricao box">
+      <div class="col-md-12">
+        <h4>Sobre min</h4>
+      </div>
+      <div class="col-md-12  mt-3 ">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam corporis perferendis reiciendis inventore
+          adipisci facere, eum eligendi assumenda? In, iure. Dolorem tenetur praesentium consequatur corrupti placeat
+          enim, suscipit quas, rem inventore itaque necessitatibus perspiciatis veritatis veniam facilis quasi culpa
+          non.
+        </p>
+      </div>
+      <div class="row  link-item">
+        <div class="col-md-1  d-flex justify-content-center align-items-center">
+          <i class="far fa-envelope"></i>
+        </div>
+        <div class="col-md-6 ">
+          <a href="#">contato@place2getter.com</a>
+        </div>
+      </div>
+      <div class="row  link-item">
+        <div class="col-md-1  d-flex justify-content-center align-items-center">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+        <div class="col-md-6 ">
+          <a href="https://www.linkedin.com/">https://www.linkedin.com/</a>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                  FIM DO CARD COM AS DESCRIÇÕES DO USUÁRIO               -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                   CARD LATERAL DIREIRA COM OS NÚMEROS                   -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="col-md-3 numeros p-4 box">
+      <div class="row ">
+        <div class="col-md-12 d-flex flex-column align-items-center ">
+          <img class="nivel" src="https://i.imgur.com/UO5x5yr.png" alt="">
+          <h5>Mentor Pro</h5>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 ">
+          <img class="star" src="https://i.imgur.com/jweR3oe.png" alt="">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-12 d-flex ">
+          <div class="col-md-4  p-0 m-0 d-flex flex-column align-items-center">
+            <div class="row ">
+              <div class="col-md-12 d-flex justify-content-center ">
+                <h6>Getters</h6>
+              </div>
+            </div>
+            <h2 class="numero-1">80</h2>
+          </div>
+          <div class="col-md-4  p-0 m-0 d-flex flex-column align-items-center">
+            <div class="row ">
+              <div class="col-md-12 d-flex justify-content-center ">
+                <h6>Mentorias</h6>
+              </div>
+            </div>
+            <h2 class="numero-2">42</h2>
+          </div>
+          <div class="col-md-4  p-0 m-0 d-flex flex-column align-items-center">
+            <div class="row ">
+              <div class="col-md-12 d-flex justify-content-center ">
+                <h6>Curtidas</h6>
+              </div>
+            </div>
+            <h2 class="numero-3">120</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------------------------------------------------------- -->
+    <!--               FIM DO CARD LATERAL DIREIRA COM OS NÚMEROS                -->
+    <!-- ----------------------------------------------------------------------- -->
+  </div>
+  <div class="row d-flex justify-content-center ">
+    <div class="col-md-8 ml-5 d-flex m-0 p-0  caixa-depoimento">
+      <div class="col-md-3  p-0 ml-5 card-depoimento">
+        <img class="img-depoimento"src="https://i.imgur.com/2rnkVzL.png" alt="">
+      </div>
+      <div class="col-md-3 p-0 ml-4 card-depoimento">
+        <img class="img-depoimento"src="https://i.imgur.com/BaXl5RX.png" alt="">
+      </div>
+      <div class="col-md-3  p-0  mr-4 card-depoimento">
+        <img class="img-depoimento"src="https://i.imgur.com/ky6wT2Y.png" alt="">
+      </div>
+    </div>
+    
+  </div>
 </div>
-
-
-
-
-
-

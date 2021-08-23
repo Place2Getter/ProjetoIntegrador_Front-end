@@ -6,6 +6,8 @@ import { Chart } from 'chart.js';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-perfil-edit',
@@ -27,14 +29,14 @@ export class PerfilEditComponent implements OnInit {
   
     window.scroll(0,0)
 
-    // if (environment.token == '') {
-    //   this.router.navigate(['/logar']);
-    //   Swal.fire({
-    //     icon: 'info',
-    //     title: 'Oops...',
-    //     text: 'Sua conexão inspirou!',
-    //   });
-    // }
+    if (environment.token == '') {
+      this.router.navigate(['/logar']);
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua conexão inspirou!',
+      });
+    }
 
     let id = this.route.snapshot.params['id']
     this.findByIdUsuario(id)

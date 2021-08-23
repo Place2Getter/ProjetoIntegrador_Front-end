@@ -98,6 +98,7 @@
     <!-- ----------------------------------------------------------------------- -->
 
     <div class="col-md-6 post-center position-relative">
+     
       <div class="row">
         <div class="col-md-12 perfil-post ">
           <img src="{{foto}}" alt="">
@@ -115,7 +116,7 @@
           <div class="input-busca position-relative mb-3">
             <input type="text" class="form-control " name="pesquisa" placeholder="Faça uma busca"
               [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' [(ngModel)]='descricaoPostagem'
-              (keyup)='findByDescricao()' [(ngModel)]='hashtagPost' (keyup)='findByHashtag()'>
+              (keyup)='findByDescricao()' [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
             <i class="fas fa-search position-absolute"></i>
           </div>
         </div>
@@ -124,8 +125,8 @@
       <!-- ----------------------------------------------------------------------- -->
       <!--                    INICIO DO COMPONENTE DE POSTAGEM                     -->
       <!-- ----------------------------------------------------------------------- -->
-      <div class="tab-content mt-4" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+      <div class="tab-content mt-4 d-flex justify-content-center flex-column position-relative" id="nav-tabContent">
+        <div class="tab-pane active" role="tabpanel" id="todasPostagens"
           aria-labelledby="nav-todasPostagens-tab">
           <div class="row mt-3 post mb-5 " *ngFor="let item of listaPostagens | orderBy : key : reverse">
             <div class="col-md-12 ">
@@ -166,7 +167,7 @@
                 <img src="{{item.fotoPost}}" alt="">
               </div>
               <!--Curti e Descutir-->
-              <p class="card-text">
+              <!-- <p class="card-text">
                 <small class="text-muter">
 
                   <button class="btn" (click)='getByIdPostagem(postagem.id)' (click)='descurtida(postagem.id)'><i
@@ -179,8 +180,7 @@
                   </button>
 
                 </small>
-              </p>
-
+              </p> -->
               <!--Fim-->
             </div>
           </div>

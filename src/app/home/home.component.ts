@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.titulo-mentoria'), {
       scrollTrigger: {
         trigger: '.titulo-mentoria',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -150,
       duration: 2,
@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.texto-mentoria'), {
       scrollTrigger: {
         trigger: '.texto-mentoria',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -150,
       duration: 2,
@@ -119,9 +119,9 @@ export class HomeComponent implements OnInit {
       duration: 0.8,
       opacity: 0,
       y: -30,
-      stagger: 0.2,
+      stagger: 0.5,
       delay: 1.5,
-      ease: 'bouce',
+      ease: 'slow',
     });
 
     gsap.from(this.banner.nativeElement.childNodes, {
@@ -152,7 +152,7 @@ export class HomeComponent implements OnInit {
     gsap.from('.bolha-persona-1', {
       scrollTrigger: {
         trigger: '.bolha-persona-1',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -150,
       duration: 2,
@@ -162,7 +162,7 @@ export class HomeComponent implements OnInit {
     gsap.from('.bolha-persona-2', {
       scrollTrigger: {
         trigger: '.bolha-persona-2',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       y: -150,
       duration: 2,
@@ -172,7 +172,7 @@ export class HomeComponent implements OnInit {
     gsap.to(this.document.querySelector('.bolha-persona-3'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.bolha-persona-3'),
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
         start: '-120% center',
       },
       x: -500,
@@ -184,18 +184,17 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.bolha-persona-4'), {
       scrollTrigger: {
         trigger: '.bolha-persona-4',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -150,
       duration: 2,
       opacity: 0,
     });
 
-    gsap.from(this.document.querySelector('.img-mentor-1'), {
+    gsap.from(('.img-mentor-1'), {
       scrollTrigger: {
-        trigger: this.document.querySelector('.img-mentor-1'),
-        toggleActions: 'restart pause reverese pause',
-        start: '-280% top',
+        trigger:('.texto-mentoria'),
+        // toggleActions: 'restart pause reverese pause',
       },
       y: 300,
       duration: 2,
@@ -204,9 +203,8 @@ export class HomeComponent implements OnInit {
 
     gsap.from(this.document.querySelector('.img-mentor-2'), {
       scrollTrigger: {
-        trigger: this.document.querySelector('.img-mentor-2'),
-        toggleActions: 'restart pause reverese pause',
-        start: '-250% top',
+        trigger: this.document.querySelector('.texto-mentoria'),
+        // toggleActions: 'restart pause reverese pause',
       },
       y: -300,
       duration: 2,
@@ -216,7 +214,7 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.texto-persona'), {
       scrollTrigger: {
         trigger: '.texto-persona',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       y: 150,
       duration: 2,
@@ -226,7 +224,7 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.texto-categoria'), {
       scrollTrigger: {
         trigger: '.texto-categoria',
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -150,
       duration: 2,
@@ -238,7 +236,7 @@ export class HomeComponent implements OnInit {
     gsap.from(('.item' ),{
       scrollTrigger: {
         trigger: '.categoria-itens ',
-        toggleActions: 'restart pause reverese pause',        
+        // toggleActions: 'restart pause reverese pause',        
       },
       y: 100,
       duration: 1.8,
@@ -252,7 +250,7 @@ export class HomeComponent implements OnInit {
     gsap.from(('.titulo-categoria'),{
       scrollTrigger: {
         trigger: '.texto-categoria-2',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
       },
       x: -300,
       duration: 1.5,
@@ -265,7 +263,7 @@ export class HomeComponent implements OnInit {
     gsap.from(('.paragrafo-padrao'),{
       scrollTrigger: {
         trigger: '.texto-categoria-2',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
       },
       x: -300,
       duration: 1.5,
@@ -312,8 +310,8 @@ export class HomeComponent implements OnInit {
           proxy.skew = skew;
           gsap.to(proxy, {
             skew: 0,
-            duration: 0.5,
-            ease: 'sine',
+            duration: 1.5,
+            ease: 'elastic',
             overwrite: true,
             onUpdate: () => skewSetter(proxy.skew),
           });
@@ -328,16 +326,17 @@ export class HomeComponent implements OnInit {
       scrollTrigger: {
         trigger: this.document.querySelector('.circlue-mentor'),
         scrub: true,
-        start: '-80% center',
+        start: '-100% center',
       },
       x: -150,
       y: -400,
+      scale: 2
     });
 
     gsap.from(document.querySelector('.mentores-img'), {
       scrollTrigger: {
         trigger: document.querySelector('.mentores-img'),
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
         start: '-115% top',
       },
       x: -150,
@@ -348,7 +347,7 @@ export class HomeComponent implements OnInit {
     gsap.from('.titulo-mentoria-2', {
       scrollTrigger: {
         trigger: this.document.querySelector('.mentores-img'),
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -300,
       duration: 2,
@@ -359,7 +358,7 @@ export class HomeComponent implements OnInit {
     gsap.from('.paragrafro-mentoria', {
       scrollTrigger: {
         trigger: this.document.querySelector('.titulo-mentoria-2'),
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       x: -300,
       duration: 3,
@@ -371,7 +370,6 @@ export class HomeComponent implements OnInit {
     gsap.from((".titulo-impacto"),{
       scrollTrigger: {
         trigger: '.section-impacto',
-        toggleActions: 'restart pause reverse pause',
       },
       y: -250,
       opacity: 0,
@@ -383,7 +381,7 @@ export class HomeComponent implements OnInit {
     gsap.from((".impacto-img"),{
       scrollTrigger: {
         trigger: '.section-impacto',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
       },
       y: 150,
       opacity: 0,
@@ -397,7 +395,7 @@ export class HomeComponent implements OnInit {
     gsap.from((".box-color"),{
       scrollTrigger: {
         trigger: '.section-impacto',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
       },
       y: 150,
       opacity: 0,
@@ -409,7 +407,7 @@ export class HomeComponent implements OnInit {
     gsap.from((".paragrafo-impacto"),{
       scrollTrigger: {
         trigger: '.section-impacto',
-        toggleActions: 'restart pause reverse pause',
+        // toggleActions: 'restart pause reverse pause',
       },
       x: -200,
       opacity: 0,
@@ -436,10 +434,21 @@ export class HomeComponent implements OnInit {
     gsap.from(this.document.querySelector('.borda-mentoria'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.titulo-mentoria-2'),
-        toggleActions: 'restart pause reverese pause',
+        // toggleActions: 'restart pause reverese pause',
       },
       y: 300,
       duration: 1,
+      opacity: 0,
+    });
+
+  
+    gsap.from(document.querySelector('.footer'), {
+      scrollTrigger: {
+        trigger: document.querySelector('.footer'),
+        // toggleActions: 'restart pause reverese pause',
+        start: '-115% top',
+      },
+      duration: 2.2,
       opacity: 0,
     });
   }

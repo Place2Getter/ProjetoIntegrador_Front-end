@@ -31,23 +31,23 @@ export class UsuarioEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
 
-  //   if (environment.token == '') {
-  //     const Toast = Swal.mixin({
-  //       toast: true,
-  //       position: 'top-end',
-  //       showConfirmButton: false,
-  //       timer: 2500,
-  //       didOpen: (toast) => {
-  //         toast.addEventListener('mouseenter', Swal.stopTimer)
-  //         toast.addEventListener('mouseleave', Swal.resumeTimer)
-  //       }
-  //     })
-  //      this.router.navigate(['/logar']);
-  //        Toast.fire({
-  //         icon: 'info',
-  //         title: 'Sua conexão expirou!'
-  //      });
-  //  }
+    if (environment.token == '') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+       this.router.navigate(['/logar']);
+         Toast.fire({
+          icon: 'info',
+          title: 'Sua conexão expirou!'
+       });
+   }
 
     this.idUsuario = this.route.snapshot.params['id'];
     this.findByIdUsuario(this.idUsuario);

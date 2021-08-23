@@ -10,6 +10,8 @@ import { AlertaService } from '../service/alerta.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-inicio',
@@ -57,23 +59,23 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-    // if (environment.token == '') {
-    //   const Toast = Swal.mixin({
-    //     toast: true,
-    //     position: 'top-end',
-    //     showConfirmButton: false,
-    //     timer: 2500,
-    //     didOpen: (toast) => {
-    //       toast.addEventListener('mouseenter', Swal.stopTimer);
-    //       toast.addEventListener('mouseleave', Swal.resumeTimer);
-    //     },
-    //   });
-    //   this.router.navigate(['/logar']);
-    //   Toast.fire({
-    //     icon: 'info',
-    //     title: 'Sua conexão expirou!',
-    //   });
-    // }
+    if (environment.token == '') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        },
+      });
+      this.router.navigate(['/logar']);
+      Toast.fire({
+        icon: 'info',
+        title: 'Sua conexão expirou!',
+      });
+    }
     this.getAllTemas();
     this.getAllPostagens();
     this.findByIdUsuario();
@@ -180,7 +182,7 @@ export class InicioComponent implements OnInit {
 
   findByNomeTema() {
     if (this.nomeTema == '') {
-      this.getAllTemas();
+      this.getAllPostagens();
     } else {
       this.temaService
         .getByNomeTema(this.nomeTema)
@@ -225,15 +227,15 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  curtida(id: number) {
-    this.postagemService.putCurtir(id).subscribe(() => {
-      this.getAllPostagens();
-    });
-  }
+  // curtida(id: number) {
+  //   this.postagemService.putCurtir(id).subscribe(() => {
+  //     this.getAllPostagens();
+  //   });
+  // }
 
-  descurtida(id: number) {
-    this.postagemService.putDescurtir(id).subscribe(() => {
-      this.getAllPostagens();
-    });
-  }
+  // descurtida(id: number) {
+  //   this.postagemService.putDescurtir(id).subscribe(() => {
+  //     this.getAllPostagens();
+  //   });
+  // }
 }

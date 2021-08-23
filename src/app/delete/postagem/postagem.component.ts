@@ -27,15 +27,15 @@ export class PostagemDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // window.scroll(0,0)
-    // if (environment.token == '') {
-    //   this.router.navigate(['/logar']);
-    //   Swal.fire({
-    //     icon: 'info',
-    //     title: 'Oops...',
-    //     text: 'Sua conexão inspirou!',
-    //   });
-    // }
+    window.scroll(0,0)
+    if (environment.token == '') {
+      this.router.navigate(['/logar']);
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Sua conexão inspirou!',
+      });
+    }
 
     this.idPostagem = this.route.snapshot.params['id'];
     this.findByIdPostagem(this.idPostagem);

@@ -53,15 +53,15 @@ export class PostagemService {
 
   //curtir
 
-  putCurtir(curtidas: number): Observable<Postagem>{
-    return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/curtidas/{curtidas}`, this.token)
+  // putCurtir(curtidas: number): Observable<Postagem>{
+  //   return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/curtidas/{curtidas}`, this.token)
 
-  }
-  //descurtir
-  putDescurtir(id: number): Observable<Postagem>{
-    return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/descurtir/{descurtir}/${id}`, this.token)
+  // }
+  // //descurtir
+  // putDescurtir(id: number): Observable<Postagem>{
+  //   return this.http.put<Postagem>(`https://place2getterback.herokuapp.com/postagem/descurtir/{descurtir}/${id}`, this.token)
 
-  }
+  // }
 
 
 }

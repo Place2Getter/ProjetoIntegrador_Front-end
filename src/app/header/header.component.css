@@ -59,9 +59,10 @@ img.img-profile {
   width: 15px;
   height: 15px;
   background: rgb(36, 197, 36);
+  border: 1px solid white;
   border-radius: 50%;
   right: 0;
-  bottom: 17%;
+  bottom: 13%;
   animation: animation-profile 5s ease-in-out infinite;
 }
 

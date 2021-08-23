@@ -126,7 +126,7 @@ img.icon-mouse {
   filter: invert(1);
   position: absolute;
   bottom: 10%;
-  right: 45%;
+  right: 47%;
   transform: translate(-50%);
 }
 
@@ -404,6 +404,7 @@ section img.vetor-3 {
 .content-2 {
   height: 100%;
   position: relative;
+  padding-top: 5%;
 }
 
 .content-2 h2 {
@@ -490,7 +491,7 @@ a.link-categoria {
 }
 
 .categorias {
-  padding-top: 50px;
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -546,7 +547,7 @@ a.link-categoria {
   -webkit-text-fill-color: transparent;
   font-size: 52pt;
   font-weight: 800;
-  margin-top: 90px;
+  margin-top: 70px;
 }
 
 .texto-categoria p {
@@ -580,7 +581,8 @@ a.link-categoria {
 
 .mentores {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
 
 .mentores img {
@@ -998,49 +1000,64 @@ img.elemento-style{
 /*                INICIO DA ESTILIZAÇÃO DO RODAPE DA HOME-PAGE                */
 /* -------------------------------------------------------------------------- */
 
+
 footer {
-  background-color: rgba(43, 94, 77, 0.651);
+  background-color: white;
   width: 100%;
-  height: 200px;
+  height: 350px;
+  background: url(https://i.imgur.com/br8akfJ.png) no-repeat;
+  animation: animation-footer 5s ease-in-out infinite;
+}
+
+footer img{
+  background-size: cover;
+}
+
+
+
+
+.footer-list{
+  margin-right: 20px;
+}
+
+.descricao-footer h5{
+  color: #13ac869a;
+  display: inline;
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.descricao-footer p{
+  color: rgba(255, 255, 255, 0.747);
+  font-size: 1em;
+  font-weight: 400;
   text-align: center;
 }
 
-footer h2 {
-  padding-top: 45px;
-}
-
-footer {
-  background-color: rgba(43, 94, 77, 0.651);
-  width: 100%;
-  height: 200px;
-  text-align: center;
+.list-items li{
+  list-style: none;
+  color: rgba(245, 245, 245, 0.747);
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 3px;
 }
 
 
-.redes-sociais {
-  display: flex;
-  justify-content: center;
-  margin-right: 18px;
+.footer-bottom small{
+  color: white;
+  font-weight: 300;
+} 
+
+.footer-logo {
+  margin-top: 13%;
 }
 
-.redes-sociais i {
-  margin-left: 20px;
-  color: rgba(0, 0, 0, 0.603);
-  font-size: 24px;
-  margin-top: 10px;
-  transition: .1s ease-in-out;
+footer .redes-sociais i{
+  color: rgba(255, 255, 255, 0.404);
+  font-size: 28px;
+  margin-right: 20px;
 }
-
-.redes-sociais i:hover {
-  color: #60dbc5;
-  transform: scale(130%);
-}
-
 /* -------------------------------------------------------------------------- */
 /*                FIM DA ESTILIZAÇÃO DO RODAPE DA HOME-PAGE                */
 /* -------------------------------------------------------------------------- */
-
-.borda { border-radius: 50%;
-  background-position: -15px -15px;
-  height: 195px;
-  width: 195px;}

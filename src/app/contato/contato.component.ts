@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
-
   constructor(
     private router : Router
   ) { }
@@ -24,5 +23,4 @@ export class ContatoComponent implements OnInit {
     });
     this.router.navigate(['/home'])
   }
-
 }

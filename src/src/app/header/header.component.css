@@ -1,0 +1,122 @@
+a .button-edit {
+  margin-left: 10px;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.header {
+  background-color: #292929;
+  height: 54px;
+  position: fixed;
+  z-index: 1000;
+  animation: animation-initial 0.8s ease-in-out;
+}
+
+.logo img{
+  width: 40px;
+}
+.header i {
+  color: white;
+}
+
+
+.header button {
+  /* border: 1px solid rgba(255, 255, 255, 0); */
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.header button:hover {
+  background: none;
+  border-bottom: 1px solid #8CF7B2;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.profile p{
+  color: #71eed0; 
+  margin-bottom: 0;
+}
+
+img.img-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: animation-profile 3s ease-in-out infinite;
+}
+
+.header h2 {
+  color: rgb(114, 55, 252);
+  font-size: 18px;
+  margin-left: 14px;
+}
+
+.icon-online {
+  width: 15px;
+  height: 15px;
+  background: rgb(36, 197, 36);
+  border-radius: 50%;
+  right: 0;
+  bottom: 17%;
+  animation: animation-profile 5s ease-in-out infinite;
+}
+
+.input-busca input {
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.103);
+  color: white;
+  font-weight: 300;
+  width: 250px;
+  margin-right: 10px;
+  padding: 20px;
+  height: 26px;
+}
+
+.input-busca input::placeholder {
+  color: rgba(255, 255, 255, 0.199);
+}
+
+.input-busca input:focus {
+  box-shadow: none;
+}
+
+.input-busca i {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  color: #6b6b6b;
+}
+
+
+
+
+@keyframes animation-profile{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(5%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation-initial{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+
+
+

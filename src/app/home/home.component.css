@@ -742,8 +742,8 @@ img.elemento-style{
 
 .desenvolvedores{
   background: linear-gradient(180deg, #D6FAF1 18.78%, #F1F1F1 100%);
-  height: 800px;
   padding-top: 80px;
+  margin-bottom: 4%;
 }
 
 .desenvolvedores h4{
@@ -753,22 +753,33 @@ img.elemento-style{
 }
 
 .desenvolvedores h3{
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .desenvolvedores p{
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: #a1a1a1;
   margin-top: 10px;
   font-weight: 300;
   padding-bottom: 10px;
 }
 
+
 .desenvolvedores img{
-  width: 300px;
+  width: 250px;
+  height: 250px;
 }
 
+.links-pessoais {
+  border-top: 1px solid #1ccea1;
+  padding-top: 10px;
+}
+
+.links-pessoais i{
+  font-size: 24px;
+  color: #23cea3;
+}
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -906,6 +917,12 @@ img.elemento-style{
     width: 38px;
   }
 }
+
+.card-desenvolvedor{
+  padding: 25px;
+}
+
+
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {  }
